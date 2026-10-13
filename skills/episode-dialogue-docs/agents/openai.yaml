@@ -1,0 +1,4 @@
+interface:
+  display_name: "分角色台词与学习脑图"
+  short_description: "逐集整理分角色台词、维护角色总表，生成 Word 文档和双语学习总结脑图"
+  default_prompt: "使用 $episode-dialogue-docs 整理指定剧集，区分角色和旁白，维护角色总表，生成 Word 台词文档，并以项目参考图片为模板生成本集双语学习总结脑图。"

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "series_id": "bluey",
+  "series_name": "Bluey",
+  "revision": 2,
+  "characters": [
+    {
+      "id": "bluey", "name_en": "Bluey", "name_zh": "布鲁伊", "display_name": "Bluey",
+      "aliases": ["布鲁伊"], "status": "confirmed",
+      "visual_notes": "以参考片段中的人物为准，尚未维护独立外观描述。",
+      "voice_notes": "参考为用户提供的英文版本；未建立自动声纹识别模型。",
+      "references": [{"episode": "S01E01", "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+        "start": 62.017, "end": 64.017, "language": "en", "edition": "用户提供英文原声版本",
+        "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+        "basis": "首集分角色稿第12条，字幕与画面核对，台词 No! It's still my turn."}]
+    },
+    {
+      "id": "bingo", "name_en": "Bingo", "name_zh": "宾果", "display_name": "Bingo",
+      "aliases": ["宾果"], "status": "confirmed",
+      "visual_notes": "以参考片段中的人物为准，尚未维护独立外观描述。",
+      "voice_notes": "参考为用户提供的英文版本；未建立自动声纹识别模型。",
+      "references": [{"episode": "S01E01", "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+        "start": 59.517, "end": 62.017, "language": "en", "edition": "用户提供英文原声版本",
+        "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+        "basis": "首集分角色稿第11条，字幕与画面核对，台词 Dad! I want to be the piano."}]
+    },
+    {
+      "id": "bandit", "name_en": "Bandit", "name_zh": "爸爸", "display_name": "爸爸 Dad",
+      "aliases": ["Dad", "Daddy", "爸爸", "Bandit"], "status": "confirmed",
+      "visual_notes": "以参考片段中的人物为准，尚未维护独立外观描述。",
+      "voice_notes": "参考为用户提供的英文版本；未建立自动声纹识别模型。",
+      "references": [{"episode": "S01E01", "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+        "start": 29.517, "end": 36.017, "language": "en", "edition": "用户提供英文原声版本",
+        "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+        "basis": "首集分角色稿第5至6条，字幕与画面核对，爸爸宣布演奏。"}]
+    },
+    {
+      "id": "chilli", "name_en": "Chilli", "name_zh": "妈妈", "display_name": "妈妈 Mum",
+      "aliases": ["Mum", "Mom", "妈妈", "Chilli"], "status": "confirmed",
+      "visual_notes": "以参考片段中的人物为准，尚未维护独立外观描述。",
+      "voice_notes": "参考为用户提供的英文版本；未建立自动声纹识别模型。",
+      "references": [{"episode": "S01E01", "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+        "start": 81.017, "end": 84.517, "language": "en", "edition": "用户提供英文原声版本",
+        "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+        "basis": "首集分角色稿第18条，字幕与画面核对，台词 Ooh! Island rhythms!"}]
+    }
+  ],
+  "changes": [
+    {"date": "2026-10-13", "reason": "从已核对的第一集初始化四位角色，片名报幕不强行归入角色。", "affected_episodes": ["S01E01"]},
+    {"date": "2026-10-13", "reason": "原始素材移入 input，仅更新参考路径，角色身份与台词不变。", "affected_episodes": ["S01E01"]}
+  ]
+}

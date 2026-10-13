@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "series_id": "bluey",
+  "current_registry": {
+    "path": "series/bluey/characters.json",
+    "revision": 3,
+    "sha256": "d28141b31f4a507cc75d6b8eeeba9e698de3d5aab02fed4b53c3c6368332fca7",
+    "snapshot": "series/bluey/history/characters.rev-003.json"
+  },
+  "episodes": [
+    {
+      "episode": "S01E01",
+      "title": "Magic Xylophone",
+      "status": "reviewed_with_uncertainties",
+      "sources": [
+        {
+          "path": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "role": "video",
+          "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46"
+        },
+        {
+          "path": "input/第一季52集/分集音频/1-2/S01E01.mp3",
+          "role": "audio",
+          "sha256": "c0a434182190269d4d5c002d1650e1959e2b44a660f1ed437c9cdb48b6e39080"
+        }
+      ],
+      "transcript": "output/S01E01/transcript.v1.json",
+      "legacy_transcript": "output/S01E01/S01E01_分角色台词.json",
+      "outputs": [
+        "output/S01E01/Bluey_S01E01_魔法木琴_分角色台词.docx",
+        "output/S01E01/Bluey_S01E01_分角色台词.txt",
+        "output/S01E01/Bluey_S01E01_分角色字幕.srt"
+      ],
+      "qa": "output/S01E01/qa/review.json",
+      "mindmap": {
+        "status": "reviewed",
+        "registry_revision": 2,
+        "registry_sha256": "48e663b821033515ed41a830bfa2e3399d1800420f2926283f284c38e28bcf77",
+        "registry_snapshot": "series/bluey/history/characters.rev-002.json",
+        "template": {
+          "path": "input/template/Bluey_分集英语学习总结_思维导图参考模板.jpg",
+          "sha256": "b05eb6b485cd7c40440e437b8bb576192485a79aa3fab2b396a2184a316d5ba2"
+        },
+        "transcript": {
+          "path": "output/S01E01/transcript.v1.json",
+          "sha256": "3b94dec0aa5493ad265b89bf509615368faf7077ff9bd735a4dfbdb44957b9c3"
+        },
+        "content_path": "output/S01E01/mindmap-v1/work/mindmap.content.json",
+        "prompt_path": "output/S01E01/mindmap-v1/work/mindmap.prompt.txt",
+        "repair_prompt_paths": ["output/S01E01/mindmap-v1/work/mindmap.repair-01.prompt.txt"],
+        "review_path": "output/S01E01/mindmap-v1/qa/mindmap.review.json",
+        "generation_method": "built-in image_gen",
+        "output_path": "output/S01E01/mindmap-v1/deliverables/Bluey_S01E01_英语学习总结思维导图.png",
+        "output_sha256": "6703aabea7c4f85842d9f78c370e87d5e6ae133227f72ecfc4b85d44c85867b2",
+        "width": 1055,
+        "height": 1491,
+        "image_format": "PNG",
+        "content_review": "passed",
+        "text_review": "passed",
+        "visual_review": "passed",
+        "unresolved": []
+      },
+      "unresolved": [
+        {
+          "id": 20,
+          "start": 86.517,
+          "text_status": "reviewed",
+          "speaker_status": "uncertain",
+          "reason": "可确定为片名报幕，未确认童声对应的具体角色。"
+        },
+        {
+          "id": 126,
+          "start": 362.6,
+          "text_status": "uncertain",
+          "speaker_status": "reviewed",
+          "reason": "爸爸哼唱前半句无字幕，现有证据不足以确认歌词。"
+        }
+      ],
+      "registry_revision": 2,
+      "registry_snapshot": "series/bluey/history/characters.rev-002.json",
+      "registry_sha256": "48e663b821033515ed41a830bfa2e3399d1800420f2926283f284c38e28bcf77",
+      "changes": [
+        {
+          "date": "2026-10-13",
+          "reason": "初始索引与数据格式规范化，原交付文件不变。"
+        },
+        {
+          "date": "2026-10-13",
+          "reason": "原始素材移入 input，同步当前引用和角色表版本；原交付文件未修改。",
+          "previous_registry_revision": 1,
+          "previous_registry_sha256": "47909a87b27955b7c02babd3ccbec5f1c0c78a5897b7cbfd7ef6ac11c4e8957f"
+        },
+        {
+          "date": "2026-10-13",
+          "reason": "按用户参考模板补做第一集双语学习总结脑图，独立保存为 mindmap-v1；原台词、文档及待核状态不变。"
+        },
+        {
+          "date": "2026-10-13",
+          "reason": "角色总表升级到 revision 3，补充外观和参考帧。当前版本单列 current_registry；本集历史交付继续固定 revision 2 快照，不改原文件或验收结论。"
+        }
+      ]
+    }
+  ]
+}

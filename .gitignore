@@ -1,0 +1,68 @@
+# Local configuration, credentials, and editor or agent state.
+/pipeline.local.json
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+/.codex/
+/.agents/
+/.vscode/
+/.idea/
+
+# Source media stays local. Keep only the shared mind-map template.
+/input/*
+!/input/template/
+/input/template/*
+!/input/template/Bluey_分集英语学习总结_思维导图参考模板.jpg
+
+# Episode deliverables, extracted media, OCR/ASR evidence, and QA renders.
+/output/
+/doc/_work/
+/tests/runs/
+.episode-test-*/
+.mindmap-test-*/
+
+# Preserve demo source code, not its media, models, or generated outputs.
+/demo/*
+!/demo/*.py
+!/demo/*.ps1
+
+# Downloaded runtimes, dependencies, models, and private application data.
+/.demo_deps/
+/.ocr_tools/
+/models/
+/model_cache/
+/data/uploads/
+/data/drafts/
+/data/cache/
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Temporary, lock, and operating system files.
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*
+.DS_Store
+Thumbs.db
+Desktop.ini
