@@ -32,6 +32,93 @@
         "output/S01E01/Bluey_S01E01_分角色字幕.srt"
       ],
       "qa": "output/S01E01/qa/review.json",
+      "comic_web_editions": [
+        {
+          "edition_id": "bluey-s01e01-comic-web-v1",
+          "created_date": "2026-10-14",
+          "status": "functional_review_passed_with_audio_boundary_review_pending",
+          "based_on_comic_edition": "bluey-s01e01-comic-full-v1",
+          "source_directory": "web/bluey-reader",
+          "output_directory": "output/S01E01/comic-web-v1",
+          "page_count": 9,
+          "panel_count": 54,
+          "bubble_count": 115,
+          "source_record_count": 140,
+          "audio_clip_count": 169,
+          "audio_source": "original_video_stream_0:a:0",
+          "audio_decode_review": "passed_all_169_clips",
+          "audio_boundary_review": "approximate_subtitle_windows_with_partial_asr_refinement; full_manual_listening_pending",
+          "browser_functional_review": "passed_chromium",
+          "native_mobile_review": "pending",
+          "review_path": "output/S01E01/comic-web-v1/qa/web-review.json",
+          "audio_provenance_path": "output/S01E01/comic-web-v1/qa/source-audio.json",
+          "archive_path": "output/S01E01/comic-web-v1/Bluey_S01E01_漫画点读网页版.zip",
+          "source_uncertainties_preserved": [
+            20,
+            126
+          ],
+          "site_project_id": "appgprj_6acf3e92bbd081918fb97c21260c4ed0",
+          "deployment_id": "appgdep_6acf482ad9d88191925d1ed15bdc1914",
+          "publication_status": "succeeded_private",
+          "url": "https://bluey-xylophone-20261014-v1.crafty-jelly-4020.chatgpt.site",
+          "online_browser_review": "blocked_by_cloudflare_on_current_network"
+        }
+      ],
+      "comic_editions": [
+        {
+          "edition_id": "bluey-s01e01-comic-full-v1",
+          "created_date": "2026-10-14",
+          "status": "reviewed_with_source_uncertainties",
+          "scope": "complete_static_comic_adaptation",
+          "page_count": 9,
+          "panel_count": 54,
+          "source_record_count": 140,
+          "pdf_path": "output/S01E01/comic-full-v1/deliverables/Bluey_S01E01_完整漫画.pdf",
+          "pdf_sha256": "c02efb36a1d2ab8fb1b4cebc0d89b1905894252054da458f5ac36b51eae357d3",
+          "png_archive_path": "output/S01E01/comic-full-v1/deliverables/Bluey_S01E01_漫画逐页PNG.zip",
+          "pages_directory": "output/S01E01/comic-full-v1/deliverables/pages",
+          "manifest_path": "output/S01E01/comic-full-v1/work/book-manifest.final.json",
+          "review_path": "output/S01E01/comic-full-v1/qa/comic.review.json",
+          "prompt_set_path": "output/S01E01/comic-full-v1/work/prompts-used.txt",
+          "generation_method": "built-in image_gen",
+          "visual_registry_revision": 3,
+          "transcript_registry_revision": 2,
+          "content_review": "passed",
+          "structure_review": "passed",
+          "visual_review": "passed",
+          "pdf_review": "passed",
+          "preserved_source_uncertainties": [
+            20,
+            126
+          ],
+          "h5_publish_ready": false,
+          "audio_status": "not_implemented"
+        }
+      ],
+      "comic_samples": [
+        {
+          "sample_id": "bluey-s01e01-comic-sample-v1",
+          "status": "reviewed",
+          "scope": "selected_static_visual_sample",
+          "panel_count": 8,
+          "dialogue_count": 14,
+          "output_path": "output/S01E01/comic-sample-v1/deliverables/Bluey_S01E01_魔法木琴_8格精选漫画.png",
+          "output_sha256": "bf5316ee790694b0adbfc1d914e966e68713a7fad24985289f5e1a03cd4ab6c9",
+          "width": 1024,
+          "height": 1536,
+          "storyboard_path": "output/S01E01/comic-sample-v1/work/storyboard.json",
+          "review_path": "output/S01E01/comic-sample-v1/qa/comic.review.json",
+          "generation_method": "built-in image_gen",
+          "prompt_paths": [
+            "output/S01E01/comic-sample-v1/work/imagegen-v2.prompt.txt",
+            "output/S01E01/comic-sample-v1/work/imagegen-repair-01.prompt.txt"
+          ],
+          "visual_registry_revision": 3,
+          "transcript_registry_revision": 2,
+          "h5_publish_ready": false,
+          "audio_status": "not_implemented"
+        }
+      ],
       "mindmap": {
         "status": "reviewed",
         "registry_revision": 2,

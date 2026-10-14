@@ -1,0 +1,63 @@
+{
+  "video": {
+    "path": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+    "role": "video",
+    "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46"
+  },
+  "transcript": {
+    "path": "output/S01E01/transcript.v1.json",
+    "sha256": "3b94dec0aa5493ad265b89bf509615368faf7077ff9bd735a4dfbdb44957b9c3"
+  },
+  "pages": [
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-01.png",
+      "sha256": "74d6f60e6dd870fc0b582d9a618621e18bf3758ff45e17c467c96e0c71b3651b",
+      "target": "assets/pages/page-01.png"
+    },
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-02.png",
+      "sha256": "4694d4149fcaee3834d8e6796b572f0c53f3148f709980b5a2a74ffbfd76a775",
+      "target": "assets/pages/page-02.png"
+    },
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-03.png",
+      "sha256": "938cd92378fde34a87f75df8613d71d942c2718b232f5dd31e805c2e222b98ee",
+      "target": "assets/pages/page-03.png"
+    },
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-04.png",
+      "sha256": "32f7d0c9903b8c66b37dc407f90e68a164b6990db4a1b977859463d8658f32b9",
+      "target": "assets/pages/page-04.png"
+    },
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-05.png",
+      "sha256": "931e74f34402d0a6169301e6716d0ceae7f8347b083b5b0013788f1ce7019e98",
+      "target": "assets/pages/page-05.png"
+    },
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-06.png",
+      "sha256": "58e8c6bc4eff0ed73356a5d58139906c60a4bbd672dd44f346cae1772bb26b60",
+      "target": "assets/pages/page-06.png"
+    },
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-07.png",
+      "sha256": "600bd8cdd6326892bbd9115f5b7a18f9a71faf4e5e6ff23eb776e78535f21da7",
+      "target": "assets/pages/page-07.png"
+    },
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-08.png",
+      "sha256": "a40e7935542e99dca679a34835661e56f35f8d97830caa701fe791e0348cff12",
+      "target": "assets/pages/page-08.png"
+    },
+    {
+      "path": "output/S01E01/comic-full-v1/deliverables/pages/Bluey_S01E01_page-09.png",
+      "sha256": "b67825b96e4ae6f0eaa8077ac7b210ac178e7c217e2ad886bb673d48f26000bf",
+      "target": "assets/pages/page-09.png"
+    }
+  ],
+  "timing_note": "Cuts use reviewed transcript subtitle windows with close matching existing ASR word boundaries and overlap-safe padding. Boundaries remain approximate (about 0.5 s); a complete auditory boundary review has not been claimed.",
+  "preserved_uncertainties": [
+    20,
+    126
+  ]
+}

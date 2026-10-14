@@ -1,0 +1,3891 @@
+{
+  "id": "bluey-s01e01-comic-web-v1",
+  "title": "Magic Xylophone",
+  "titleZh": "魔法木琴",
+  "episode": "S01E01",
+  "pages": [
+    {
+      "number": 1,
+      "title": "钢琴游戏",
+      "image": "assets/pages/page-01.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-001",
+          "number": 1,
+          "page": 1,
+          "rect": [
+            16,
+            89,
+            491,
+            391
+          ],
+          "bubbles": [
+            {
+              "id": "p01-panel01-b01",
+              "text": "Mum!",
+              "speaker": "片头合声",
+              "speakerIds": [],
+              "kind": "chorus",
+              "sourceIds": [
+                1
+              ],
+              "rect": [
+                40,
+                117,
+                110,
+                59
+              ],
+              "audio": "assets/audio/p01-panel01-b01.mp3",
+              "start": 6.237,
+              "end": 7.737,
+              "note": "",
+              "duration": 1.5,
+              "sha256": "061ab69b962869db32e24ae86d0242b4f90ba04b7fea2cf665fa40ab529bbe29"
+            },
+            {
+              "id": "p01-panel01-b02",
+              "text": "Dad!",
+              "speaker": "片头合声",
+              "speakerIds": [],
+              "kind": "chorus",
+              "sourceIds": [
+                2
+              ],
+              "rect": [
+                163,
+                117,
+                92,
+                59
+              ],
+              "audio": "assets/audio/p01-panel01-b02.mp3",
+              "start": 11.737,
+              "end": 13.237,
+              "note": "",
+              "duration": 1.5,
+              "sha256": "ae2d6332210a5b1a36b762d62ceab36a741520fa7d95cd4824db8b7b0a767f35"
+            },
+            {
+              "id": "p01-panel01-b03",
+              "text": "Bingo!",
+              "speaker": "片头合声",
+              "speakerIds": [],
+              "kind": "chorus",
+              "sourceIds": [
+                3
+              ],
+              "rect": [
+                264,
+                117,
+                111,
+                59
+              ],
+              "audio": "assets/audio/p01-panel01-b03.mp3",
+              "start": 17.737,
+              "end": 19.237,
+              "note": "",
+              "duration": 1.5,
+              "sha256": "74575852b28821de76c745fe11b55a4e84e558700408adc64f83a6568d56655a"
+            },
+            {
+              "id": "p01-panel01-b04",
+              "text": "Bluey!",
+              "speaker": "片头合声",
+              "speakerIds": [],
+              "kind": "chorus",
+              "sourceIds": [
+                4
+              ],
+              "rect": [
+                380,
+                117,
+                110,
+                59
+              ],
+              "audio": "assets/audio/p01-panel01-b04.mp3",
+              "start": 22.737,
+              "end": 25.237,
+              "note": "",
+              "duration": 2.5,
+              "sha256": "ad063941da4f43e161e28262f27d5d42a2b41cfcc393bb696a0ec2bdbe696ec0"
+            }
+          ],
+          "start": 6.237,
+          "end": 25.237,
+          "audio": "assets/audio/panel-001.mp3",
+          "ambient": false,
+          "duration": 19.0,
+          "sha256": "1d37e3fb24759652945d7295feb5e4678ce3c865397f58e742828565671eda72"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-002",
+          "number": 2,
+          "page": 1,
+          "rect": [
+            516,
+            89,
+            492,
+            391
+          ],
+          "bubbles": [
+            {
+              "id": "p01-panel02-b01",
+              "text": "Ladies and gentlemen, I will now play for you the rondo \"Alla Turca.\"",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                5,
+                6
+              ],
+              "rect": [
+                728,
+                107,
+                276,
+                132
+              ],
+              "audio": "assets/audio/p01-panel02-b01.mp3",
+              "start": 29.237,
+              "end": 36.237,
+              "note": "",
+              "duration": 7.0,
+              "sha256": "8ed94b9e3bdc69ba8f8e5cc305e58f10634dd3e1f6d33c1a85ef6541cbb48880"
+            }
+          ],
+          "start": 29.237,
+          "end": 36.237,
+          "audio": "assets/audio/panel-002.mp3",
+          "ambient": false,
+          "duration": 7.0,
+          "sha256": "8ed94b9e3bdc69ba8f8e5cc305e58f10634dd3e1f6d33c1a85ef6541cbb48880"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-003",
+          "number": 3,
+          "page": 1,
+          "rect": [
+            16,
+            488,
+            491,
+            430
+          ],
+          "bubbles": [
+            {
+              "id": "p01-panel03-b01",
+              "text": "Hmm, hmm, hmm!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "singing",
+              "sourceIds": [
+                7
+              ],
+              "rect": [
+                221,
+                508,
+                242,
+                69
+              ],
+              "audio": "assets/audio/p01-panel03-b01.mp3",
+              "start": 36.737,
+              "end": 38.737,
+              "note": "",
+              "duration": 2.0,
+              "sha256": "9c9df5cb9c0d28736b25a3593955d8638eabf90919a8e1aa756bd1a8648d4733"
+            }
+          ],
+          "start": 36.737,
+          "end": 38.737,
+          "audio": "assets/audio/panel-003.mp3",
+          "ambient": false,
+          "duration": 2.0,
+          "sha256": "9c9df5cb9c0d28736b25a3593955d8638eabf90919a8e1aa756bd1a8648d4733"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-004",
+          "number": 4,
+          "page": 1,
+          "rect": [
+            516,
+            488,
+            492,
+            430
+          ],
+          "bubbles": [
+            {
+              "id": "p01-panel04-b01",
+              "text": "Hey! Piano!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                8
+              ],
+              "rect": [
+                568,
+                505,
+                179,
+                67
+              ],
+              "audio": "assets/audio/p01-panel04-b01.mp3",
+              "start": 47.237,
+              "end": 49.989,
+              "note": "",
+              "duration": 2.752,
+              "sha256": "79b6fd00391d29fdedf2c9c1cd874850d69c808a3034ec2e046c1a113365a59e"
+            },
+            {
+              "id": "p01-panel04-b02",
+              "text": "Ladies and gentlemen, I'm terribly sorry. I seem to be having a little bit of trouble with my piano!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                9,
+                10
+              ],
+              "rect": [
+                748,
+                498,
+                253,
+                165
+              ],
+              "audio": "assets/audio/p01-panel04-b02.mp3",
+              "start": 49.989,
+              "end": 56.737,
+              "note": "",
+              "duration": 6.748,
+              "sha256": "c63b462eb84f5c63c8f0d505ce6c79d0107a2eb55dd6b6bbde9f148c67263f0d"
+            }
+          ],
+          "start": 47.237,
+          "end": 56.737,
+          "audio": "assets/audio/panel-004.mp3",
+          "ambient": false,
+          "duration": 9.5,
+          "sha256": "445f9735e860f1300fdd9b671382eb4a53fef221f75ec8892df32e275a854e34"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-005",
+          "number": 5,
+          "page": 1,
+          "rect": [
+            16,
+            927,
+            491,
+            581
+          ],
+          "bubbles": [
+            {
+              "id": "p01-panel05-b01",
+              "text": "Dad! I want to be the piano.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                11
+              ],
+              "rect": [
+                42,
+                965,
+                254,
+                94
+              ],
+              "audio": "assets/audio/p01-panel05-b01.mp3",
+              "start": 59.34,
+              "end": 61.76,
+              "note": "",
+              "duration": 2.42,
+              "sha256": "31e9ca91e5511af0e4c7c5f2b2839db0f491e377a76269c09037846ac9201565"
+            },
+            {
+              "id": "p01-panel05-b02",
+              "text": "No! It's still my turn.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                12
+              ],
+              "rect": [
+                317,
+                978,
+                167,
+                115
+              ],
+              "audio": "assets/audio/p01-panel05-b02.mp3",
+              "start": 61.76,
+              "end": 64.06,
+              "note": "",
+              "duration": 2.3,
+              "sha256": "12b23fe3440711dd1922af03e0c0c536ffaed55e8674d9e769c69dd89352d745"
+            }
+          ],
+          "start": 59.34,
+          "end": 64.06,
+          "audio": "assets/audio/panel-005.mp3",
+          "ambient": false,
+          "duration": 4.72,
+          "sha256": "aac8d5e716583f31464b3f26735131ba6a00f9140fd72687bd756ca435f7fcdd"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-006",
+          "number": 6,
+          "page": 1,
+          "rect": [
+            516,
+            927,
+            492,
+            581
+          ],
+          "bubbles": [
+            {
+              "id": "p01-panel06-b01",
+              "text": "Taking turns can be difficult.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                13
+              ],
+              "rect": [
+                634,
+                963,
+                337,
+                69
+              ],
+              "audio": "assets/audio/p01-panel06-b01.mp3",
+              "start": 64.1,
+              "end": 66.338,
+              "note": "",
+              "duration": 2.238,
+              "sha256": "24f24153bf61b3df5ab0b8debd520bd226a6d770e531393d66742d6e1d29d6f4"
+            }
+          ],
+          "start": 64.1,
+          "end": 66.338,
+          "audio": "assets/audio/panel-006.mp3",
+          "ambient": false,
+          "duration": 2.238,
+          "sha256": "24f24153bf61b3df5ab0b8debd520bd226a6d770e531393d66742d6e1d29d6f4"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "发现魔法木琴",
+      "image": "assets/pages/page-02.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-007",
+          "number": 7,
+          "page": 2,
+          "rect": [
+            16,
+            89,
+            491,
+            423
+          ],
+          "bubbles": [
+            {
+              "id": "p02-panel07-b01",
+              "text": "Dad! She's had this many turns!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                14
+              ],
+              "rect": [
+                236,
+                103,
+                196,
+                91
+              ],
+              "audio": "assets/audio/p02-panel07-b01.mp3",
+              "start": 66.338,
+              "end": 70.153,
+              "note": "",
+              "duration": 3.815,
+              "sha256": "9caad3b5788bdfced6ed596bed3c86a434101c6602fce9b326a3a2e733b4d7b6"
+            },
+            {
+              "id": "p02-panel07-b02",
+              "text": "You can be the bum bongos!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                15
+              ],
+              "rect": [
+                197,
+                193,
+                186,
+                77
+              ],
+              "audio": "assets/audio/p02-panel07-b02.mp3",
+              "start": 70.153,
+              "end": 71.89,
+              "note": "",
+              "duration": 1.737,
+              "sha256": "719740e9c3c7a0ac8c34446102baddbca98949c14186343b0f665be10658cccd"
+            }
+          ],
+          "start": 66.338,
+          "end": 71.89,
+          "audio": "assets/audio/panel-007.mp3",
+          "ambient": false,
+          "duration": 5.552,
+          "sha256": "c5132ed63e8d00aab508ed78f5d2549de06b1e111c61d132caa26e994e9bbfed"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-008",
+          "number": 8,
+          "page": 2,
+          "rect": [
+            516,
+            89,
+            492,
+            423
+          ],
+          "bubbles": [
+            {
+              "id": "p02-panel08-b01",
+              "text": "Bum bumda bum, bum bongos! Bum, bumda, bum...",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "singing",
+              "sourceIds": [
+                16,
+                17
+              ],
+              "rect": [
+                570,
+                100,
+                222,
+                93
+              ],
+              "audio": "assets/audio/p02-panel08-b01.mp3",
+              "start": 72.237,
+              "end": 80.987,
+              "note": "",
+              "duration": 8.75,
+              "sha256": "e122f55dbfa382b7fc5369626adc72839cd64f81f5afe097ab1d305c7587fb5c"
+            },
+            {
+              "id": "p02-panel08-b02",
+              "text": "Ooh! Island rhythms!",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                18
+              ],
+              "rect": [
+                787,
+                142,
+                130,
+                93
+              ],
+              "audio": "assets/audio/p02-panel08-b02.mp3",
+              "start": 80.987,
+              "end": 84.487,
+              "note": "",
+              "duration": 3.5,
+              "sha256": "0979e3154b6328afe2be65e3313bbf7dbac7dfc7cf3978cf9bd92e5f3fd51cde"
+            },
+            {
+              "id": "p02-panel08-b03",
+              "text": "Bum bumda bum, bum bongos!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "singing",
+              "sourceIds": [
+                19
+              ],
+              "rect": [
+                675,
+                216,
+                190,
+                75
+              ],
+              "audio": "assets/audio/p02-panel08-b03.mp3",
+              "start": 84.487,
+              "end": 86.487,
+              "note": "",
+              "duration": 2.0,
+              "sha256": "062a76bed72297ad1d54c38cccb7b7a617ec10fa094503dab912a0c489b0797d"
+            }
+          ],
+          "start": 72.237,
+          "end": 86.487,
+          "audio": "assets/audio/panel-008.mp3",
+          "ambient": false,
+          "duration": 14.25,
+          "sha256": "e348b30a4d3a5d1190070cb83f43193ccb4d838e85ff68abf11156664e445009"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-009",
+          "number": 9,
+          "page": 2,
+          "rect": [
+            16,
+            521,
+            491,
+            413
+          ],
+          "bubbles": [
+            {
+              "id": "p02-panel09-b01",
+              "text": "This episode of Bluey is called \"The Magic Xylophone\"!",
+              "speaker": "片名报幕 · 说话人待核",
+              "speakerIds": [],
+              "kind": "title_announcement",
+              "sourceIds": [
+                20
+              ],
+              "rect": [
+                54,
+                786,
+                416,
+                97
+              ],
+              "audio": "assets/audio/p02-panel09-b01.mp3",
+              "start": 86.487,
+              "end": 90.737,
+              "note": "报幕角色待核",
+              "duration": 4.25,
+              "sha256": "30e9c63a83e4aa1124506c6a4b5ff30e417d37a41f2bc9135c9839ede212413f"
+            }
+          ],
+          "start": 86.487,
+          "end": 90.737,
+          "audio": "assets/audio/panel-009.mp3",
+          "ambient": false,
+          "duration": 4.25,
+          "sha256": "30e9c63a83e4aa1124506c6a4b5ff30e417d37a41f2bc9135c9839ede212413f"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-010",
+          "number": 10,
+          "page": 2,
+          "rect": [
+            516,
+            521,
+            492,
+            413
+          ],
+          "bubbles": [
+            {
+              "id": "p02-panel10-b01",
+              "text": "Where are the real bongos?",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                21
+              ],
+              "rect": [
+                564,
+                546,
+                180,
+                69
+              ],
+              "audio": "assets/audio/p02-panel10-b01.mp3",
+              "start": 95.237,
+              "end": 97.15,
+              "note": "",
+              "duration": 1.913,
+              "sha256": "ab721129e726044c8511a3bab0ff2f3e9468ced94dce71e83697daf98005443b"
+            },
+            {
+              "id": "p02-panel10-b02",
+              "text": "Bluey! Look!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                22
+              ],
+              "rect": [
+                643,
+                613,
+                140,
+                54
+              ],
+              "audio": "assets/audio/p02-panel10-b02.mp3",
+              "start": 100.237,
+              "end": 101.487,
+              "note": "",
+              "duration": 1.25,
+              "sha256": "787276bd57f72631aa1a8dfbf3feac60572aa7c48a42af7f73d0c378992c1236"
+            },
+            {
+              "id": "p02-panel10-b03",
+              "text": "Huh? Oh, no! The...",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                23,
+                24
+              ],
+              "rect": [
+                846,
+                531,
+                152,
+                80
+              ],
+              "audio": "assets/audio/p02-panel10-b03.mp3",
+              "start": 101.487,
+              "end": 104.237,
+              "note": "",
+              "duration": 2.75,
+              "sha256": "a42a0695e6df85d4c23e85594a972e616864a9468763bda67213e78d23668f2e"
+            }
+          ],
+          "start": 95.237,
+          "end": 104.237,
+          "audio": "assets/audio/panel-010.mp3",
+          "ambient": false,
+          "duration": 9.0,
+          "sha256": "8a6c5e41966d67d9190d1ebba50ff3eac080202d0753d5b982fcb3ce69d2e50e"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-011",
+          "number": 11,
+          "page": 2,
+          "rect": [
+            16,
+            943,
+            491,
+            545
+          ],
+          "bubbles": [
+            {
+              "id": "p02-panel11-b01",
+              "text": "Quick, Bingo! Get the dinger thing!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                25
+              ],
+              "rect": [
+                26,
+                989,
+                206,
+                73
+              ],
+              "audio": "assets/audio/p02-panel11-b01.mp3",
+              "start": 104.237,
+              "end": 106.987,
+              "note": "",
+              "duration": 2.75,
+              "sha256": "540a0f496cfe0b201ddec65245648d69d612c192ff65c7507b231d7456fc4e3f"
+            },
+            {
+              "id": "p02-panel11-b02",
+              "text": "Let me up! Let me out of here!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                26
+              ],
+              "rect": [
+                233,
+                982,
+                183,
+                74
+              ],
+              "audio": "assets/audio/p02-panel11-b02.mp3",
+              "start": 106.987,
+              "end": 108.987,
+              "note": "",
+              "duration": 2.0,
+              "sha256": "81429122849989143848a26a44ac6d447733baf01fd5bfe577c5921ff7dcd4a5"
+            },
+            {
+              "id": "p02-panel11-b03",
+              "text": "Got it!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                27
+              ],
+              "rect": [
+                357,
+                1065,
+                102,
+                56
+              ],
+              "audio": "assets/audio/p02-panel11-b03.mp3",
+              "start": 108.987,
+              "end": 109.49,
+              "note": "",
+              "duration": 0.503,
+              "sha256": "ee5ce9028ed60b24162cc392737882e1128994ceac52aba4ea249db0bc42f6d3"
+            },
+            {
+              "id": "p02-panel11-b04",
+              "text": "Do a ding!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                28
+              ],
+              "rect": [
+                148,
+                1324,
+                125,
+                55
+              ],
+              "audio": "assets/audio/p02-panel11-b04.mp3",
+              "start": 109.49,
+              "end": 110.487,
+              "note": "",
+              "duration": 0.997,
+              "sha256": "498a177b0680a02951939a7a1ccbc26c3fefab3eef8fec4b7cff151913b6ca28"
+            }
+          ],
+          "start": 104.237,
+          "end": 110.487,
+          "audio": "assets/audio/panel-011.mp3",
+          "ambient": false,
+          "duration": 6.25,
+          "sha256": "693c4bc2da90b06f8afc265144d5b62a1dabcac6039c4be6c90bc2715b06d36a"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-012",
+          "number": 12,
+          "page": 2,
+          "rect": [
+            516,
+            943,
+            492,
+            545
+          ],
+          "bubbles": [
+            {
+              "id": "p02-panel12-b01",
+              "text": "Freeze!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                29
+              ],
+              "rect": [
+                541,
+                1010,
+                111,
+                57
+              ],
+              "audio": "assets/audio/p02-panel12-b01.mp3",
+              "start": 110.487,
+              "end": 111.937,
+              "note": "",
+              "duration": 1.45,
+              "sha256": "ff488b90c23532d1020d8e84d4bc11fb377a335deecae3e4bbca1c8cf0d1fcaa"
+            },
+            {
+              "id": "p02-panel12-b02",
+              "text": "Y...",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                30
+              ],
+              "rect": [
+                651,
+                1017,
+                61,
+                56
+              ],
+              "audio": "assets/audio/p02-panel12-b02.mp3",
+              "start": 111.937,
+              "end": 112.52,
+              "note": "",
+              "duration": 0.583,
+              "sha256": "bac219b07f2496a45448fcb386c1ef0f122f57536ff555571bde5220e0c8e811"
+            },
+            {
+              "id": "p02-panel12-b03",
+              "text": "Yeah!",
+              "speaker": "布鲁伊 · Bluey、宾果 · Bingo",
+              "speakerIds": [
+                "bluey",
+                "bingo"
+              ],
+              "kind": "chorus",
+              "sourceIds": [
+                31
+              ],
+              "rect": [
+                681,
+                1076,
+                101,
+                58
+              ],
+              "audio": "assets/audio/p02-panel12-b03.mp3",
+              "start": 114.737,
+              "end": 115.99,
+              "note": "",
+              "duration": 1.253,
+              "sha256": "74add572ffd96f15bf1764b93a2842be0c79e65603d4c58256d485b45c81ad1f"
+            },
+            {
+              "id": "p02-panel12-b04",
+              "text": "The magic xylophone!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                32
+              ],
+              "rect": [
+                616,
+                1329,
+                186,
+                78
+              ],
+              "audio": "assets/audio/p02-panel12-b04.mp3",
+              "start": 115.99,
+              "end": 118.737,
+              "note": "",
+              "duration": 2.747,
+              "sha256": "7b9e7caf86823dc2e84660eb7fe239516c3847fccc96d44ac53e38a0abea4468"
+            }
+          ],
+          "start": 110.487,
+          "end": 118.737,
+          "audio": "assets/audio/panel-012.mp3",
+          "ambient": false,
+          "duration": 8.25,
+          "sha256": "6cd1786eb47d227b9f833969c85df6bd2f33ea8793007e02601f9ea5f51a24ca"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "恶作剧",
+      "image": "assets/pages/page-03.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-013",
+          "number": 13,
+          "page": 3,
+          "rect": [
+            16,
+            89,
+            491,
+            418
+          ],
+          "bubbles": [
+            {
+              "id": "p03-panel13-b01",
+              "text": "Mum, come and look at this!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                33
+              ],
+              "rect": [
+                47,
+                134,
+                204,
+                87
+              ],
+              "audio": "assets/audio/p03-panel13-b01.mp3",
+              "start": 128.737,
+              "end": 131.487,
+              "note": "",
+              "duration": 2.75,
+              "sha256": "326a7bf87b26b621d4d27c2408fda9ef38a61d4da8ff7ab312fc2d50e61cd7b4"
+            },
+            {
+              "id": "p03-panel13-b02",
+              "text": "Oh, look! It's just like when we first met.",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                34,
+                35
+              ],
+              "rect": [
+                299,
+                98,
+                190,
+                96
+              ],
+              "audio": "assets/audio/p03-panel13-b02.mp3",
+              "start": 131.487,
+              "end": 135.237,
+              "note": "",
+              "duration": 3.75,
+              "sha256": "e75aee277cc1cd9bdfcbfb7a1cce91fb0b242667a29c02442916d391ad1e56ac"
+            }
+          ],
+          "start": 128.737,
+          "end": 135.237,
+          "audio": "assets/audio/panel-013.mp3",
+          "ambient": false,
+          "duration": 6.5,
+          "sha256": "6112d08b4c244e795f76300ace5b82ae6076fc44d97e54e3e634ea1c4a03e4eb"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-014",
+          "number": 14,
+          "page": 3,
+          "rect": [
+            516,
+            89,
+            492,
+            418
+          ],
+          "bubbles": [
+            {
+              "id": "p03-panel14-b01",
+              "text": "Unfreeze!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                36
+              ],
+              "rect": [
+                575,
+                119,
+                137,
+                58
+              ],
+              "audio": "assets/audio/p03-panel14-b01.mp3",
+              "start": 136.237,
+              "end": 137.737,
+              "note": "",
+              "duration": 1.5,
+              "sha256": "a61504b646fc6deb61e2a2a5a2ef40ddb8ceac31e74b182e3c919608dd36c222"
+            },
+            {
+              "id": "p03-panel14-b02",
+              "text": "What?! How did I get fingers up my nose?",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                37,
+                38
+              ],
+              "rect": [
+                775,
+                103,
+                196,
+                101
+              ],
+              "audio": "assets/audio/p03-panel14-b02.mp3",
+              "start": 138.84,
+              "end": 142.0,
+              "note": "",
+              "duration": 3.16,
+              "sha256": "ae790dd408c393848afbf236174e6df3ceaab2a0248b4db96dd15b915f820d5e"
+            },
+            {
+              "id": "p03-panel14-b03",
+              "text": "Oh. The magic xylophone!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                39
+              ],
+              "rect": [
+                601,
+                193,
+                139,
+                68
+              ],
+              "audio": "assets/audio/p03-panel14-b03.mp3",
+              "start": 142.237,
+              "end": 145.228,
+              "note": "",
+              "duration": 2.991,
+              "sha256": "aba2bbf2fa5cf9de325130472d1782924db0e7e13a1ec5540cdcd02d2cf2e371"
+            }
+          ],
+          "start": 136.237,
+          "end": 145.228,
+          "audio": "assets/audio/panel-014.mp3",
+          "ambient": false,
+          "duration": 8.991,
+          "sha256": "ad5b2f01f435845eb0eb32a0f8c1fd72cea3080cea140b7b1014f33c3c5b21c9"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-015",
+          "number": 15,
+          "page": 3,
+          "rect": [
+            16,
+            515,
+            491,
+            416
+          ],
+          "bubbles": [
+            {
+              "id": "p03-panel15-b01",
+              "text": "Give me that xylophone!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                40
+              ],
+              "rect": [
+                104,
+                524,
+                304,
+                57
+              ],
+              "audio": "assets/audio/p03-panel15-b01.mp3",
+              "start": 145.228,
+              "end": 146.987,
+              "note": "",
+              "duration": 1.759,
+              "sha256": "7eec891c47138eb3b11c08cd5cdadfd73b92290c8905e4a32e014a928caba4ea"
+            },
+            {
+              "id": "p03-panel15-b02",
+              "text": "Freeze!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                41
+              ],
+              "rect": [
+                370,
+                589,
+                104,
+                52
+              ],
+              "audio": "assets/audio/p03-panel15-b02.mp3",
+              "start": 146.987,
+              "end": 147.42,
+              "note": "",
+              "duration": 0.433,
+              "sha256": "52de31286636849ea201aa680d2d26aa62677ac0d360219581cdfc31b027e220"
+            },
+            {
+              "id": "p03-panel15-b03",
+              "text": "Give me that...",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                42
+              ],
+              "rect": [
+                285,
+                649,
+                162,
+                55
+              ],
+              "audio": "assets/audio/p03-panel15-b03.mp3",
+              "start": 147.42,
+              "end": 148.237,
+              "note": "",
+              "duration": 0.817,
+              "sha256": "29497c083878c8e5c5c34895ef2acd72cedab0ff580a8f5fc0f075872333a730"
+            }
+          ],
+          "start": 145.228,
+          "end": 148.237,
+          "audio": "assets/audio/panel-015.mp3",
+          "ambient": false,
+          "duration": 3.009,
+          "sha256": "4131993ec1d60626c7dbe03b53e0a5aaa285bfe01ab0d26ed7a573a5bb793fed"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-016",
+          "number": 16,
+          "page": 3,
+          "rect": [
+            516,
+            515,
+            492,
+            416
+          ],
+          "bubbles": [
+            {
+              "id": "p03-panel16-b01",
+              "text": "Bingo, let's get the pens!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                43
+              ],
+              "rect": [
+                597,
+                558,
+                256,
+                59
+              ],
+              "audio": "assets/audio/p03-panel16-b01.mp3",
+              "start": 150.737,
+              "end": 153.237,
+              "note": "",
+              "duration": 2.5,
+              "sha256": "4491bfb6b2f22aa57b1bfc14b1cb7fdbfdf2cc064288dab93dac596fa2b0cd2e"
+            }
+          ],
+          "start": 150.737,
+          "end": 153.237,
+          "audio": "assets/audio/panel-016.mp3",
+          "ambient": false,
+          "duration": 2.5,
+          "sha256": "4491bfb6b2f22aa57b1bfc14b1cb7fdbfdf2cc064288dab93dac596fa2b0cd2e"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-017",
+          "number": 17,
+          "page": 3,
+          "rect": [
+            16,
+            940,
+            491,
+            563
+          ],
+          "bubbles": [
+            {
+              "id": "p03-panel17-b01",
+              "text": "Oh, what a splendid mustache you have.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                44
+              ],
+              "rect": [
+                39,
+                978,
+                234,
+                78
+              ],
+              "audio": "assets/audio/p03-panel17-b01.mp3",
+              "start": 157.737,
+              "end": 161.237,
+              "note": "",
+              "duration": 3.5,
+              "sha256": "14b68684c28c254196185f7c01ebc800d281355b2bd43f914c3ccdb08237dc6c"
+            },
+            {
+              "id": "p03-panel17-b02",
+              "text": "Ooh! Lovely.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                45
+              ],
+              "rect": [
+                363,
+                1015,
+                137,
+                61
+              ],
+              "audio": "assets/audio/p03-panel17-b02.mp3",
+              "start": 162.237,
+              "end": 164.737,
+              "note": "",
+              "duration": 2.5,
+              "sha256": "072a6e7bede2ab2b12a240f4b4c67a827ce8316a502b175f6b4b6b5e96c7eade"
+            }
+          ],
+          "start": 157.737,
+          "end": 164.737,
+          "audio": "assets/audio/panel-017.mp3",
+          "ambient": false,
+          "duration": 7.0,
+          "sha256": "996f4cdb64f3a4067c5eff2f32a67cf97480a4250b27d2c640af25fa87a0bf2d"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-018",
+          "number": 18,
+          "page": 3,
+          "rect": [
+            516,
+            940,
+            492,
+            563
+          ],
+          "bubbles": [
+            {
+              "id": "p03-panel18-b01",
+              "text": "It's my turn to unfreeze him.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                46
+              ],
+              "rect": [
+                541,
+                993,
+                160,
+                76
+              ],
+              "audio": "assets/audio/p03-panel18-b01.mp3",
+              "start": 165.737,
+              "end": 168.487,
+              "note": "",
+              "duration": 2.75,
+              "sha256": "764c06757d23bcb09953aa171a6b192a6e677fb1ba759e975bc1b69a045ce4ed"
+            },
+            {
+              "id": "p03-panel18-b02",
+              "text": "Unfreeze!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                47
+              ],
+              "rect": [
+                689,
+                1051,
+                128,
+                58
+              ],
+              "audio": "assets/audio/p03-panel18-b02.mp3",
+              "start": 168.487,
+              "end": 169.737,
+              "note": "",
+              "duration": 1.25,
+              "sha256": "39634c6705fe695d52007e3af0f341f126feb999d31ebbc00558e51570e7b9f6"
+            },
+            {
+              "id": "p03-panel18-b03",
+              "text": "What?! Arghh! You kids!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                48,
+                49
+              ],
+              "rect": [
+                833,
+                976,
+                168,
+                79
+              ],
+              "audio": "assets/audio/p03-panel18-b03.mp3",
+              "start": 170.27,
+              "end": 173.95,
+              "note": "",
+              "duration": 3.68,
+              "sha256": "fbbdae048ecd1ebfd302328719408607cf19b0a7cb321daa0de87cfd3073ad8c"
+            }
+          ],
+          "start": 165.737,
+          "end": 173.95,
+          "audio": "assets/audio/panel-018.mp3",
+          "ambient": false,
+          "duration": 8.213,
+          "sha256": "4ac5aacedc6f404f9b4523c9a2842e0aea3bd02116f16d1605ee8045a3c4cc40"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "追逐与装扮",
+      "image": "assets/pages/page-04.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-019",
+          "number": 19,
+          "page": 4,
+          "rect": [
+            16,
+            77,
+            491,
+            432
+          ],
+          "bubbles": [
+            {
+              "id": "p04-panel19-b01",
+              "text": "Run!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                50
+              ],
+              "rect": [
+                77,
+                146,
+                91,
+                64
+              ],
+              "audio": "assets/audio/p04-panel19-b01.mp3",
+              "start": 174.237,
+              "end": 174.99,
+              "note": "",
+              "duration": 0.753,
+              "sha256": "0e63ee08fb03c0eae6156d7fb7786365b68d2b2dde931c59ad9b6fd837a5635a"
+            },
+            {
+              "id": "p04-panel19-b02",
+              "text": "Aaah!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                51
+              ],
+              "rect": [
+                236,
+                205,
+                108,
+                57
+              ],
+              "audio": "assets/audio/p04-panel19-b02.mp3",
+              "start": 174.99,
+              "end": 175.987,
+              "note": "",
+              "duration": 0.997,
+              "sha256": "4055249a5b4c03c6121ac41c69be93ad5e288cf39c863ad8bdff9ddeab69b053"
+            },
+            {
+              "id": "p04-panel19-b03",
+              "text": "Give me the magic xylophone!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                52,
+                53
+              ],
+              "rect": [
+                217,
+                104,
+                240,
+                89
+              ],
+              "audio": "assets/audio/p04-panel19-b03.mp3",
+              "start": 175.987,
+              "end": 179.487,
+              "note": "",
+              "duration": 3.5,
+              "sha256": "a5801a11ab2da72e90c26951472aa19035444b995490b08af6ad8da3b4d06fad"
+            }
+          ],
+          "start": 174.237,
+          "end": 179.487,
+          "audio": "assets/audio/panel-019.mp3",
+          "ambient": false,
+          "duration": 5.25,
+          "sha256": "b71a4d400e2d750469d60c4eb8e21b4733c56885b16d15e30b1d6490c26593ab"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-020",
+          "number": 20,
+          "page": 4,
+          "rect": [
+            516,
+            77,
+            492,
+            432
+          ],
+          "bubbles": [
+            {
+              "id": "p04-panel20-b01",
+              "text": "Gotcha!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                54
+              ],
+              "rect": [
+                663,
+                109,
+                117,
+                59
+              ],
+              "audio": "assets/audio/p04-panel20-b01.mp3",
+              "start": 179.487,
+              "end": 179.95,
+              "note": "",
+              "duration": 0.463,
+              "sha256": "33bfc6dbddf72bc861cae831cbc21a8bb534995298a631595bf007e70be6f032"
+            },
+            {
+              "id": "p04-panel20-b02",
+              "text": "Aaaah!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                55
+              ],
+              "rect": [
+                701,
+                185,
+                102,
+                61
+              ],
+              "audio": "assets/audio/p04-panel20-b02.mp3",
+              "start": 179.95,
+              "end": 180.737,
+              "note": "",
+              "duration": 0.787,
+              "sha256": "8295b55392ae7fe1ce987dd76a83d25d2dc6795154bb2fa0d2857523764c59e7"
+            },
+            {
+              "id": "p04-panel20-b03",
+              "text": "Yaha! Too slow, Mr Mustache!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                56
+              ],
+              "rect": [
+                804,
+                163,
+                193,
+                88
+              ],
+              "audio": "assets/audio/p04-panel20-b03.mp3",
+              "start": 181.237,
+              "end": 184.487,
+              "note": "",
+              "duration": 3.25,
+              "sha256": "02c5d0112059eeceaf0d15bb733ef51e9d6f89b8f7c6bf1866658f4eb792d2a3"
+            }
+          ],
+          "start": 179.487,
+          "end": 184.487,
+          "audio": "assets/audio/panel-020.mp3",
+          "ambient": false,
+          "duration": 5.0,
+          "sha256": "b6c043965b5a88024cefe4f902f7267098397c3f29bd8a1fb8ae7a248196cf16"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-021",
+          "number": 21,
+          "page": 4,
+          "rect": [
+            16,
+            518,
+            491,
+            427
+          ],
+          "bubbles": [
+            {
+              "id": "p04-panel21-b01",
+              "text": "Bluey, you're taking all the turns freezing.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                57
+              ],
+              "rect": [
+                24,
+                581,
+                234,
+                75
+              ],
+              "audio": "assets/audio/p04-panel21-b01.mp3",
+              "start": 184.487,
+              "end": 188.118,
+              "note": "",
+              "duration": 3.631,
+              "sha256": "003891a743a3340b34b75e0bdd236218bed622c4f39d8cc67b5d61a9aef1e70f"
+            },
+            {
+              "id": "p04-panel21-b02",
+              "text": "Come on, Bingo. Let's get the teddies.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                58
+              ],
+              "rect": [
+                273,
+                594,
+                224,
+                72
+              ],
+              "audio": "assets/audio/p04-panel21-b02.mp3",
+              "start": 188.118,
+              "end": 190.16,
+              "note": "",
+              "duration": 2.042,
+              "sha256": "8c6095cb320bf13ae6c9504a5a6d2caad16b818b659b53bc1a2b333e43a58e18"
+            },
+            {
+              "id": "p04-panel21-b03",
+              "text": "Okay.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                59
+              ],
+              "rect": [
+                135,
+                849,
+                93,
+                49
+              ],
+              "audio": "assets/audio/p04-panel21-b03.mp3",
+              "start": 190.237,
+              "end": 192.737,
+              "note": "",
+              "duration": 2.5,
+              "sha256": "ef1d61d247ae90ba807ec595d28b875bdb377efe944471eafb1248508a41eda6"
+            }
+          ],
+          "start": 184.487,
+          "end": 192.737,
+          "audio": "assets/audio/panel-021.mp3",
+          "ambient": false,
+          "duration": 8.25,
+          "sha256": "4c85e7da668a3efdcbb9c2cb269c2417c39ed8169a5537d52228735c1f995092"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-022",
+          "number": 22,
+          "page": 4,
+          "rect": [
+            516,
+            518,
+            492,
+            427
+          ],
+          "bubbles": [],
+          "start": 196.8,
+          "end": 199.9,
+          "audio": "assets/audio/panel-022.mp3",
+          "ambient": true,
+          "duration": 3.1,
+          "sha256": "68d8690c467a7259820bbf049a1b8820699ca9b850641236c2807cf4d67f5d4e"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-023",
+          "number": 23,
+          "page": 4,
+          "rect": [
+            16,
+            954,
+            491,
+            531
+          ],
+          "bubbles": [
+            {
+              "id": "p04-panel23-b01",
+              "text": "I'm off to work!",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                60
+              ],
+              "rect": [
+                62,
+                1010,
+                195,
+                55
+              ],
+              "audio": "assets/audio/p04-panel23-b01.mp3",
+              "start": 204.24,
+              "end": 205.64,
+              "note": "",
+              "duration": 1.4,
+              "sha256": "ea88971a6e92c18e548907656da69894b2b63041eee95e83a266c5d902c71f4c"
+            },
+            {
+              "id": "p04-panel23-b02",
+              "text": "Mum! Mum! Look at dad now!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                61
+              ],
+              "rect": [
+                172,
+                1074,
+                185,
+                71
+              ],
+              "audio": "assets/audio/p04-panel23-b02.mp3",
+              "start": 205.737,
+              "end": 208.737,
+              "note": "",
+              "duration": 3.0,
+              "sha256": "d2004205b3114bfda1c749a9bcbaf2767e3fd5b5a56a8731997ec0dbe0cbe522"
+            },
+            {
+              "id": "p04-panel23-b03",
+              "text": "This loose hair's been bugging me all morning.",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                62
+              ],
+              "rect": [
+                141,
+                1320,
+                238,
+                73
+              ],
+              "audio": "assets/audio/p04-panel23-b03.mp3",
+              "start": 209.237,
+              "end": 213.44,
+              "note": "",
+              "duration": 4.203,
+              "sha256": "bcfd8918fce1eadebceafdb7c3abbdd60e07fb030770042ee6e19e5001400ab6"
+            }
+          ],
+          "start": 204.24,
+          "end": 213.44,
+          "audio": "assets/audio/panel-023.mp3",
+          "ambient": false,
+          "duration": 9.2,
+          "sha256": "cc8f4992112faf366465e2e19ada14db91cf5f75f4618726b6d8359a4de963d5"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-024",
+          "number": 24,
+          "page": 4,
+          "rect": [
+            516,
+            954,
+            492,
+            531
+          ],
+          "bubbles": [
+            {
+              "id": "p04-panel24-b01",
+              "text": "Okay, I'll unfreeze him.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                63
+              ],
+              "rect": [
+                548,
+                1068,
+                155,
+                74
+              ],
+              "audio": "assets/audio/p04-panel24-b01.mp3",
+              "start": 215.737,
+              "end": 217.487,
+              "note": "",
+              "duration": 1.75,
+              "sha256": "53e6520af7d6ec876f7eed2fcfc6ecacf29adf3b979bff1821555cf910627375"
+            },
+            {
+              "id": "p04-panel24-b02",
+              "text": "I want to do it.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                64
+              ],
+              "rect": [
+                848,
+                1128,
+                153,
+                50
+              ],
+              "audio": "assets/audio/p04-panel24-b02.mp3",
+              "start": 217.487,
+              "end": 218.774,
+              "note": "",
+              "duration": 1.287,
+              "sha256": "13a055ce86ab100e42bce69519f59ce19fad974d0eb73f6f8c59199edc16da9b"
+            }
+          ],
+          "start": 215.737,
+          "end": 218.774,
+          "audio": "assets/audio/panel-024.mp3",
+          "ambient": false,
+          "duration": 3.037,
+          "sha256": "51d4a243d090316ac84c2f558b5093d96bb82b4cd07da4158dc1c2d9ceba2a79"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "妈妈提醒轮流玩",
+      "image": "assets/pages/page-05.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-025",
+          "number": 25,
+          "page": 5,
+          "rect": [
+            16,
+            89,
+            491,
+            427
+          ],
+          "bubbles": [
+            {
+              "id": "p05-panel25-b01",
+              "text": "Mum, Bluey's not letting me have any turns.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                65
+              ],
+              "rect": [
+                36,
+                133,
+                196,
+                107
+              ],
+              "audio": "assets/audio/p05-panel25-b01.mp3",
+              "start": 218.774,
+              "end": 221.81,
+              "note": "",
+              "duration": 3.036,
+              "sha256": "9e6c247f500542dc2e6e7654e5101b67cd16e16394d5c55ccd07c931a4876ac6"
+            },
+            {
+              "id": "p05-panel25-b02",
+              "text": "Bluey, if you don't take turns with people, people won't take turns with you.",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                66,
+                67
+              ],
+              "rect": [
+                235,
+                94,
+                246,
+                122
+              ],
+              "audio": "assets/audio/p05-panel25-b02.mp3",
+              "start": 222.21,
+              "end": 226.774,
+              "note": "",
+              "duration": 4.564,
+              "sha256": "ea4cef4b0a6230139a0ce4477cf865e7f4619c7695af2064bbe1d61e33ab6f2d"
+            }
+          ],
+          "start": 218.774,
+          "end": 226.774,
+          "audio": "assets/audio/panel-025.mp3",
+          "ambient": false,
+          "duration": 8.0,
+          "sha256": "1f82a84fdaa461917649d5eb8a601af89e5bdbcddf7c7c7707bd2a659b3038c2"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-026",
+          "number": 26,
+          "page": 5,
+          "rect": [
+            516,
+            89,
+            492,
+            427
+          ],
+          "bubbles": [
+            {
+              "id": "p05-panel26-b01",
+              "text": "But Bingo's too slow. Dad will catch her.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                68,
+                69
+              ],
+              "rect": [
+                574,
+                127,
+                243,
+                83
+              ],
+              "audio": "assets/audio/p05-panel26-b01.mp3",
+              "start": 226.774,
+              "end": 230.584,
+              "note": "",
+              "duration": 3.81,
+              "sha256": "94e28af53c35e51d64faf64cf588b4399a3fdda5b3070a6f1f62019587a73d45"
+            },
+            {
+              "id": "p05-panel26-b02",
+              "text": "No, I'm not.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                70
+              ],
+              "rect": [
+                775,
+                223,
+                134,
+                58
+              ],
+              "audio": "assets/audio/p05-panel26-b02.mp3",
+              "start": 230.584,
+              "end": 231.69,
+              "note": "",
+              "duration": 1.106,
+              "sha256": "f36a85dc1d6e83a7f1838ff920ff33f8abe6f2ac29a9ca7645aaaf17b90044bf"
+            }
+          ],
+          "start": 226.774,
+          "end": 231.69,
+          "audio": "assets/audio/panel-026.mp3",
+          "ambient": false,
+          "duration": 4.916,
+          "sha256": "5888ca59fad0aaebed69cb91769fe0fcd07df03a75d5151fa854bccbdef6eac5"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-027",
+          "number": 27,
+          "page": 5,
+          "rect": [
+            16,
+            524,
+            491,
+            451
+          ],
+          "bubbles": [
+            {
+              "id": "p05-panel27-b01",
+              "text": "You can either take turns or I'll bring the xylophone to work with me.",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                71,
+                72
+              ],
+              "rect": [
+                129,
+                535,
+                279,
+                103
+              ],
+              "audio": "assets/audio/p05-panel27-b01.mp3",
+              "start": 232.03,
+              "end": 236.17,
+              "note": "",
+              "duration": 4.14,
+              "sha256": "4ff8191c932dbe6fa30965590e7b7cef89ef85714143f053e25352705e74f85d"
+            },
+            {
+              "id": "p05-panel27-b02",
+              "text": "I'll freeze my boss.",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                73
+              ],
+              "rect": [
+                347,
+                645,
+                131,
+                73
+              ],
+              "audio": "assets/audio/p05-panel27-b02.mp3",
+              "start": 236.47,
+              "end": 237.344,
+              "note": "",
+              "duration": 0.874,
+              "sha256": "48a3ba7ac2323134dfc905770481d144d491bce90cfc78c53542b0792a703f86"
+            }
+          ],
+          "start": 232.03,
+          "end": 237.344,
+          "audio": "assets/audio/panel-027.mp3",
+          "ambient": false,
+          "duration": 5.314,
+          "sha256": "1af06f9fd3ad60cc6b85ebabef7c68febb5a26e801788bc4a2b9c80e2dcf0fa2"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-028",
+          "number": 28,
+          "page": 5,
+          "rect": [
+            516,
+            524,
+            492,
+            451
+          ],
+          "bubbles": [
+            {
+              "id": "p05-panel28-b01",
+              "text": "No! No!",
+              "speaker": "布鲁伊 · Bluey、宾果 · Bingo",
+              "speakerIds": [
+                "bluey",
+                "bingo"
+              ],
+              "kind": "chorus",
+              "sourceIds": [
+                74
+              ],
+              "rect": [
+                549,
+                693,
+                123,
+                58
+              ],
+              "audio": "assets/audio/p05-panel28-b01.mp3",
+              "start": 237.344,
+              "end": 238.487,
+              "note": "",
+              "duration": 1.143,
+              "sha256": "618c909c983d25e1658668d50c5b6f5e4cdc065a330bc69ec59a229c571066c1"
+            },
+            {
+              "id": "p05-panel28-b02",
+              "text": "Nnnn! Nnnn!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                75
+              ],
+              "rect": [
+                658,
+                564,
+                149,
+                54
+              ],
+              "audio": "assets/audio/p05-panel28-b02.mp3",
+              "start": 238.487,
+              "end": 240.043,
+              "note": "",
+              "duration": 1.556,
+              "sha256": "f9daad73ae202abd2f84359ddac6873a5ffef083511b567f25fd2789d9c7b6c8"
+            },
+            {
+              "id": "p05-panel28-b03",
+              "text": "Well, you know what to do, then.",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                76
+              ],
+              "rect": [
+                821,
+                532,
+                181,
+                97
+              ],
+              "audio": "assets/audio/p05-panel28-b03.mp3",
+              "start": 240.043,
+              "end": 241.99,
+              "note": "",
+              "duration": 1.947,
+              "sha256": "2b0e2d0f5b643270724faebaf23963f51717c649f4cd0ef6fa6cd2b0e3dad9ca"
+            }
+          ],
+          "start": 237.344,
+          "end": 241.99,
+          "audio": "assets/audio/panel-028.mp3",
+          "ambient": false,
+          "duration": 4.646,
+          "sha256": "158f427f5b14db120a4406abd30bcd2c1a02b14e091ed1031cceaef2f5142c92"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-029",
+          "number": 29,
+          "page": 5,
+          "rect": [
+            16,
+            984,
+            491,
+            534
+          ],
+          "bubbles": [
+            {
+              "id": "p05-panel29-b01",
+              "text": "I'll see you later. Just make sure you unfreeze him for toilet breaks, okay?",
+              "speaker": "妈妈 · Mum",
+              "speakerIds": [
+                "chilli"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                77,
+                78
+              ],
+              "rect": [
+                81,
+                996,
+                377,
+                103
+              ],
+              "audio": "assets/audio/p05-panel29-b01.mp3",
+              "start": 241.99,
+              "end": 246.487,
+              "note": "",
+              "duration": 4.497,
+              "sha256": "d35eb2b790c8a7c7d53ee546ef1a12f0af26b4d3e973e0d350fa5f0f01b8413b"
+            },
+            {
+              "id": "p05-panel29-b02",
+              "text": "Okay. Okay.",
+              "speaker": "布鲁伊 · Bluey、宾果 · Bingo",
+              "speakerIds": [
+                "bluey",
+                "bingo"
+              ],
+              "kind": "chorus",
+              "sourceIds": [
+                79
+              ],
+              "rect": [
+                109,
+                1195,
+                173,
+                64
+              ],
+              "audio": "assets/audio/p05-panel29-b02.mp3",
+              "start": 246.487,
+              "end": 247.737,
+              "note": "",
+              "duration": 1.25,
+              "sha256": "4f75b799f5d98e077d0288e90dc3769ddb06acdc080b6e337ac3585b68cf729d"
+            }
+          ],
+          "start": 241.99,
+          "end": 247.737,
+          "audio": "assets/audio/panel-029.mp3",
+          "ambient": false,
+          "duration": 5.747,
+          "sha256": "8d97273f53b12e067a8da92c49a2f21be43f4dbbdb5c7f58f60a16819599caa6"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-030",
+          "number": 30,
+          "page": 5,
+          "rect": [
+            516,
+            984,
+            492,
+            534
+          ],
+          "bubbles": [
+            {
+              "id": "p05-panel30-b01",
+              "text": "Here, Bingo. But stand right back here.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                80,
+                81
+              ],
+              "rect": [
+                551,
+                1025,
+                250,
+                78
+              ],
+              "audio": "assets/audio/p05-panel30-b01.mp3",
+              "start": 248.737,
+              "end": 251.987,
+              "note": "",
+              "duration": 3.25,
+              "sha256": "f631b7d2968f42e35c42c3b0cf1bebb5d29c83a87b2df2e961fcdfd0d0889fe2"
+            },
+            {
+              "id": "p05-panel30-b02",
+              "text": "That way, you could get a head start. He runs really fast when he's mad.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                82,
+                83
+              ],
+              "rect": [
+                551,
+                1102,
+                292,
+                104
+              ],
+              "audio": "assets/audio/p05-panel30-b02.mp3",
+              "start": 251.987,
+              "end": 256.737,
+              "note": "",
+              "duration": 4.75,
+              "sha256": "6fb7c378f99ae863bd7a4f4ec6364f1a9eed6a1eef3805675dbd3218071adfdb"
+            }
+          ],
+          "start": 248.737,
+          "end": 256.737,
+          "audio": "assets/audio/panel-030.mp3",
+          "ambient": false,
+          "duration": 8.0,
+          "sha256": "b9a228a7b866bfbab32de9213307eb37a523b08d4cf06927aa0b57d0974352f5"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "争抢木琴",
+      "image": "assets/pages/page-06.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-031",
+          "number": 31,
+          "page": 6,
+          "rect": [
+            16,
+            89,
+            491,
+            400
+          ],
+          "bubbles": [
+            {
+              "id": "p06-panel31-b01",
+              "text": "Okay. Unfreeze!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                84
+              ],
+              "rect": [
+                251,
+                146,
+                200,
+                64
+              ],
+              "audio": "assets/audio/p06-panel31-b01.mp3",
+              "start": 256.737,
+              "end": 258.487,
+              "note": "",
+              "duration": 1.75,
+              "sha256": "df145b8fd498ef7d7b3708df30aa1cc71911b635ec4bd739aaa302ed85b5ae46"
+            },
+            {
+              "id": "p06-panel31-b02",
+              "text": "Ohh!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                85
+              ],
+              "rect": [
+                260,
+                215,
+                83,
+                56
+              ],
+              "audio": "assets/audio/p06-panel31-b02.mp3",
+              "start": 258.487,
+              "end": 259.737,
+              "note": "",
+              "duration": 1.25,
+              "sha256": "9a1a1b808f27e1a3d961aed95b3fbed94bfecd61b823c8e1d8394b5d42a894c6"
+            }
+          ],
+          "start": 256.737,
+          "end": 259.737,
+          "audio": "assets/audio/panel-031.mp3",
+          "ambient": false,
+          "duration": 3.0,
+          "sha256": "0d441a9683c1f3880e9899af682450e5616a19d2182a65f8b766fbb8d9900e0d"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-032",
+          "number": 32,
+          "page": 6,
+          "rect": [
+            516,
+            89,
+            492,
+            400
+          ],
+          "bubbles": [
+            {
+              "id": "p06-panel32-b01",
+              "text": "There you are!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                86
+              ],
+              "rect": [
+                626,
+                99,
+                178,
+                57
+              ],
+              "audio": "assets/audio/p06-panel32-b01.mp3",
+              "start": 260.237,
+              "end": 261.78,
+              "note": "",
+              "duration": 1.543,
+              "sha256": "4e0bd9c4ecfc7e6dd808db7440309fc92a3d39e7255bbec3336590991bd24ffd"
+            },
+            {
+              "id": "p06-panel32-b02",
+              "text": "Grrr!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                87
+              ],
+              "rect": [
+                716,
+                146,
+                101,
+                53
+              ],
+              "audio": "assets/audio/p06-panel32-b02.mp3",
+              "start": 262.237,
+              "end": 262.99,
+              "note": "",
+              "duration": 0.753,
+              "sha256": "f6e20c5d5dce393d4cb99000aa1c4b14dd49167d64bebaff59d5b3d3b08b416e"
+            },
+            {
+              "id": "p06-panel32-b03",
+              "text": "Run, Bingo! Back inside!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                88,
+                89
+              ],
+              "rect": [
+                842,
+                177,
+                148,
+                82
+              ],
+              "audio": "assets/audio/p06-panel32-b03.mp3",
+              "start": 262.99,
+              "end": 265.237,
+              "note": "",
+              "duration": 2.247,
+              "sha256": "1a838f780e39fea595e920ce7fe9e625dcfaa46cb1210ca5e7723f10202afbc3"
+            }
+          ],
+          "start": 260.237,
+          "end": 265.237,
+          "audio": "assets/audio/panel-032.mp3",
+          "ambient": false,
+          "duration": 5.0,
+          "sha256": "4c32a776164730fd2f7c9e504142647271ff444a4bccec401543248aa69cdf68"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-033",
+          "number": 33,
+          "page": 6,
+          "rect": [
+            16,
+            497,
+            491,
+            467
+          ],
+          "bubbles": [
+            {
+              "id": "p06-panel33-b01",
+              "text": "Bingo! Bluey! Come back here!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "offscreen_dialogue",
+              "sourceIds": [
+                90,
+                91
+              ],
+              "rect": [
+                26,
+                545,
+                281,
+                67
+              ],
+              "audio": "assets/audio/p06-panel33-b01.mp3",
+              "start": 265.737,
+              "end": 269.487,
+              "note": "",
+              "duration": 3.75,
+              "sha256": "2c3de8a3cdd2e4b89962001c4841afef09e1042076f8547e3b4ea0dde577b2b9"
+            },
+            {
+              "id": "p06-panel33-b02",
+              "text": "Where are they?! I can't find them anywhere!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "offscreen_dialogue",
+              "sourceIds": [
+                92,
+                93
+              ],
+              "rect": [
+                235,
+                612,
+                260,
+                86
+              ],
+              "audio": "assets/audio/p06-panel33-b02.mp3",
+              "start": 269.487,
+              "end": 272.737,
+              "note": "",
+              "duration": 3.25,
+              "sha256": "ca2fe8ed1e190626bd47c02543f3b5a8deb964db52f9d43f499ebc9d2e174987"
+            }
+          ],
+          "start": 265.737,
+          "end": 272.737,
+          "audio": "assets/audio/panel-033.mp3",
+          "ambient": false,
+          "duration": 7.0,
+          "sha256": "cceed213b96ea729446adb99a86eb6126c82ca2035b023e542f5b352f1fc4abd"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-034",
+          "number": 34,
+          "page": 6,
+          "rect": [
+            516,
+            497,
+            492,
+            467
+          ],
+          "bubbles": [
+            {
+              "id": "p06-panel34-b01",
+              "text": "Oh, maybe they went downstairs.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "offscreen_dialogue",
+              "sourceIds": [
+                94
+              ],
+              "rect": [
+                658,
+                538,
+                317,
+                72
+              ],
+              "audio": "assets/audio/p06-panel34-b01.mp3",
+              "start": 273.237,
+              "end": 276.737,
+              "note": "",
+              "duration": 3.5,
+              "sha256": "4e22585f172bca5db5a77a4971dec77fb0d7e72377f88b45398b51d1a2ce4f46"
+            }
+          ],
+          "start": 273.237,
+          "end": 276.737,
+          "audio": "assets/audio/panel-034.mp3",
+          "ambient": false,
+          "duration": 3.5,
+          "sha256": "4e22585f172bca5db5a77a4971dec77fb0d7e72377f88b45398b51d1a2ce4f46"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-035",
+          "number": 35,
+          "page": 6,
+          "rect": [
+            16,
+            972,
+            491,
+            546
+          ],
+          "bubbles": [
+            {
+              "id": "p06-panel35-b01",
+              "text": "I can't hear him. I think we should freeze him, just in case.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                95,
+                96
+              ],
+              "rect": [
+                101,
+                1011,
+                286,
+                106
+              ],
+              "audio": "assets/audio/p06-panel35-b01.mp3",
+              "start": 279.737,
+              "end": 284.074,
+              "note": "",
+              "duration": 4.337,
+              "sha256": "f913ac3d61abbc460dec2fa331e3d4ae98cc72e80bead7791a6261e209c68f57"
+            }
+          ],
+          "start": 279.737,
+          "end": 284.074,
+          "audio": "assets/audio/panel-035.mp3",
+          "ambient": false,
+          "duration": 4.337,
+          "sha256": "f913ac3d61abbc460dec2fa331e3d4ae98cc72e80bead7791a6261e209c68f57"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-036",
+          "number": 36,
+          "page": 6,
+          "rect": [
+            516,
+            972,
+            492,
+            546
+          ],
+          "bubbles": [
+            {
+              "id": "p06-panel36-b01",
+              "text": "Give me the xylophone.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                97
+              ],
+              "rect": [
+                556,
+                1011,
+                177,
+                80
+              ],
+              "audio": "assets/audio/p06-panel36-b01.mp3",
+              "start": 284.074,
+              "end": 285.193,
+              "note": "",
+              "duration": 1.119,
+              "sha256": "32596a20b91c068b881318fe956ac2a61f4e439ed93e731fc755040c0d5c788a"
+            },
+            {
+              "id": "p06-panel36-b02",
+              "text": "No, I want to freeze him! You've had all the freezing turns.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                98,
+                99
+              ],
+              "rect": [
+                751,
+                1012,
+                242,
+                103
+              ],
+              "audio": "assets/audio/p06-panel36-b02.mp3",
+              "start": 285.193,
+              "end": 289.514,
+              "note": "",
+              "duration": 4.321,
+              "sha256": "f99b0d31de53f2bd5ff4032d9524d81c8e1d7aac80825a9d4e9ada775c18e22a"
+            },
+            {
+              "id": "p06-panel36-b03",
+              "text": "Bingo! Let go!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                100
+              ],
+              "rect": [
+                663,
+                1333,
+                171,
+                64
+              ],
+              "audio": "assets/audio/p06-panel36-b03.mp3",
+              "start": 289.514,
+              "end": 291.01,
+              "note": "",
+              "duration": 1.496,
+              "sha256": "23908f8c8cc28cf959e216c9bee90edf66973ea1300d81f822036011f1893a9b"
+            }
+          ],
+          "start": 284.074,
+          "end": 291.01,
+          "audio": "assets/audio/panel-036.mp3",
+          "ambient": false,
+          "duration": 6.936,
+          "sha256": "b3f98f0e0921a4d0423fd35611d9d45e39063e16586bf8e48647eebd3dc3f3f1"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "爸爸的反击",
+      "image": "assets/pages/page-07.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-037",
+          "number": 37,
+          "page": 7,
+          "rect": [
+            16,
+            89,
+            491,
+            418
+          ],
+          "bubbles": [
+            {
+              "id": "p07-panel37-b01",
+              "text": "Freedom!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                101
+              ],
+              "rect": [
+                158,
+                99,
+                150,
+                61
+              ],
+              "audio": "assets/audio/p07-panel37-b01.mp3",
+              "start": 294.737,
+              "end": 296.237,
+              "note": "",
+              "duration": 1.5,
+              "sha256": "20df0e0dac44decdc3ffeaa8bd5e41e166c0a21ca0bb57473efe3e758e6e2f67"
+            },
+            {
+              "id": "p07-panel37-b02",
+              "text": "Got it!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                102
+              ],
+              "rect": [
+                373,
+                112,
+                119,
+                56
+              ],
+              "audio": "assets/audio/p07-panel37-b02.mp3",
+              "start": 297.53,
+              "end": 298.27,
+              "note": "",
+              "duration": 0.74,
+              "sha256": "2407bf1a66b3028723dbd6dc01f9b1a479ef5100653490d8565dbe633b40b5d5"
+            }
+          ],
+          "start": 294.737,
+          "end": 298.27,
+          "audio": "assets/audio/panel-037.mp3",
+          "ambient": false,
+          "duration": 3.533,
+          "sha256": "f219f0c5fed2c597bacdf47dae86d88fa9d3ae3f6d3f68efdda26f18f2fe726c"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-038",
+          "number": 38,
+          "page": 7,
+          "rect": [
+            516,
+            89,
+            492,
+            418
+          ],
+          "bubbles": [
+            {
+              "id": "p07-panel38-b01",
+              "text": "You ding-dongs were too busy squabbling.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                103
+              ],
+              "rect": [
+                585,
+                100,
+                260,
+                76
+              ],
+              "audio": "assets/audio/p07-panel38-b01.mp3",
+              "start": 300.07,
+              "end": 302.764,
+              "note": "",
+              "duration": 2.694,
+              "sha256": "250a9543644723e7a032f4e570108759a41893aba608185d87d7e499678075c9"
+            },
+            {
+              "id": "p07-panel38-b02",
+              "text": "Freeze!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                104
+              ],
+              "rect": [
+                835,
+                175,
+                152,
+                64
+              ],
+              "audio": "assets/audio/p07-panel38-b02.mp3",
+              "start": 302.764,
+              "end": 303.987,
+              "note": "",
+              "duration": 1.223,
+              "sha256": "ca8d693b4aa34b5894a462837134d607601db3416cab3a23413408c7a1c827bd"
+            }
+          ],
+          "start": 300.07,
+          "end": 303.987,
+          "audio": "assets/audio/panel-038.mp3",
+          "ambient": false,
+          "duration": 3.917,
+          "sha256": "3c3254e12d3e4e9fe365c0647b5db3ceeb1df8fc687011b7fae136105bf615ef"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-039",
+          "number": 39,
+          "page": 7,
+          "rect": [
+            16,
+            515,
+            491,
+            427
+          ],
+          "bubbles": [
+            {
+              "id": "p07-panel39-b01",
+              "text": "Aaaah!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                105
+              ],
+              "rect": [
+                36,
+                571,
+                119,
+                65
+              ],
+              "audio": "assets/audio/p07-panel39-b01.mp3",
+              "start": 303.987,
+              "end": 305.344,
+              "note": "",
+              "duration": 1.357,
+              "sha256": "20d72d1ef909f855ad53c55fd2dc284f51c019c88ea9651ceab64d879dfd4710"
+            },
+            {
+              "id": "p07-panel39-b02",
+              "text": "Freeze, freeze, freeze!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                106
+              ],
+              "rect": [
+                224,
+                527,
+                264,
+                56
+              ],
+              "audio": "assets/audio/p07-panel39-b02.mp3",
+              "start": 305.344,
+              "end": 307.737,
+              "note": "",
+              "duration": 2.393,
+              "sha256": "66d6ce0dcc8c295f28aa158808162fd369df4af83c23837e066b7ae49e49c3fc"
+            },
+            {
+              "id": "p07-panel39-b03",
+              "text": "Oh, never mind. She'll keep.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                107
+              ],
+              "rect": [
+                323,
+                586,
+                173,
+                78
+              ],
+              "audio": "assets/audio/p07-panel39-b03.mp3",
+              "start": 308.237,
+              "end": 310.183,
+              "note": "",
+              "duration": 1.946,
+              "sha256": "c097cc45a2994cd5df0463d08db406a0c3f9cfd924feafa299f1e4da6a71460a"
+            }
+          ],
+          "start": 303.987,
+          "end": 310.183,
+          "audio": "assets/audio/panel-039.mp3",
+          "ambient": false,
+          "duration": 6.196,
+          "sha256": "621ee317d93b3b502384a158c4da7807071395963155cfa23752d85e116fb21e"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-040",
+          "number": 40,
+          "page": 7,
+          "rect": [
+            516,
+            515,
+            492,
+            427
+          ],
+          "bubbles": [
+            {
+              "id": "p07-panel40-b01",
+              "text": "Now, look at this lovely new garden gnome.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                108
+              ],
+              "rect": [
+                574,
+                531,
+                277,
+                72
+              ],
+              "audio": "assets/audio/p07-panel40-b01.mp3",
+              "start": 310.183,
+              "end": 314.99,
+              "note": "",
+              "duration": 4.807,
+              "sha256": "626ef4925a29b20b887ec6562b98811e40c74253e0bc66a9841fffdc53bd2bd4"
+            },
+            {
+              "id": "p07-panel40-b02",
+              "text": "Ahh. This is the perfect spot.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                109
+              ],
+              "rect": [
+                844,
+                602,
+                156,
+                69
+              ],
+              "audio": "assets/audio/p07-panel40-b02.mp3",
+              "start": 317.737,
+              "end": 320.63,
+              "note": "",
+              "duration": 2.893,
+              "sha256": "d592088c5147d50cdad2d6c9510d81be61547173755e7aa66239416c88cadad7"
+            }
+          ],
+          "start": 310.183,
+          "end": 320.63,
+          "audio": "assets/audio/panel-040.mp3",
+          "ambient": false,
+          "duration": 10.447,
+          "sha256": "64f4d4eb07650849c4de1c82a52c95eb6e561ba320ec26ee2859b08a38cc1837"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-041",
+          "number": 41,
+          "page": 7,
+          "rect": [
+            16,
+            950,
+            491,
+            570
+          ],
+          "bubbles": [
+            {
+              "id": "p07-panel41-b01",
+              "text": "Oh! Wait a minute! It's got a little bit of felt pen on the fingers.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                110,
+                111
+              ],
+              "rect": [
+                179,
+                958,
+                268,
+                110
+              ],
+              "audio": "assets/audio/p07-panel41-b01.mp3",
+              "start": 320.97,
+              "end": 325.87,
+              "note": "",
+              "duration": 4.9,
+              "sha256": "6484f6cfb235523d180859943ef166bfd45e48914b5bb683daa2e3e257f35a3e"
+            },
+            {
+              "id": "p07-panel41-b02",
+              "text": "Probably from some mischief!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                112
+              ],
+              "rect": [
+                305,
+                1066,
+                174,
+                78
+              ],
+              "audio": "assets/audio/p07-panel41-b02.mp3",
+              "start": 326.05,
+              "end": 327.95,
+              "note": "",
+              "duration": 1.9,
+              "sha256": "9db231e1d85429e0e8ae5afd6a3d292e4578bcc1eaf0c01fcb507ff4136573f5"
+            }
+          ],
+          "start": 320.97,
+          "end": 327.95,
+          "audio": "assets/audio/panel-041.mp3",
+          "ambient": false,
+          "duration": 6.98,
+          "sha256": "9b7a54756208a2d27c41f1743ee9c0b09ad74bfaedc5b79caa08607674b5e6d1"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-042",
+          "number": 42,
+          "page": 7,
+          "rect": [
+            516,
+            950,
+            492,
+            570
+          ],
+          "bubbles": [
+            {
+              "id": "p07-panel42-b01",
+              "text": "I'd better get the hose.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                113
+              ],
+              "rect": [
+                734,
+                987,
+                250,
+                60
+              ],
+              "audio": "assets/audio/p07-panel42-b01.mp3",
+              "start": 328.29,
+              "end": 329.433,
+              "note": "",
+              "duration": 1.143,
+              "sha256": "19bd0de14593f180c65ed4bd8bc633db3b9124b5a7abd21424db5de9a4038346"
+            },
+            {
+              "id": "p07-panel42-b02",
+              "text": "Nnn! Nnnnnnn!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                114
+              ],
+              "rect": [
+                574,
+                1088,
+                158,
+                53
+              ],
+              "audio": "assets/audio/p07-panel42-b02.mp3",
+              "start": 329.433,
+              "end": 332.237,
+              "note": "",
+              "duration": 2.804,
+              "sha256": "de4f0da3e0d26909a4f7ce8d74cce39ad779aacd806d103fafa5cdeac61f98b7"
+            }
+          ],
+          "start": 328.29,
+          "end": 332.237,
+          "audio": "assets/audio/panel-042.mp3",
+          "ambient": false,
+          "duration": 3.947,
+          "sha256": "4e86d560c861bb27e0610451319a370352ac515d6574573038bc25d1853952d1"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "宾果说出感受",
+      "image": "assets/pages/page-08.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-043",
+          "number": 43,
+          "page": 8,
+          "rect": [
+            16,
+            89,
+            491,
+            443
+          ],
+          "bubbles": [
+            {
+              "id": "p08-panel43-b01",
+              "text": "Unfreeze me!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                115
+              ],
+              "rect": [
+                190,
+                101,
+                194,
+                64
+              ],
+              "audio": "assets/audio/p08-panel43-b01.mp3",
+              "start": 332.737,
+              "end": 334.987,
+              "note": "",
+              "duration": 2.25,
+              "sha256": "f66f5f696099930d3dce56896e5f91388d2baa3d571614022ba7c3560e01474b"
+            },
+            {
+              "id": "p08-panel43-b02",
+              "text": "Unfreeze!",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                116
+              ],
+              "rect": [
+                346,
+                169,
+                146,
+                56
+              ],
+              "audio": "assets/audio/p08-panel43-b02.mp3",
+              "start": 334.987,
+              "end": 335.987,
+              "note": "",
+              "duration": 1.0,
+              "sha256": "f7026ede675916676b15de27144e57325fc9d1ca10075687f218b12116054e7b"
+            }
+          ],
+          "start": 332.737,
+          "end": 335.987,
+          "audio": "assets/audio/panel-043.mp3",
+          "ambient": false,
+          "duration": 3.25,
+          "sha256": "81d5953a862e378005f790ad1b348761877f038b73d7f8864b0df2873b10bd9c"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-044",
+          "number": 44,
+          "page": 8,
+          "rect": [
+            516,
+            89,
+            492,
+            443
+          ],
+          "bubbles": [
+            {
+              "id": "p08-panel44-b01",
+              "text": "Thanks, Bingo. Dad's gone to get the hose.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                117,
+                118
+              ],
+              "rect": [
+                616,
+                106,
+                309,
+                79
+              ],
+              "audio": "assets/audio/p08-panel44-b01.mp3",
+              "start": 335.987,
+              "end": 338.487,
+              "note": "",
+              "duration": 2.5,
+              "sha256": "4e2df4d2264be9fafb1a323438018d44ea91bed60b2e5dd17ce3f55dde735223"
+            },
+            {
+              "id": "p08-panel44-b02",
+              "text": "Let's go and hi...",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                119
+              ],
+              "rect": [
+                774,
+                191,
+                218,
+                56
+              ],
+              "audio": "assets/audio/p08-panel44-b02.mp3",
+              "start": 338.487,
+              "end": 340.737,
+              "note": "",
+              "duration": 2.25,
+              "sha256": "1136712c59a9cdb21a79ff0c0735081b700e5fde034027050b506c2afccf3d60"
+            }
+          ],
+          "start": 335.987,
+          "end": 340.737,
+          "audio": "assets/audio/panel-044.mp3",
+          "ambient": false,
+          "duration": 4.75,
+          "sha256": "1b35f7219da8bc963e3728cdf887da52d88e1698b51888e4bcde92f244f56335"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-045",
+          "number": 45,
+          "page": 8,
+          "rect": [
+            16,
+            540,
+            491,
+            463
+          ],
+          "bubbles": [],
+          "start": 340.4,
+          "end": 342.7,
+          "audio": "assets/audio/panel-045.mp3",
+          "ambient": true,
+          "duration": 2.3,
+          "sha256": "8207f620aeeaca507a5e518bf78e1fe0a384e67517d3398193dc3d7f47c10991"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-046",
+          "number": 46,
+          "page": 8,
+          "rect": [
+            516,
+            540,
+            492,
+            463
+          ],
+          "bubbles": [
+            {
+              "id": "p08-panel46-b01",
+              "text": "Bluey, you always never take turns with me.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                120
+              ],
+              "rect": [
+                645,
+                552,
+                303,
+                77
+              ],
+              "audio": "assets/audio/p08-panel46-b01.mp3",
+              "start": 342.737,
+              "end": 347.609,
+              "note": "",
+              "duration": 4.872,
+              "sha256": "6ae769c57e53e7c676c48579eb7afa5eade2e43cd9a1e602b91d06fc10c27cb2"
+            },
+            {
+              "id": "p08-panel46-b02",
+              "text": "You just take all of the turns. And it makes me feel sad.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                121,
+                122
+              ],
+              "rect": [
+                782,
+                629,
+                226,
+                104
+              ],
+              "audio": "assets/audio/p08-panel46-b02.mp3",
+              "start": 347.609,
+              "end": 352.12,
+              "note": "",
+              "duration": 4.511,
+              "sha256": "9c55b3e30152da7d6cf54e966f23b5cd892aaf77113515eeb9e9ab8cb368ea44"
+            }
+          ],
+          "start": 342.737,
+          "end": 352.12,
+          "audio": "assets/audio/panel-046.mp3",
+          "ambient": false,
+          "duration": 9.383,
+          "sha256": "f554e5c247eec064deb0092b72904ff5cf160df1ed7664aadeaaa4e894ec6903"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-047",
+          "number": 47,
+          "page": 8,
+          "rect": [
+            16,
+            1010,
+            491,
+            510
+          ],
+          "bubbles": [
+            {
+              "id": "p08-panel47-b01",
+              "text": "I will unfreeze you if you promise you will let me have turns, too.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                123,
+                124
+              ],
+              "rect": [
+                204,
+                1020,
+                274,
+                110
+              ],
+              "audio": "assets/audio/p08-panel47-b01.mp3",
+              "start": 353.16,
+              "end": 357.76,
+              "note": "",
+              "duration": 4.6,
+              "sha256": "f09b74a9e69d7accc61460d0e701c1830be500f86341316acb8e0cba73cd9bfc"
+            },
+            {
+              "id": "p08-panel47-b02",
+              "text": "Blink two times if \"yes.\"",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                125
+              ],
+              "rect": [
+                283,
+                1127,
+                198,
+                76
+              ],
+              "audio": "assets/audio/p08-panel47-b02.mp3",
+              "start": 358.737,
+              "end": 361.737,
+              "note": "",
+              "duration": 3.0,
+              "sha256": "6db9327aeeb522c47248988afbe510b8e3cae9be9f2e4cf3d8f91cbc20725d7f"
+            }
+          ],
+          "start": 353.16,
+          "end": 361.737,
+          "audio": "assets/audio/panel-047.mp3",
+          "ambient": false,
+          "duration": 8.577,
+          "sha256": "21ac2f0ac29e752afe45aedd1ba4db0ce7106c939678a913c5973f5ce115d60f"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-048",
+          "number": 48,
+          "page": 8,
+          "rect": [
+            516,
+            1010,
+            492,
+            510
+          ],
+          "bubbles": [
+            {
+              "id": "p08-panel48-b01",
+              "text": "Gonna hose my [歌词待核]... I'm gonna hose it good.",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "singing",
+              "sourceIds": [
+                126
+              ],
+              "rect": [
+                611,
+                1021,
+                381,
+                85
+              ],
+              "audio": "assets/audio/p08-panel48-b01.mp3",
+              "start": 362.32,
+              "end": 367.82,
+              "note": "哼唱歌词待核",
+              "duration": 5.5,
+              "sha256": "6094545a28bb9524c3e835e524f43d1b49d5c70ee14a519b946394ad04b94bb9"
+            }
+          ],
+          "start": 362.32,
+          "end": 367.82,
+          "audio": "assets/audio/panel-048.mp3",
+          "ambient": false,
+          "duration": 5.5,
+          "sha256": "6094545a28bb9524c3e835e524f43d1b49d5c70ee14a519b946394ad04b94bb9"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "姐妹合作",
+      "image": "assets/pages/page-09.png",
+      "width": 1024,
+      "height": 1536,
+      "panels": [
+        {
+          "id": "bluey-s01e01-full-panel-049",
+          "number": 49,
+          "page": 9,
+          "rect": [
+            16,
+            89,
+            491,
+            422
+          ],
+          "bubbles": [
+            {
+              "id": "p09-panel49-b01",
+              "text": "Okay, time for a little bath, garden gnome!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                127
+              ],
+              "rect": [
+                198,
+                103,
+                289,
+                73
+              ],
+              "audio": "assets/audio/p09-panel49-b01.mp3",
+              "start": 369.737,
+              "end": 372.987,
+              "note": "",
+              "duration": 3.25,
+              "sha256": "91b9cfa8db3d63024552a26182df87f7465d057f722708199093d41bbce440df"
+            },
+            {
+              "id": "p09-panel49-b02",
+              "text": "Nnn! Nnnn!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                128
+              ],
+              "rect": [
+                157,
+                180,
+                137,
+                53
+              ],
+              "audio": "assets/audio/p09-panel49-b02.mp3",
+              "start": 372.987,
+              "end": 374.737,
+              "note": "",
+              "duration": 1.75,
+              "sha256": "89bced870d3e88877854803a0abf5856ae8bb46100df31ce019326290c85bb97"
+            }
+          ],
+          "start": 369.737,
+          "end": 374.737,
+          "audio": "assets/audio/panel-049.mp3",
+          "ambient": false,
+          "duration": 5.0,
+          "sha256": "5e373e1316e7959ebb5e92e94ec758c277dabfd3e64fb0eedc6083d0f8784adb"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-050",
+          "number": 50,
+          "page": 9,
+          "rect": [
+            516,
+            89,
+            492,
+            422
+          ],
+          "bubbles": [
+            {
+              "id": "p09-panel50-b01",
+              "text": "Ohhhhh, yeah!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                129
+              ],
+              "rect": [
+                716,
+                111,
+                167,
+                57
+              ],
+              "audio": "assets/audio/p09-panel50-b01.mp3",
+              "start": 376.737,
+              "end": 378.487,
+              "note": "",
+              "duration": 1.75,
+              "sha256": "925fb8d51e819d328308abfafaac3f25bb0fe07904ee98fdab54032b519b7a49"
+            },
+            {
+              "id": "p09-panel50-b02",
+              "text": "Huh?",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                130
+              ],
+              "rect": [
+                916,
+                146,
+                86,
+                54
+              ],
+              "audio": "assets/audio/p09-panel50-b02.mp3",
+              "start": 378.487,
+              "end": 379.487,
+              "note": "",
+              "duration": 1.0,
+              "sha256": "d5daa54c6b250420cb0e397444b640eca41735b93c83f857d25dc3517682252d"
+            }
+          ],
+          "start": 376.737,
+          "end": 379.487,
+          "audio": "assets/audio/panel-050.mp3",
+          "ambient": false,
+          "duration": 2.75,
+          "sha256": "6c59286c41e58808019fc06cfac63dd492fcb09912fe5e605cad8e5d9c708ecc"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-051",
+          "number": 51,
+          "page": 9,
+          "rect": [
+            16,
+            519,
+            491,
+            427
+          ],
+          "bubbles": [
+            {
+              "id": "p09-panel51-b01",
+              "text": "Freeze!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                131
+              ],
+              "rect": [
+                94,
+                568,
+                108,
+                58
+              ],
+              "audio": "assets/audio/p09-panel51-b01.mp3",
+              "start": 379.487,
+              "end": 381.487,
+              "note": "",
+              "duration": 2.0,
+              "sha256": "1127fa0187fb34fc12825bc7d5363764c5833ea9f83b1ec0c1b471892dccc09d"
+            },
+            {
+              "id": "p09-panel51-b02",
+              "text": "We tricked you! Bingo unfroze me. I was just pretending.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                132,
+                133,
+                134
+              ],
+              "rect": [
+                211,
+                558,
+                201,
+                97
+              ],
+              "audio": "assets/audio/p09-panel51-b02.mp3",
+              "start": 381.487,
+              "end": 386.987,
+              "note": "",
+              "duration": 5.5,
+              "sha256": "81d5367f0f8e75091ac29d9ae9c63e74901388297f25ad19ecdaa1d8b4192fc9"
+            }
+          ],
+          "start": 379.487,
+          "end": 386.987,
+          "audio": "assets/audio/panel-051.mp3",
+          "ambient": false,
+          "duration": 7.5,
+          "sha256": "b81eace48dc9c82a057b9ff8203fe5b376bc64933fd490278b06e4eb6c9184da"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-052",
+          "number": 52,
+          "page": 9,
+          "rect": [
+            516,
+            519,
+            492,
+            427
+          ],
+          "bubbles": [
+            {
+              "id": "p09-panel52-b01",
+              "text": "Now, Bingo!",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                135
+              ],
+              "rect": [
+                595,
+                572,
+                147,
+                55
+              ],
+              "audio": "assets/audio/p09-panel52-b01.mp3",
+              "start": 386.987,
+              "end": 388.737,
+              "note": "",
+              "duration": 1.75,
+              "sha256": "6516796329aaab8d470bd4235b75e584eb75d7eb39a56a367052e3889a6e515c"
+            },
+            {
+              "id": "p09-panel52-b02",
+              "text": "Blub-blub-blub!",
+              "speaker": "爸爸 · Dad",
+              "speakerIds": [
+                "bandit"
+              ],
+              "kind": "vocalization",
+              "sourceIds": [
+                136
+              ],
+              "rect": [
+                830,
+                531,
+                172,
+                54
+              ],
+              "audio": "assets/audio/p09-panel52-b02.mp3",
+              "start": 389.237,
+              "end": 390.737,
+              "note": "",
+              "duration": 1.5,
+              "sha256": "d411ef8a2c1bed7b480d59769012f8b6991a20dfdc6b95e9a78f17c82e258fa1"
+            }
+          ],
+          "start": 386.987,
+          "end": 390.737,
+          "audio": "assets/audio/panel-052.mp3",
+          "ambient": false,
+          "duration": 3.75,
+          "sha256": "6162a0ec3892b6ace47104421ad6d45b35339f6c14a1f6cb9384b80fd3f6d06a"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-053",
+          "number": 53,
+          "page": 9,
+          "rect": [
+            16,
+            954,
+            491,
+            566
+          ],
+          "bubbles": [
+            {
+              "id": "p09-panel53-b01",
+              "text": "Here, Bingo. You can unfreeze him.",
+              "speaker": "布鲁伊 · Bluey",
+              "speakerIds": [
+                "bluey"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                137
+              ],
+              "rect": [
+                114,
+                975,
+                248,
+                78
+              ],
+              "audio": "assets/audio/p09-panel53-b01.mp3",
+              "start": 402.737,
+              "end": 405.487,
+              "note": "",
+              "duration": 2.75,
+              "sha256": "694c9a98b4dbbb8a7bc6dfc0fa3e38f6e646c4dc7681405d1b90dd65f9dc76ad"
+            },
+            {
+              "id": "p09-panel53-b02",
+              "text": "Thanks, Bluey.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                138
+              ],
+              "rect": [
+                307,
+                1057,
+                163,
+                60
+              ],
+              "audio": "assets/audio/p09-panel53-b02.mp3",
+              "start": 405.487,
+              "end": 408.237,
+              "note": "",
+              "duration": 2.75,
+              "sha256": "a9c7137a04839734fe60fa18db3066d43613c4d977cb00ae99e773cc654a6d7b"
+            }
+          ],
+          "start": 402.737,
+          "end": 408.237,
+          "audio": "assets/audio/panel-053.mp3",
+          "ambient": false,
+          "duration": 5.5,
+          "sha256": "5997f2016066265cc102eae5cd8c5c24ac873bc4ad29bbc3eab3200cb7fd3533"
+        },
+        {
+          "id": "bluey-s01e01-full-panel-054",
+          "number": 54,
+          "page": 9,
+          "rect": [
+            516,
+            954,
+            492,
+            566
+          ],
+          "bubbles": [
+            {
+              "id": "p09-panel54-b01",
+              "text": "Not just yet.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                139
+              ],
+              "rect": [
+                577,
+                1024,
+                164,
+                66
+              ],
+              "audio": "assets/audio/p09-panel54-b01.mp3",
+              "start": 412.237,
+              "end": 413.987,
+              "note": "",
+              "duration": 1.75,
+              "sha256": "ddae47894b03fbef3045f2d5f55f74e8266db3099aa8436eabf8bb906b9d9f4e"
+            },
+            {
+              "id": "p09-panel54-b02",
+              "text": "I like the daddy water fountain.",
+              "speaker": "宾果 · Bingo",
+              "speakerIds": [
+                "bingo"
+              ],
+              "kind": "dialogue",
+              "sourceIds": [
+                140
+              ],
+              "rect": [
+                543,
+                1085,
+                195,
+                78
+              ],
+              "audio": "assets/audio/p09-panel54-b02.mp3",
+              "start": 413.987,
+              "end": 416.737,
+              "note": "",
+              "duration": 2.75,
+              "sha256": "c2267e7a0ba3d01800696bef1058be1fc845d4ba5a48a704695c52670589eda4"
+            }
+          ],
+          "start": 412.237,
+          "end": 416.737,
+          "audio": "assets/audio/panel-054.mp3",
+          "ambient": false,
+          "duration": 4.5,
+          "sha256": "8965c16f3d6bd7709fc0d50654e14b9d3052da7ce716dc65956e19ff5d7cfe9e"
+        }
+      ]
+    }
+  ]
+}
