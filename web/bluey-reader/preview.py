@@ -8,7 +8,7 @@ import urllib.error
 import urllib.request
 import webbrowser
 
-DIST = Path(__file__).resolve().parents[2] / "output/S01E01/comic-web-v2/dist"
+DIST = Path(__file__).resolve().parents[2] / "output/S01E01/comic-web-v3/dist"
 
 
 class PreviewServer(ThreadingHTTPServer):

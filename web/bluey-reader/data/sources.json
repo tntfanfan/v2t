@@ -10,49 +10,49 @@
   },
   "pages": [
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-01.png",
-      "sha256": "8984c80bb38146d2fbd99daacdfe95263d5af15be268271f3c6000ad99c181d7",
-      "target": "assets/pages/page-01-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-01.png",
+      "sha256": "2e6e1bc28679a837e9ccb1276f2f2844c67f37b320550b530cefb7ded7d1ab1c",
+      "target": "assets/pages/page-01-v3.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-02.png",
-      "sha256": "e7e25e516ae6d945fb76a49e8e79691a4b7d30000785fca85112fd686f5ef240",
-      "target": "assets/pages/page-02-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-02.png",
+      "sha256": "e091071fb9eff8389cb12227c73da25186c633ca771b00053f763ddd8dc83db2",
+      "target": "assets/pages/page-02-v3.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-03.png",
-      "sha256": "3585c1a9a52e1ca620b2dd293f5d34d35ab367ea8dffc262a34ce3ff8c00c8fe",
-      "target": "assets/pages/page-03-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-03.png",
+      "sha256": "8c7d63df5b3ca7628e2c3aab949f0860b7819fcda43df2ef8ef4a663179c3683",
+      "target": "assets/pages/page-03-v3.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-04.png",
-      "sha256": "e33740597f9dac3942c3aad179366328f59f3f0ada40677634c1e9fe3ba9bd4d",
-      "target": "assets/pages/page-04-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-04.png",
+      "sha256": "19751b31e70d429b98481b2e449f0d0971cfba2b4ed6dc773762a40fd056b5a4",
+      "target": "assets/pages/page-04-v3.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-05.png",
-      "sha256": "3cd2bf8b67ebec42fae28160ee93bc484b593a86aeb29ea230f764459f6484c3",
-      "target": "assets/pages/page-05-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-05.png",
+      "sha256": "1879dd43b3e137c49c828b0d6d32a01533af1eb2e1590970a025e3fe5844e82f",
+      "target": "assets/pages/page-05-v3.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-06.png",
-      "sha256": "eab8b96eb7e13cc5fb86bd06f1f78ed7aa02405cfd8cce5db0f14d9ea67be755",
-      "target": "assets/pages/page-06-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-06.png",
+      "sha256": "991c1d81f7b03d623693fe77a0c99b7d1a989319ad28936f2797f64c03759273",
+      "target": "assets/pages/page-06-v3.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-07.png",
-      "sha256": "7818c6dda16719ccc71a8345ba8b3d03bc81307f85889bcd52c54f40adcf613a",
-      "target": "assets/pages/page-07-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-07.png",
+      "sha256": "3e485d32c1dcb020832ec63891f8b58db025d5429dbcc30bfb002b9ed44dc01d",
+      "target": "assets/pages/page-07-v3.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-08.png",
-      "sha256": "c5d9e7720f7d83d38996218e2151554cf32bf1d695a6b06126eeb0e001b33729",
-      "target": "assets/pages/page-08-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-08.png",
+      "sha256": "e055cb23d843294c2aca58295e8231a50804d2c1182ddb5f0fee058adceaf635",
+      "target": "assets/pages/page-08-v3.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v2/deliverables/pages/Bluey_S01E01_page-09.png",
-      "sha256": "5385f70ff3312bbd257e47366982e7533a63c77220e94f353d8b61ce3d959630",
-      "target": "assets/pages/page-09-v2.png"
+      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-09.png",
+      "sha256": "7c5e8b1001605f6ffdddda594e0557d6737a3833c579de048aeb9c6fc606eb31",
+      "target": "assets/pages/page-09-v3.png"
     }
   ],
   "timing_note": "Cuts use reviewed transcript subtitle windows with close matching existing ASR word boundaries and overlap-safe padding. Boundaries remain approximate (about 0.5 s); a complete auditory boundary review has not been claimed.",
