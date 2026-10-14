@@ -3,9 +3,9 @@
   "series_id": "bluey",
   "current_registry": {
     "path": "series/bluey/characters.json",
-    "revision": 3,
-    "sha256": "d28141b31f4a507cc75d6b8eeeba9e698de3d5aab02fed4b53c3c6368332fca7",
-    "snapshot": "series/bluey/history/characters.rev-003.json"
+    "revision": 4,
+    "sha256": "619a8bc43cb83ef3209093bab0ec02846cafe4a15ba42d89c3799a4c95daf2de",
+    "snapshot": "series/bluey/history/characters.rev-004.json"
   },
   "episodes": [
     {
@@ -62,6 +62,42 @@
           "publication_status": "succeeded_private",
           "url": "https://bluey-xylophone-20261014-v1.crafty-jelly-4020.chatgpt.site",
           "online_browser_review": "blocked_by_cloudflare_on_current_network"
+        },
+        {
+          "edition_id": "bluey-s01e01-comic-web-v2",
+          "created_date": "2026-10-14",
+          "status": "visual_revision_checked_browser_retest_unavailable",
+          "based_on_comic_edition": "bluey-s01e01-comic-full-v1",
+          "source_directory": "web/bluey-reader",
+          "output_directory": "output/S01E01/comic-web-v2",
+          "page_count": 9,
+          "panel_count": 54,
+          "bubble_count": 115,
+          "source_record_count": 140,
+          "audio_clip_count": 169,
+          "visual_registry_revision": 4,
+          "transcript_registry_revision": 2,
+          "character_reference_directory": "series/bluey/visual-references/book-20261014",
+          "revision_scope": "四位主角轮廓和色块；爸爸深蓝中段、浅蓝尾尖跨页统一；台词及原声音频不变",
+          "audio_source": "original_video_stream_0:a:0",
+          "audio_reuse": "all_169_sha256_identical_to_v1",
+          "audio_decode_review": "passed_all_169_clips",
+          "audio_boundary_review": "unchanged_from_v1; full_manual_listening_pending",
+          "browser_functional_review": "v2_retest_unavailable_cua_kernel_assets_path_error; v1_passed",
+          "native_mobile_review": "pending",
+          "review_path": "output/S01E01/comic-web-v2/qa/web-review.json",
+          "audio_provenance_path": "output/S01E01/comic-web-v2/qa/source-audio.json",
+          "archive_path": "output/S01E01/comic-web-v2/Bluey_S01E01_角色修订版_漫画点读网页.zip",
+          "source_uncertainties_preserved": [
+            20,
+            126
+          ],
+          "site_project_id": "appgprj_6acf3e92bbd081918fb97c21260c4ed0",
+          "deployment_id": "appgdep_6acf880613648191a3e67f5fd8c5c1f0",
+          "site_source_commit": "99ccbee2c7c821a22d47d2622c725dae9907527b",
+          "publication_status": "succeeded_private",
+          "url": "https://bluey-xylophone-20261014-v1.crafty-jelly-4020.chatgpt.site",
+          "online_browser_review": "not_retested_cua_unavailable; previous_current_network_cloudflare_block"
         }
       ],
       "comic_editions": [
@@ -134,7 +170,9 @@
         },
         "content_path": "output/S01E01/mindmap-v1/work/mindmap.content.json",
         "prompt_path": "output/S01E01/mindmap-v1/work/mindmap.prompt.txt",
-        "repair_prompt_paths": ["output/S01E01/mindmap-v1/work/mindmap.repair-01.prompt.txt"],
+        "repair_prompt_paths": [
+          "output/S01E01/mindmap-v1/work/mindmap.repair-01.prompt.txt"
+        ],
         "review_path": "output/S01E01/mindmap-v1/qa/mindmap.review.json",
         "generation_method": "built-in image_gen",
         "output_path": "output/S01E01/mindmap-v1/deliverables/Bluey_S01E01_英语学习总结思维导图.png",

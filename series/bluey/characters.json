@@ -2,84 +2,277 @@
   "schema_version": 1,
   "series_id": "bluey",
   "series_name": "Bluey",
-  "revision": 3,
+  "revision": 4,
   "characters": [
     {
-      "id": "bluey", "name_en": "Bluey", "name_zh": "布鲁伊", "display_name": "Bluey",
-      "aliases": ["布鲁伊"], "status": "confirmed",
-      "visual_notes": "小蓝色犬形角色，体型小于爸爸、大于宾果；中蓝色身体，深蓝色脸侧和背部色块，浅蓝色口鼻和腹部，竖起的三角耳、黑鼻。不能仅凭蓝色判定为布鲁伊，需与成年爸爸的体型及浅黄口鼻腹部区分。",
+      "id": "bluey",
+      "name_en": "Bluey",
+      "name_zh": "布鲁伊",
+      "display_name": "Bluey",
+      "aliases": [
+        "布鲁伊"
+      ],
+      "status": "confirmed",
+      "visual_notes": "儿童蓝色犬形角色，高于宾果、明显小于爸爸；头身衔接为圆角矩形，中浅蓝身体，深蓝脸侧、耳缘和背侧斑块，额头中央浅蓝条带；口鼻主体为金黄/赭黄色，边缘浅色，不能误写为整块浅蓝口鼻。腹部、眉毛、手端与袜状脚端为浅蓝灰色；蓝色尾巴带深蓝末端。竖三角耳、椭圆眼、深色圆角三角鼻；不添加成年角色的短毛纹。",
       "visual_status": "reviewed",
-      "visual_references": [{"path": "series/bluey/visual-references/bluey-S01E01-062.267.jpg",
-        "sha256": "d77a106a7082daca959aad675e657acad401b03a21747d9fd3e676ccad93e54b",
-        "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
-        "source_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
-        "episode": "S01E01", "time": 62.266666666666666,
-        "subject_location": "画面中央偏左、坐在爸爸身前的小蓝色角色；不是左侧体型较大的爸爸。",
-        "basis": "已查看原片提取帧，对照第12条已核对身份和原始字幕；原帧保持不变，不是生成图。"}],
+      "visual_references": [
+        {
+          "path": "series/bluey/visual-references/bluey-S01E01-062.267.jpg",
+          "sha256": "d77a106a7082daca959aad675e657acad401b03a21747d9fd3e676ccad93e54b",
+          "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "source_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+          "episode": "S01E01",
+          "time": 62.266666666666666,
+          "subject_location": "画面中央偏左、坐在爸爸身前的小蓝色角色；不是左侧体型较大的爸爸。",
+          "basis": "已查看原片提取帧，对照第12条已核对身份和原始字幕；原帧保持不变，不是生成图。"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/5d6c3c42172f12c1775c090d0d9fcba7.jpg",
+          "sha256": "64c41aa8b24135d86718a4f61d6578d49090507d2369b837f1f9a989489b75ef",
+          "source": "input/character-references/bluey/book-20261014/5d6c3c42172f12c1775c090d0d9fcba7.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "深蓝脸侧、金黄口鼻的小蓝色孩子"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/644a1f640991818ea2d2b3c187ba4fe2.jpg",
+          "sha256": "9aabce08295c655e19f2336a3a9976707bc309acac2e4e4c87d7049e74c20722",
+          "source": "input/character-references/bluey/book-20261014/644a1f640991818ea2d2b3c187ba4fe2.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "深蓝脸侧、金黄口鼻的小蓝色孩子"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/9e3e1d724ee9067cabfb54be7d2ffe00.jpg",
+          "sha256": "8eb3116c6eeb5d0ac230b139ae5f56e933fc92617eef02bff4355aa06c593ee7",
+          "source": "input/character-references/bluey/book-20261014/9e3e1d724ee9067cabfb54be7d2ffe00.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "深蓝脸侧、金黄口鼻的小蓝色孩子"
+        }
+      ],
       "voice_notes": "参考为用户提供的英文版本；未建立自动声纹识别模型。",
-      "references": [{"episode": "S01E01", "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
-        "start": 62.017, "end": 64.017, "language": "en", "edition": "用户提供英文原声版本",
-        "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
-        "basis": "首集分角色稿第12条，字幕与画面核对，台词 No! It's still my turn."}]
+      "references": [
+        {
+          "episode": "S01E01",
+          "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "start": 62.017,
+          "end": 64.017,
+          "language": "en",
+          "edition": "用户提供英文原声版本",
+          "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+          "basis": "首集分角色稿第12条，字幕与画面核对，台词 No! It's still my turn."
+        }
+      ]
     },
     {
-      "id": "bingo", "name_en": "Bingo", "name_zh": "宾果", "display_name": "Bingo",
-      "aliases": ["宾果"], "status": "confirmed",
-      "visual_notes": "小橙色犬形角色，四位家庭角色中体型最小；橙色身体，较深橙色头侧和耳部色块，奶油色口鼻和腹部，竖起的三角耳、黑鼻。与妈妈同属橙色系，但明显更矮小，不画成成年身形。",
+      "id": "bingo",
+      "name_en": "Bingo",
+      "name_zh": "宾果",
+      "display_name": "Bingo",
+      "aliases": [
+        "宾果"
+      ],
+      "status": "confirmed",
+      "visual_notes": "四位家人中最小的橙色儿童犬形角色，紧凑圆角矩形头身；深橙脸侧和耳部色块，奶油色中央脸条、口鼻、腹部、眉毛、手脚端；橙尾奶油色尾尖。竖三角耳、椭圆眼、深色鼻；身形明显矮于妈妈，不添加成年短毛纹。",
       "visual_status": "reviewed",
-      "visual_references": [{"path": "series/bluey/visual-references/bingo-S01E01-059.767.jpg",
-        "sha256": "2bd075c3ab8b98d8bbf69b14771a65ca9f122e803a01b579817808ce34103191",
-        "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
-        "source_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
-        "episode": "S01E01", "time": 59.766666666666666,
-        "subject_location": "画面右侧站立、抬起双手的小橙色角色；不是左侧躺着的蓝色布鲁伊。",
-        "basis": "已查看原片提取帧，对照第11条已核对身份和原始字幕；原帧保持不变，不是生成图。"}],
+      "visual_references": [
+        {
+          "path": "series/bluey/visual-references/bingo-S01E01-059.767.jpg",
+          "sha256": "2bd075c3ab8b98d8bbf69b14771a65ca9f122e803a01b579817808ce34103191",
+          "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "source_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+          "episode": "S01E01",
+          "time": 59.766666666666666,
+          "subject_location": "画面右侧站立、抬起双手的小橙色角色；不是左侧躺着的蓝色布鲁伊。",
+          "basis": "已查看原片提取帧，对照第11条已核对身份和原始字幕；原帧保持不变，不是生成图。"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/5d6c3c42172f12c1775c090d0d9fcba7.jpg",
+          "sha256": "64c41aa8b24135d86718a4f61d6578d49090507d2369b837f1f9a989489b75ef",
+          "source": "input/character-references/bluey/book-20261014/5d6c3c42172f12c1775c090d0d9fcba7.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "奶油口鼻的小橙色孩子"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/644a1f640991818ea2d2b3c187ba4fe2.jpg",
+          "sha256": "9aabce08295c655e19f2336a3a9976707bc309acac2e4e4c87d7049e74c20722",
+          "source": "input/character-references/bluey/book-20261014/644a1f640991818ea2d2b3c187ba4fe2.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "奶油口鼻的小橙色孩子"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/9e3e1d724ee9067cabfb54be7d2ffe00.jpg",
+          "sha256": "8eb3116c6eeb5d0ac230b139ae5f56e933fc92617eef02bff4355aa06c593ee7",
+          "source": "input/character-references/bluey/book-20261014/9e3e1d724ee9067cabfb54be7d2ffe00.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "奶油口鼻的小橙色孩子"
+        }
+      ],
       "voice_notes": "参考为用户提供的英文版本；未建立自动声纹识别模型。",
-      "references": [{"episode": "S01E01", "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
-        "start": 59.517, "end": 62.017, "language": "en", "edition": "用户提供英文原声版本",
-        "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
-        "basis": "首集分角色稿第11条，字幕与画面核对，台词 Dad! I want to be the piano."}]
+      "references": [
+        {
+          "episode": "S01E01",
+          "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "start": 59.517,
+          "end": 62.017,
+          "language": "en",
+          "edition": "用户提供英文原声版本",
+          "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+          "basis": "首集分角色稿第11条，字幕与画面核对，台词 Dad! I want to be the piano."
+        }
+      ]
     },
     {
-      "id": "bandit", "name_en": "Bandit", "name_zh": "爸爸", "display_name": "爸爸 Dad",
-      "aliases": ["Dad", "Daddy", "爸爸", "Bandit"], "status": "confirmed",
-      "visual_notes": "成年大蓝色犬形角色，身形高大宽厚；深蓝色头部和背部，浅蓝色身体及四肢，浅黄褐色口鼻和腹部，竖起的三角耳、黑鼻。必须与小蓝色布鲁伊区分，不能只用蓝色作为身份依据。",
+      "id": "bandit",
+      "name_en": "Bandit",
+      "name_zh": "爸爸",
+      "display_name": "爸爸 Dad",
+      "aliases": [
+        "Dad",
+        "Daddy",
+        "爸爸",
+        "Bandit"
+      ],
+      "status": "confirmed",
+      "visual_notes": "成年大蓝色犬形角色，头身为宽厚的长圆角矩形，明显高于两个孩子；浅蓝身体，深蓝头侧、背部与尾巴深色段，淡蓝灰眉毛、手脚端。金黄/赭黄口鼻及大块腹部，浅色边缘；深色头部、口鼻及深色背尾部有稀疏短浅色毛纹。竖三角耳、深色圆角三角鼻。不能仅凭蓝色混同布鲁伊；当集紫色胡子涂鸦、鹿角发箍、围巾等是剧情道具，不是固有外貌。 尾巴须统一为长而厚的尾形：深蓝色近端/中段带少量浅色短毛纹，远端约三分之一到五分之二为浅蓝色圆钝毛尖；与布鲁伊的深蓝尾尖区别。参考用户照片第二张爸爸左后侧完整尾巴。",
       "visual_status": "reviewed",
-      "visual_references": [{"path": "series/bluey/visual-references/bandit-S01E01-031.767.jpg",
-        "sha256": "cba5f061bad5bfca4b875da3445ff248911e66b37fedbab047c0107b54995dcd",
-        "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
-        "source_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
-        "episode": "S01E01", "time": 31.766666666666666,
-        "subject_location": "画面中央张开双臂的大蓝色角色；腿前横躺的小蓝色角色是布鲁伊，不是爸爸。",
-        "basis": "已查看原片提取帧，对照第6条已核对身份及演奏报幕画面；原帧保持不变，不是生成图。"}],
+      "visual_references": [
+        {
+          "path": "series/bluey/visual-references/bandit-S01E01-031.767.jpg",
+          "sha256": "cba5f061bad5bfca4b875da3445ff248911e66b37fedbab047c0107b54995dcd",
+          "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "source_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+          "episode": "S01E01",
+          "time": 31.766666666666666,
+          "subject_location": "画面中央张开双臂的大蓝色角色；腿前横躺的小蓝色角色是布鲁伊，不是爸爸。",
+          "basis": "已查看原片提取帧，对照第6条已核对身份及演奏报幕画面；原帧保持不变，不是生成图。"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/5d6c3c42172f12c1775c090d0d9fcba7.jpg",
+          "sha256": "64c41aa8b24135d86718a4f61d6578d49090507d2369b837f1f9a989489b75ef",
+          "source": "input/character-references/bluey/book-20261014/5d6c3c42172f12c1775c090d0d9fcba7.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "宽厚身形、带短毛纹的大蓝色爸爸"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/644a1f640991818ea2d2b3c187ba4fe2.jpg",
+          "sha256": "9aabce08295c655e19f2336a3a9976707bc309acac2e4e4c87d7049e74c20722",
+          "source": "input/character-references/bluey/book-20261014/644a1f640991818ea2d2b3c187ba4fe2.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "宽厚身形、带短毛纹的大蓝色爸爸"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/9e3e1d724ee9067cabfb54be7d2ffe00.jpg",
+          "sha256": "8eb3116c6eeb5d0ac230b139ae5f56e933fc92617eef02bff4355aa06c593ee7",
+          "source": "input/character-references/bluey/book-20261014/9e3e1d724ee9067cabfb54be7d2ffe00.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "宽厚身形、带短毛纹的大蓝色爸爸"
+        }
+      ],
       "voice_notes": "参考为用户提供的英文版本；未建立自动声纹识别模型。",
-      "references": [{"episode": "S01E01", "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
-        "start": 29.517, "end": 36.017, "language": "en", "edition": "用户提供英文原声版本",
-        "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
-        "basis": "首集分角色稿第5至6条，字幕与画面核对，爸爸宣布演奏。"}]
+      "references": [
+        {
+          "episode": "S01E01",
+          "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "start": 29.517,
+          "end": 36.017,
+          "language": "en",
+          "edition": "用户提供英文原声版本",
+          "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+          "basis": "首集分角色稿第5至6条，字幕与画面核对，爸爸宣布演奏。"
+        }
+      ]
     },
     {
-      "id": "chilli", "name_en": "Chilli", "name_zh": "妈妈", "display_name": "妈妈 Mum",
-      "aliases": ["Mum", "Mom", "妈妈", "Chilli"], "status": "confirmed",
-      "visual_notes": "成年橙棕色犬形角色，身形高于两个孩子、较爸爸纤细；橙棕色身体，较深棕色脸侧及耳部色块，浅奶油色口鼻和大块腹部，竖起的三角耳、黑鼻。与小橙色宾果区分，不画成幼童身形。",
+      "id": "chilli",
+      "name_en": "Chilli",
+      "name_zh": "妈妈",
+      "display_name": "妈妈 Mum",
+      "aliases": [
+        "Mum",
+        "Mom",
+        "妈妈",
+        "Chilli"
+      ],
+      "status": "confirmed",
+      "visual_notes": "成年橙棕色犬形角色，长圆角矩形身形，比孩子高、比爸爸纤细；深锈棕头侧和耳缘，浅奶油中央脸条、口鼻、大块腹部、眉毛、手脚端和尾尖，头侧有稀疏短浅色毛纹。竖三角耳、深色鼻；不能画成宾果的儿童比例。棕色肩包属于出门场景道具，不是每个场景必备。",
       "visual_status": "reviewed",
-      "visual_references": [{"path": "series/bluey/visual-references/chilli-S01E01-082.267.jpg",
-        "sha256": "f2b7978678eb00b802449e9dc69d064f8fdaa1cd37d6d4730bab472369d59cf2",
-        "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
-        "source_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
-        "episode": "S01E01", "time": 82.26666666666667,
-        "subject_location": "画面右侧站立、抬起一条腿的成年橙棕色角色；不是左下方的小橙色宾果。",
-        "basis": "已查看原片提取帧，对照第18条已核对身份和原始字幕；原帧保持不变，不是生成图。"}],
+      "visual_references": [
+        {
+          "path": "series/bluey/visual-references/chilli-S01E01-082.267.jpg",
+          "sha256": "f2b7978678eb00b802449e9dc69d064f8fdaa1cd37d6d4730bab472369d59cf2",
+          "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "source_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+          "episode": "S01E01",
+          "time": 82.26666666666667,
+          "subject_location": "画面右侧站立、抬起一条腿的成年橙棕色角色；不是左下方的小橙色宾果。",
+          "basis": "已查看原片提取帧，对照第18条已核对身份和原始字幕；原帧保持不变，不是生成图。"
+        },
+        {
+          "path": "series/bluey/visual-references/book-20261014/9e3e1d724ee9067cabfb54be7d2ffe00.jpg",
+          "sha256": "8eb3116c6eeb5d0ac230b139ae5f56e933fc92617eef02bff4355aa06c593ee7",
+          "source": "input/character-references/bluey/book-20261014/9e3e1d724ee9067cabfb54be7d2ffe00.jpg",
+          "source_type": "user_provided_book_photo",
+          "received_date": "2026-10-14",
+          "basis": "用户提供的绘本实拍，目视核对体型、面部色块、口鼻、手脚端、尾部与成年短毛纹。保留照片原始像素；不是生成图。拍摄光线可能影响色温，不以照片直接采样色值。",
+          "subject_location": "左侧站立、背棕色肩包的成年橙色妈妈"
+        }
+      ],
       "voice_notes": "参考为用户提供的英文版本；未建立自动声纹识别模型。",
-      "references": [{"episode": "S01E01", "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
-        "start": 81.017, "end": 84.517, "language": "en", "edition": "用户提供英文原声版本",
-        "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
-        "basis": "首集分角色稿第18条，字幕与画面核对，台词 Ooh! Island rhythms!"}]
+      "references": [
+        {
+          "episode": "S01E01",
+          "source": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+          "start": 81.017,
+          "end": 84.517,
+          "language": "en",
+          "edition": "用户提供英文原声版本",
+          "sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+          "basis": "首集分角色稿第18条，字幕与画面核对，台词 Ooh! Island rhythms!"
+        }
+      ]
     }
   ],
   "changes": [
-    {"date": "2026-10-13", "reason": "从已核对的第一集初始化四位角色，片名报幕不强行归入角色。", "affected_episodes": ["S01E01"]},
-    {"date": "2026-10-13", "reason": "原始素材移入 input，仅更新参考路径，角色身份与台词不变。", "affected_episodes": ["S01E01"]},
-    {"date": "2026-10-13", "reason": "补充四位角色已目视核对的外观描述、原片参考帧及定位依据；revision 2 已保存到 history。仅增强后续插图身份约束，不改角色归属、声音参考或历史交付。", "affected_episodes": []}
+    {
+      "date": "2026-10-13",
+      "reason": "从已核对的第一集初始化四位角色，片名报幕不强行归入角色。",
+      "affected_episodes": [
+        "S01E01"
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "reason": "原始素材移入 input，仅更新参考路径，角色身份与台词不变。",
+      "affected_episodes": [
+        "S01E01"
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "reason": "补充四位角色已目视核对的外观描述、原片参考帧及定位依据；revision 2 已保存到 history。仅增强后续插图身份约束，不改角色归属、声音参考或历史交付。",
+      "affected_episodes": []
+    },
+    {
+      "date": "2026-10-14",
+      "reason": "依据用户新增三张绘本实拍细化四位主角外观，并纠正布鲁伊口鼻色描述；角色身份、台词归属、声音参考不变；历史交付继续绑定原版本。",
+      "affected_episodes": []
+    }
   ]
 }

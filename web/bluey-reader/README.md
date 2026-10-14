@@ -8,12 +8,12 @@
 
 Windows 下，重启电脑后双击项目根目录的 **`打开漫画预览.cmd`**。它会启动本地服务，并在默认浏览器打开漫画；已有服务时直接打开网页。保留弹出的运行窗口（最小化即可），关闭它会停止预览。无需先打开 Codex，也无需重新生成图片或音频。
 
-启动文件优先使用当前用户目录里的 Codex Python 运行环境，也支持本机已安装的 `py` 或 `python`。请保留项目下的 `output/S01E01/comic-web-v1/dist/` 完整文件夹。
+启动文件优先使用当前用户目录里的 Codex Python 运行环境，也支持本机已安装的 `py` 或 `python`。请保留项目下的 `output/S01E01/comic-web-v2/dist/` 完整文件夹。当前默认打开按用户绘本照片细化角色的 v2 版，旧版 `comic-web-v1` 原样保留。
 
-已有构建位于 `output/S01E01/comic-web-v1/dist/`。在项目根目录运行：
+已有构建位于 `output/S01E01/comic-web-v2/dist/`。在项目根目录运行：
 
 ```powershell
-python -m http.server 8766 --bind 127.0.0.1 --directory output/S01E01/comic-web-v1/dist
+python -m http.server 8766 --bind 127.0.0.1 --directory output/S01E01/comic-web-v2/dist
 ```
 
 浏览器打开 `http://127.0.0.1:8766/`。也可打开构建目录里的 `index.html`，数据使用普通脚本加载，无需后端接口；建议通过 HTTP 预览以获得一致的媒体行为。
@@ -23,8 +23,8 @@ python -m http.server 8766 --bind 127.0.0.1 --directory output/S01E01/comic-web-
 Python 3.12 标准库和 FFmpeg 即可，无 npm 包或新模型。构建前准备 `data/sources.json` 指定的原视频与 9 张漫画 PNG；这些媒体不随 Git 提交。脚本会先校验源文件哈希，不会重新生成漫画或猜测新时间段。
 
 ```powershell
-python -B web/bluey-reader/build.py --output output/S01E01/comic-web-v2
-python -B web/bluey-reader/verify.py output/S01E01/comic-web-v2
+python -B web/bluey-reader/build.py --output output/S01E01/comic-web-v3
+python -B web/bluey-reader/verify.py output/S01E01/comic-web-v3
 ```
 
 输出目录必须不存在，避免覆盖已有交付。支持 `--root` 指定素材根目录、`--ffmpeg` 指定程序；默认从 `pipeline.local.json` 的 `media_dependency_dirs` 查找已有 FFmpeg，再尝试 PATH。构建失败后检查错误并选用新输出目录。
@@ -42,6 +42,8 @@ python -B web/bluey-reader/verify.py output/S01E01/comic-web-v2
 修改点读位置或切片边界后，构建到新的版本目录，检查完整画面、单格裁切及实际声音，再更新分集索引。图片以 1024 × 1536 原始坐标映射，不修改原图文字。
 
 ## 内容与验证范围
+
+v2 依据 `series/bluey/visual-references/book-20261014/` 的三张用户照片细化四位主角，使用角色表 revision 4；九张修订图另存于 `output/S01E01/comic-characters-v2/deliverables/pages/`。生成使用内置 imagegen，提示词保存在 `data/character-revision-v2-prompts.json`。台词、角色归属及 169 段原视频音频保持不变，媒体哈希与新版检查记录见交付目录 `qa/`。
 
 第 36 格按用户确认保留原句。第 22、45 格没有对白，播放对应原片环境音。源记录 20 的报幕角色、126 的部分哼唱歌词继续显示待核，不作新认定。
 

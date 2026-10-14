@@ -1,5 +1,5 @@
 {
-  "id": "bluey-s01e01-comic-web-v1",
+  "id": "bluey-s01e01-comic-web-v2",
   "title": "Magic Xylophone",
   "titleZh": "魔法木琴",
   "episode": "S01E01",
@@ -7,7 +7,7 @@
     {
       "number": 1,
       "title": "钢琴游戏",
-      "image": "assets/pages/page-01.png",
+      "image": "assets/pages/page-01-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
@@ -388,7 +388,7 @@
     {
       "number": 2,
       "title": "发现魔法木琴",
-      "image": "assets/pages/page-02.png",
+      "image": "assets/pages/page-02-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
@@ -920,7 +920,7 @@
     {
       "number": 3,
       "title": "恶作剧",
-      "image": "assets/pages/page-03.png",
+      "image": "assets/pages/page-03-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
@@ -1382,7 +1382,7 @@
     {
       "number": 4,
       "title": "追逐与装扮",
-      "image": "assets/pages/page-04.png",
+      "image": "assets/pages/page-04-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
@@ -1841,7 +1841,7 @@
     {
       "number": 5,
       "title": "妈妈提醒轮流玩",
-      "image": "assets/pages/page-05.png",
+      "image": "assets/pages/page-05-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
@@ -2284,7 +2284,7 @@
     {
       "number": 6,
       "title": "争抢木琴",
-      "image": "assets/pages/page-06.png",
+      "image": "assets/pages/page-06-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
@@ -2700,7 +2700,7 @@
     {
       "number": 7,
       "title": "爸爸的反击",
-      "image": "assets/pages/page-07.png",
+      "image": "assets/pages/page-07-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
@@ -3136,7 +3136,7 @@
     {
       "number": 8,
       "title": "宾果说出感受",
-      "image": "assets/pages/page-08.png",
+      "image": "assets/pages/page-08-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
@@ -3477,7 +3477,7 @@
     {
       "number": 9,
       "title": "姐妹合作",
-      "image": "assets/pages/page-09.png",
+      "image": "assets/pages/page-09-v2.png",
       "width": 1024,
       "height": 1536,
       "panels": [
