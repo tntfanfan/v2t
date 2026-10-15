@@ -10,49 +10,49 @@
   },
   "pages": [
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-01.png",
-      "sha256": "2e6e1bc28679a837e9ccb1276f2f2844c67f37b320550b530cefb7ded7d1ab1c",
-      "target": "assets/pages/page-01-v3.png"
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-01.png",
+      "sha256": "c5e285c488b2028484aadd91a6042b185da493df71cc58bb446a0b2626bfcd6b",
+      "target": "assets/pages/page-01-v4.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-02.png",
-      "sha256": "e091071fb9eff8389cb12227c73da25186c633ca771b00053f763ddd8dc83db2",
-      "target": "assets/pages/page-02-v3.png"
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-02.png",
+      "sha256": "dc5705842045e41f24b1a29586e0d49b4d39c471d5669ed1a7e46407ef11326c",
+      "target": "assets/pages/page-02-v4.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-03.png",
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-03.png",
       "sha256": "8c7d63df5b3ca7628e2c3aab949f0860b7819fcda43df2ef8ef4a663179c3683",
-      "target": "assets/pages/page-03-v3.png"
+      "target": "assets/pages/page-03-v4.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-04.png",
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-04.png",
       "sha256": "19751b31e70d429b98481b2e449f0d0971cfba2b4ed6dc773762a40fd056b5a4",
-      "target": "assets/pages/page-04-v3.png"
+      "target": "assets/pages/page-04-v4.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-05.png",
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-05.png",
       "sha256": "1879dd43b3e137c49c828b0d6d32a01533af1eb2e1590970a025e3fe5844e82f",
-      "target": "assets/pages/page-05-v3.png"
+      "target": "assets/pages/page-05-v4.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-06.png",
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-06.png",
       "sha256": "991c1d81f7b03d623693fe77a0c99b7d1a989319ad28936f2797f64c03759273",
-      "target": "assets/pages/page-06-v3.png"
+      "target": "assets/pages/page-06-v4.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-07.png",
-      "sha256": "3e485d32c1dcb020832ec63891f8b58db025d5429dbcc30bfb002b9ed44dc01d",
-      "target": "assets/pages/page-07-v3.png"
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-07.png",
+      "sha256": "4a2ca191e7966560c5f4b4c462b805f2ed1e74ac7e34c6ea4dd7a50718a003f1",
+      "target": "assets/pages/page-07-v4.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-08.png",
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-08.png",
       "sha256": "e055cb23d843294c2aca58295e8231a50804d2c1182ddb5f0fee058adceaf635",
-      "target": "assets/pages/page-08-v3.png"
+      "target": "assets/pages/page-08-v4.png"
     },
     {
-      "path": "output/S01E01/comic-characters-v3/deliverables/pages/Bluey_S01E01_page-09.png",
-      "sha256": "7c5e8b1001605f6ffdddda594e0557d6737a3833c579de048aeb9c6fc606eb31",
-      "target": "assets/pages/page-09-v3.png"
+      "path": "output/S01E01/comic-characters-v4/deliverables/pages/Bluey_S01E01_page-09.png",
+      "sha256": "6da45f6ab46117ec355bcbab1ea3ea1e158bd1d5a8400e62ee890602276abd46",
+      "target": "assets/pages/page-09-v4.png"
     }
   ],
   "timing_note": "Cuts use reviewed transcript subtitle windows with close matching existing ASR word boundaries and overlap-safe padding. Boundaries remain approximate (about 0.5 s); a complete auditory boundary review has not been claimed.",

@@ -1,0 +1,1269 @@
+{
+  "status": "reviewed_against_original_video_and_final_images",
+  "basis": "162 original video frames, three samples for each of 54 panels; nine source contact sheets visually inspected; full-size selected pose frames examined",
+  "scope": "漫画改编的肢体连接、数量、合理遮挡、尾巴与道具支撑核对；162张抽样帧，不等于逐帧复制整部动画。",
+  "revised_panels": [
+    2,
+    3,
+    4,
+    6,
+    11,
+    41,
+    51
+  ],
+  "review": [
+    {
+      "panel": 1,
+      "note": "四人均为两臂两腿；区分爸爸浅蓝尾尖、Bluey深尾尖、妈妈橙色斑点尾、Bingo奶油尾尖。",
+      "source_frames": [
+        {
+          "panel": 1,
+          "time": 9.666666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-001-1-9.667s.png"
+        },
+        {
+          "panel": 1,
+          "time": 15.766666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-001-2-15.767s.png"
+        },
+        {
+          "panel": 1,
+          "time": 21.833333333333332,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-001-3-21.833s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 2,
+      "note": "按37.767秒原片姿态重画：Bluey横躺，头在左，右端两条短腿、两只小袜脚与爸爸两只大脚分开。",
+      "source_frames": [
+        {
+          "panel": 2,
+          "time": 30.5,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-002-1-30.500s.png"
+        },
+        {
+          "panel": 2,
+          "time": 32.766666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-002-2-32.767s.png"
+        },
+        {
+          "panel": 2,
+          "time": 35.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-002-3-35.000s.png"
+        }
+      ],
+      "action": "revised"
+    },
+    {
+      "panel": 3,
+      "note": "与第2格一致；重绘后剔除一次生成的重复头部，保持一个Bluey、两只小脚；复核爸爸尾尖。",
+      "source_frames": [
+        {
+          "panel": 3,
+          "time": 37.1,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-003-1-37.100s.png"
+        },
+        {
+          "panel": 3,
+          "time": 37.766666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-003-2-37.767s.png"
+        },
+        {
+          "panel": 3,
+          "time": 38.4,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-003-3-38.400s.png"
+        }
+      ],
+      "action": "revised"
+    },
+    {
+      "panel": 4,
+      "note": "删除肩部胳膊状尾巴；当前左边界紧贴爸爸后腰，将尾巴合理遮在身体后及画框外，保留两臂两腿。",
+      "source_frames": [
+        {
+          "panel": 4,
+          "time": 48.96666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-004-1-48.967s.png"
+        },
+        {
+          "panel": 4,
+          "time": 52.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-004-2-52.000s.png"
+        },
+        {
+          "panel": 4,
+          "time": 55.03333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-004-3-55.033s.png"
+        }
+      ],
+      "action": "revised"
+    },
+    {
+      "panel": 5,
+      "note": "两孩子各两手两脚，手势与站姿连续，未见明确肢体缺失。",
+      "source_frames": [
+        {
+          "panel": 5,
+          "time": 60.2,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-005-1-60.200s.png"
+        },
+        {
+          "panel": 5,
+          "time": 61.7,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-005-2-61.700s.png"
+        },
+        {
+          "panel": 5,
+          "time": 63.233333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-005-3-63.233s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 6,
+      "note": "保留父女坐姿，移除左侧穿出Bingo身后的爸爸尾巴；依据漫画当前构图作遮挡处理。",
+      "source_frames": [
+        {
+          "panel": 6,
+          "time": 64.53333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-006-1-64.533s.png"
+        },
+        {
+          "panel": 6,
+          "time": 65.23333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-006-2-65.233s.png"
+        },
+        {
+          "panel": 6,
+          "time": 65.96666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-006-3-65.967s.png"
+        }
+      ],
+      "action": "revised"
+    },
+    {
+      "panel": 7,
+      "note": "坐姿脚与手可区分；爸爸远侧部分腿被Bluey挡住，属于合理遮挡。",
+      "source_frames": [
+        {
+          "panel": 7,
+          "time": 67.36666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-007-1-67.367s.png"
+        },
+        {
+          "panel": 7,
+          "time": 69.13333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-007-2-69.133s.png"
+        },
+        {
+          "panel": 7,
+          "time": 70.9,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-007-3-70.900s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 8,
+      "note": "Bingo俯卧由爸爸腿支撑；远侧短肢受身体遮挡，保留；Bluey双脚独立。",
+      "source_frames": [
+        {
+          "panel": 8,
+          "time": 74.83333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-008-1-74.833s.png"
+        },
+        {
+          "panel": 8,
+          "time": 79.36666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-008-2-79.367s.png"
+        },
+        {
+          "panel": 8,
+          "time": 83.93333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-008-3-83.933s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 9,
+      "note": "木琴标题格，无人物肢体。",
+      "source_frames": [
+        {
+          "panel": 9,
+          "time": 87.26666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-009-1-87.267s.png"
+        },
+        {
+          "panel": 9,
+          "time": 88.63333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-009-2-88.633s.png"
+        },
+        {
+          "panel": 9,
+          "time": 90.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-009-3-90.000s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 10,
+      "note": "Bingo下半身被玩具桶挡住，未补画穿桶的脚；爸爸与Bluey站姿肢体可辨。",
+      "source_frames": [
+        {
+          "panel": 10,
+          "time": 96.86666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-010-1-96.867s.png"
+        },
+        {
+          "panel": 10,
+          "time": 99.76666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-010-2-99.767s.png"
+        },
+        {
+          "panel": 10,
+          "time": 102.63333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-010-3-102.633s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 11,
+      "note": "依据107.367秒原片重画：爸爸一手撑地、一手抬起，一腿弯曲、一腿伸向Bluey；Bluey双手抓脚踝、双脚着地。",
+      "source_frames": [
+        {
+          "panel": 11,
+          "time": 105.36666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-011-1-105.367s.png"
+        },
+        {
+          "panel": 11,
+          "time": 107.36666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-011-2-107.367s.png"
+        },
+        {
+          "panel": 11,
+          "time": 109.36666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-011-3-109.367s.png"
+        }
+      ],
+      "action": "revised"
+    },
+    {
+      "panel": 12,
+      "note": "漫画以抬腿表现定住动作，保留可成立的两臂两腿；Bingo拿槌，木琴支承在地面。",
+      "source_frames": [
+        {
+          "panel": 12,
+          "time": 112.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-012-1-112.000s.png"
+        },
+        {
+          "panel": 12,
+          "time": 114.63333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-012-2-114.633s.png"
+        },
+        {
+          "panel": 12,
+          "time": 117.26666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-012-3-117.267s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 13,
+      "note": "爸爸双手贴鼻、双脚着地；妈妈远臂被身体遮挡，保留。",
+      "source_frames": [
+        {
+          "panel": 13,
+          "time": 129.93333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-013-1-129.933s.png"
+        },
+        {
+          "panel": 13,
+          "time": 132.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-013-2-132.000s.png"
+        },
+        {
+          "panel": 13,
+          "time": 134.1,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-013-3-134.100s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 14,
+      "note": "Bluey手与木琴、琴槌接触清楚；爸爸两手、两脚可辨。",
+      "source_frames": [
+        {
+          "panel": 14,
+          "time": 137.86666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-014-1-137.867s.png"
+        },
+        {
+          "panel": 14,
+          "time": 140.73333333333332,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-014-2-140.733s.png"
+        },
+        {
+          "panel": 14,
+          "time": 143.63333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-014-3-143.633s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 15,
+      "note": "爸爸前伸双臂与双腿分开；Bluey一手拿槌、一手支撑木琴。",
+      "source_frames": [
+        {
+          "panel": 15,
+          "time": 145.8,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-015-1-145.800s.png"
+        },
+        {
+          "panel": 15,
+          "time": 146.73333333333332,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-015-2-146.733s.png"
+        },
+        {
+          "panel": 15,
+          "time": 147.7,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-015-3-147.700s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 16,
+      "note": "Bluey抱木琴的近臂、远侧持槌手关系可辨；两孩子步行双脚成立。",
+      "source_frames": [
+        {
+          "panel": 16,
+          "time": 151.2,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-016-1-151.200s.png"
+        },
+        {
+          "panel": 16,
+          "time": 152.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-016-2-152.000s.png"
+        },
+        {
+          "panel": 16,
+          "time": 152.8,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-016-3-152.800s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 17,
+      "note": "两孩子握笔手腕有归属；爸爸身形、双脚和涂鸦保留。",
+      "source_frames": [
+        {
+          "panel": 17,
+          "time": 159.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-017-1-159.000s.png"
+        },
+        {
+          "panel": 17,
+          "time": 161.26666666666668,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-017-2-161.267s.png"
+        },
+        {
+          "panel": 17,
+          "time": 163.5,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-017-3-163.500s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 18,
+      "note": "爸爸双手抬起、两脚着地；Bluey持槌与托木琴的手分开。",
+      "source_frames": [
+        {
+          "panel": 18,
+          "time": 167.23333333333332,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-018-1-167.233s.png"
+        },
+        {
+          "panel": 18,
+          "time": 169.86666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-018-2-169.867s.png"
+        },
+        {
+          "panel": 18,
+          "time": 172.5,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-018-3-172.500s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 19,
+      "note": "跑动时爸爸和两孩子各两腿，尾巴均由低位连接。",
+      "source_frames": [
+        {
+          "panel": 19,
+          "time": 175.2,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-019-1-175.200s.png"
+        },
+        {
+          "panel": 19,
+          "time": 176.86666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-019-2-176.867s.png"
+        },
+        {
+          "panel": 19,
+          "time": 178.56666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-019-3-178.567s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 20,
+      "note": "爸爸两臂前伸、两腿分离；Bluey持物双手、Bingo站姿可辨。",
+      "source_frames": [
+        {
+          "panel": 20,
+          "time": 180.4,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-020-1-180.400s.png"
+        },
+        {
+          "panel": 20,
+          "time": 182.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-020-2-182.000s.png"
+        },
+        {
+          "panel": 20,
+          "time": 183.6,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-020-3-183.600s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 21,
+      "note": "Bluey一手托木琴一手持槌；Bingo两腿与浅色尾尖分开。",
+      "source_frames": [
+        {
+          "panel": 21,
+          "time": 186.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-021-1-186.000s.png"
+        },
+        {
+          "panel": 21,
+          "time": 188.63333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-021-2-188.633s.png"
+        },
+        {
+          "panel": 21,
+          "time": 191.26666666666668,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-021-3-191.267s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 22,
+      "note": "路人与婴儿车接触和遮挡合理；爸爸两臂两腿可辨，保留道具遮挡。",
+      "source_frames": [
+        {
+          "panel": 22,
+          "time": 197.36666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-022-1-197.367s.png"
+        },
+        {
+          "panel": 22,
+          "time": 198.36666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-022-2-198.367s.png"
+        },
+        {
+          "panel": 22,
+          "time": 199.36666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-022-3-199.367s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 23,
+      "note": "Bluey下半身被文字气泡挡住，不将气泡遮挡判为缺脚；妈妈提包的手臂有连续连接。",
+      "source_frames": [
+        {
+          "panel": 23,
+          "time": 205.9,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-023-1-205.900s.png"
+        },
+        {
+          "panel": 23,
+          "time": 208.86666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-023-2-208.867s.png"
+        },
+        {
+          "panel": 23,
+          "time": 211.8,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-023-3-211.800s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 24,
+      "note": "木琴有Bluey托持；Bingo两手分开，爸爸后侧尾根低于围巾。",
+      "source_frames": [
+        {
+          "panel": 24,
+          "time": 216.3,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-024-1-216.300s.png"
+        },
+        {
+          "panel": 24,
+          "time": 217.26666666666668,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-024-2-217.267s.png"
+        },
+        {
+          "panel": 24,
+          "time": 218.23333333333332,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-024-3-218.233s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 25,
+      "note": "妈妈双腿、伸出的手与下垂手清楚；爸爸抱物的部分手臂被玩具遮挡。",
+      "source_frames": [
+        {
+          "panel": 25,
+          "time": 220.23333333333332,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-025-1-220.233s.png"
+        },
+        {
+          "panel": 25,
+          "time": 222.8,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-025-2-222.800s.png"
+        },
+        {
+          "panel": 25,
+          "time": 225.36666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-025-3-225.367s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 26,
+      "note": "Bluey近手托住木琴、另一手伸出；Bingo双臂与双腿可辨。",
+      "source_frames": [
+        {
+          "panel": 26,
+          "time": 227.66666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-026-1-227.667s.png"
+        },
+        {
+          "panel": 26,
+          "time": 229.23333333333332,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-026-2-229.233s.png"
+        },
+        {
+          "panel": 26,
+          "time": 230.83333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-026-3-230.833s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 27,
+      "note": "妈妈一手叉腰、一手抬起；两孩子脚、手与持物边缘可辨。",
+      "source_frames": [
+        {
+          "panel": 27,
+          "time": 233.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-027-1-233.000s.png"
+        },
+        {
+          "panel": 27,
+          "time": 234.7,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-027-2-234.700s.png"
+        },
+        {
+          "panel": 27,
+          "time": 236.4,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-027-3-236.400s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 28,
+      "note": "爸爸双臂抱住玩具，玩具造成局部遮挡；其两腿和一条低位尾巴可辨。",
+      "source_frames": [
+        {
+          "panel": 28,
+          "time": 238.2,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-028-1-238.200s.png"
+        },
+        {
+          "panel": 28,
+          "time": 239.7,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-028-2-239.700s.png"
+        },
+        {
+          "panel": 28,
+          "time": 241.16666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-028-3-241.167s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 29,
+      "note": "妈妈下半身被汽车遮住；孩子双腿落地，保留车窗构图。",
+      "source_frames": [
+        {
+          "panel": 29,
+          "time": 243.03333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-029-1-243.033s.png"
+        },
+        {
+          "panel": 29,
+          "time": 244.86666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-029-2-244.867s.png"
+        },
+        {
+          "panel": 29,
+          "time": 246.73333333333332,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-029-3-246.733s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 30,
+      "note": "Bingo双手接住木琴，Bluey双手未和木琴混为一体；各两脚清楚。",
+      "source_frames": [
+        {
+          "panel": 30,
+          "time": 250.2,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-030-1-250.200s.png"
+        },
+        {
+          "panel": 30,
+          "time": 252.76666666666668,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-030-2-252.767s.png"
+        },
+        {
+          "panel": 30,
+          "time": 255.3,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-030-3-255.300s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 31,
+      "note": "爸爸一手抬起，另一手受玩具遮挡；Bingo持槌、木琴由另一手支持。",
+      "source_frames": [
+        {
+          "panel": 31,
+          "time": 257.3,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-031-1-257.300s.png"
+        },
+        {
+          "panel": 31,
+          "time": 258.26666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-031-2-258.267s.png"
+        },
+        {
+          "panel": 31,
+          "time": 259.2,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-031-3-259.200s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 32,
+      "note": "爸爸和两孩子跑动双腿分开；爸爸紫色胡子、地上鹿角和围巾保留。",
+      "source_frames": [
+        {
+          "panel": 32,
+          "time": 261.1666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-032-1-261.167s.png"
+        },
+        {
+          "panel": 32,
+          "time": 262.76666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-032-2-262.767s.png"
+        },
+        {
+          "panel": 32,
+          "time": 264.3666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-032-3-264.367s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 33,
+      "note": "床底俯卧，孩子双手在前；后腿由身体、玩具遮挡，未补穿透肢体；爸爸画外。",
+      "source_frames": [
+        {
+          "panel": 33,
+          "time": 267.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-033-1-267.000s.png"
+        },
+        {
+          "panel": 33,
+          "time": 269.26666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-033-2-269.267s.png"
+        },
+        {
+          "panel": 33,
+          "time": 271.5,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-033-3-271.500s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 34,
+      "note": "同床底遮挡关系，两个孩子前爪有各自手腕，爸爸画外。",
+      "source_frames": [
+        {
+          "panel": 34,
+          "time": 273.9,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-034-1-273.900s.png"
+        },
+        {
+          "panel": 34,
+          "time": 275.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-034-2-275.000s.png"
+        },
+        {
+          "panel": 34,
+          "time": 276.1333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-034-3-276.133s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 35,
+      "note": "门挡住Bluey远侧腿和手，保留合理遮挡；Bingo双手持琴与两脚可辨。",
+      "source_frames": [
+        {
+          "panel": 35,
+          "time": 280.53333333333336,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-035-1-280.533s.png"
+        },
+        {
+          "panel": 35,
+          "time": 281.93333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-035-2-281.933s.png"
+        },
+        {
+          "panel": 35,
+          "time": 283.3,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-035-3-283.300s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 36,
+      "note": "双方抓木琴的手各属于自己的前臂；Bluey一侧下肢被气泡遮挡，保留原句。",
+      "source_frames": [
+        {
+          "panel": 36,
+          "time": 285.3333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-036-1-285.333s.png"
+        },
+        {
+          "panel": 36,
+          "time": 287.56666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-036-2-287.567s.png"
+        },
+        {
+          "panel": 36,
+          "time": 289.76666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-036-3-289.767s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 37,
+      "note": "爸爸两手分别拿木琴、琴槌，两脚着地；孩子站姿可辨。",
+      "source_frames": [
+        {
+          "panel": 37,
+          "time": 295.4,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-037-1-295.400s.png"
+        },
+        {
+          "panel": 37,
+          "time": 296.53333333333336,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-037-2-296.533s.png"
+        },
+        {
+          "panel": 37,
+          "time": 297.6666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-037-3-297.667s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 38,
+      "note": "爸爸一手持槌、另一手托琴，两臂与两腿清楚。",
+      "source_frames": [
+        {
+          "panel": 38,
+          "time": 300.8,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-038-1-300.800s.png"
+        },
+        {
+          "panel": 38,
+          "time": 302.03333333333336,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-038-2-302.033s.png"
+        },
+        {
+          "panel": 38,
+          "time": 303.3,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-038-3-303.300s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 39,
+      "note": "Bingo跑动两腿与尾巴分开；父女肢体可辨。",
+      "source_frames": [
+        {
+          "panel": 39,
+          "time": 305.1333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-039-1-305.133s.png"
+        },
+        {
+          "panel": 39,
+          "time": 307.1,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-039-2-307.100s.png"
+        },
+        {
+          "panel": 39,
+          "time": 309.1,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-039-3-309.100s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 40,
+      "note": "爸爸一条腿被石台遮住，不能补成穿石台的脚；Bluey两脚站在台面。",
+      "source_frames": [
+        {
+          "panel": 40,
+          "time": 312.06666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-040-1-312.067s.png"
+        },
+        {
+          "panel": 40,
+          "time": 315.43333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-040-2-315.433s.png"
+        },
+        {
+          "panel": 40,
+          "time": 318.76666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-040-3-318.767s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 41,
+      "note": "重画接触：爸爸干净手掌从下方托住Bluey手腕；紫色笔迹只在Bluey手上，腕臂连接分开。",
+      "source_frames": [
+        {
+          "panel": 41,
+          "time": 322.23333333333335,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-041-1-322.233s.png"
+        },
+        {
+          "panel": 41,
+          "time": 324.46666666666664,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-041-2-324.467s.png"
+        },
+        {
+          "panel": 41,
+          "time": 326.7,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-041-3-326.700s.png"
+        }
+      ],
+      "action": "revised"
+    },
+    {
+      "panel": 42,
+      "note": "爸爸两手抓水管圈，近远手分开；两腿行走；Bluey台面站姿成立。",
+      "source_frames": [
+        {
+          "panel": 42,
+          "time": 329.03333333333336,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-042-1-329.033s.png"
+        },
+        {
+          "panel": 42,
+          "time": 330.26666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-042-2-330.267s.png"
+        },
+        {
+          "panel": 42,
+          "time": 331.53333333333336,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-042-3-331.533s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 43,
+      "note": "Bingo一手持槌一手托琴；Bluey双手张开、双脚立台。",
+      "source_frames": [
+        {
+          "panel": 43,
+          "time": 333.3333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-043-1-333.333s.png"
+        },
+        {
+          "panel": 43,
+          "time": 334.3666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-043-2-334.367s.png"
+        },
+        {
+          "panel": 43,
+          "time": 335.43333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-043-3-335.433s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 44,
+      "note": "Bluey下垂手与伸出手分开；Bingo持琴手未与身体融合。",
+      "source_frames": [
+        {
+          "panel": 44,
+          "time": 336.8666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-044-1-336.867s.png"
+        },
+        {
+          "panel": 44,
+          "time": 338.3666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-044-2-338.367s.png"
+        },
+        {
+          "panel": 44,
+          "time": 339.9,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-044-3-339.900s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 45,
+      "note": "Bluey两手和双脚清楚；Bingo持槌触琴，另一手托琴。",
+      "source_frames": [
+        {
+          "panel": 45,
+          "time": 340.8333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-045-1-340.833s.png"
+        },
+        {
+          "panel": 45,
+          "time": 341.56666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-045-2-341.567s.png"
+        },
+        {
+          "panel": 45,
+          "time": 342.3,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-045-3-342.300s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 46,
+      "note": "Bingo一手持槌一手托琴；Bluey双臂下垂，两腿分离。",
+      "source_frames": [
+        {
+          "panel": 46,
+          "time": 344.43333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-046-1-344.433s.png"
+        },
+        {
+          "panel": 46,
+          "time": 347.43333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-046-2-347.433s.png"
+        },
+        {
+          "panel": 46,
+          "time": 350.43333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-046-3-350.433s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 47,
+      "note": "沿用上一格的站立肢体关系，闭眼为眨眼剧情。",
+      "source_frames": [
+        {
+          "panel": 47,
+          "time": 354.73333333333335,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-047-1-354.733s.png"
+        },
+        {
+          "panel": 47,
+          "time": 357.46666666666664,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-047-2-357.467s.png"
+        },
+        {
+          "panel": 47,
+          "time": 360.2,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-047-3-360.200s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 48,
+      "note": "爸爸两手握水管接头，双脚着地，尾巴与水管路线区分。",
+      "source_frames": [
+        {
+          "panel": 48,
+          "time": 363.3333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-048-1-363.333s.png"
+        },
+        {
+          "panel": 48,
+          "time": 365.1,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-048-2-365.100s.png"
+        },
+        {
+          "panel": 48,
+          "time": 366.8333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-048-3-366.833s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 49,
+      "note": "爸爸持管手与下垂手可辨，双脚着地；Bluey站台，Bingo局部边界裁切合理。",
+      "source_frames": [
+        {
+          "panel": 49,
+          "time": 370.6666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-049-1-370.667s.png"
+        },
+        {
+          "panel": 49,
+          "time": 372.26666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-049-2-372.267s.png"
+        },
+        {
+          "panel": 49,
+          "time": 373.8666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-049-3-373.867s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 50,
+      "note": "爸爸将喷头举至嘴前，另一臂下垂；Bluey远臂被身体遮挡。",
+      "source_frames": [
+        {
+          "panel": 50,
+          "time": 377.23333333333335,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-050-1-377.233s.png"
+        },
+        {
+          "panel": 50,
+          "time": 378.1333333333333,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-050-2-378.133s.png"
+        },
+        {
+          "panel": 50,
+          "time": 379.0,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-050-3-379.000s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 51,
+      "note": "将原来悬空的木琴移到Bluey脚旁石台，木座接触台面；保留一手持槌、一手伸出及双脚。",
+      "source_frames": [
+        {
+          "panel": 51,
+          "time": 380.8666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-051-1-380.867s.png"
+        },
+        {
+          "panel": 51,
+          "time": 383.26666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-051-2-383.267s.png"
+        },
+        {
+          "panel": 51,
+          "time": 385.6666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-051-3-385.667s.png"
+        }
+      ],
+      "action": "revised"
+    },
+    {
+      "panel": 52,
+      "note": "喷水遮挡爸爸一只持管手，另一手下垂；Bingo双手握管的手臂连接可辨。",
+      "source_frames": [
+        {
+          "panel": 52,
+          "time": 387.6666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-052-1-387.667s.png"
+        },
+        {
+          "panel": 52,
+          "time": 388.8666666666667,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-052-2-388.867s.png"
+        },
+        {
+          "panel": 52,
+          "time": 390.06666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-052-3-390.067s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 53,
+      "note": "两孩子各两只脚和接木琴手可辨，坐姿/站姿为漫画改编。",
+      "source_frames": [
+        {
+          "panel": 53,
+          "time": 403.73333333333335,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-053-1-403.733s.png"
+        },
+        {
+          "panel": 53,
+          "time": 405.5,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-053-2-405.500s.png"
+        },
+        {
+          "panel": 53,
+          "time": 407.26666666666665,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-053-3-407.267s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    },
+    {
+      "panel": 54,
+      "note": "两孩子坐台阶、爸爸背景站立均两腿；木琴有托持，水管与尾巴分开。",
+      "source_frames": [
+        {
+          "panel": 54,
+          "time": 413.06666666666666,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-054-1-413.067s.png"
+        },
+        {
+          "panel": 54,
+          "time": 414.5,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-054-2-414.500s.png"
+        },
+        {
+          "panel": 54,
+          "time": 415.93333333333334,
+          "path": "output/S01E01/comic-characters-v4/work/video-frames/panel-054-3-415.933s.png"
+        }
+      ],
+      "action": "reviewed_and_retained"
+    }
+  ],
+  "date": "2026-10-15",
+  "registry_revision": 5,
+  "source_video": "input/第一季52集/分集视频/1-2/S01E01.mp4",
+  "reviewer": "assistant_visual_inspection",
+  "source_video_sha256": "49edec39dc491225b5fba46ec23fa41628d0793945cd08a2139dbe2cc1812c46",
+  "text_review": {
+    "bubbles": 115,
+    "ocr_matched_within_original_hotspots": 114,
+    "manual_exception": {
+      "id": "p02-panel12-b02",
+      "text": "Y...",
+      "result": "visible_and_unchanged"
+    }
+  },
+  "edited_pages": [
+    1,
+    2,
+    7,
+    9
+  ],
+  "reused_pages": [
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "sha256": "c5e285c488b2028484aadd91a6042b185da493df71cc58bb446a0b2626bfcd6b"
+    },
+    {
+      "page": 2,
+      "sha256": "dc5705842045e41f24b1a29586e0d49b4d39c471d5669ed1a7e46407ef11326c"
+    },
+    {
+      "page": 3,
+      "sha256": "8c7d63df5b3ca7628e2c3aab949f0860b7819fcda43df2ef8ef4a663179c3683"
+    },
+    {
+      "page": 4,
+      "sha256": "19751b31e70d429b98481b2e449f0d0971cfba2b4ed6dc773762a40fd056b5a4"
+    },
+    {
+      "page": 5,
+      "sha256": "1879dd43b3e137c49c828b0d6d32a01533af1eb2e1590970a025e3fe5844e82f"
+    },
+    {
+      "page": 6,
+      "sha256": "991c1d81f7b03d623693fe77a0c99b7d1a989319ad28936f2797f64c03759273"
+    },
+    {
+      "page": 7,
+      "sha256": "4a2ca191e7966560c5f4b4c462b805f2ed1e74ac7e34c6ea4dd7a50718a003f1"
+    },
+    {
+      "page": 8,
+      "sha256": "e055cb23d843294c2aca58295e8231a50804d2c1182ddb5f0fee058adceaf635"
+    },
+    {
+      "page": 9,
+      "sha256": "6da45f6ab46117ec355bcbab1ea3ea1e158bd1d5a8400e62ee890602276abd46"
+    }
+  ]
+}

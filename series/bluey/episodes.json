@@ -148,6 +148,64 @@
               "review_path": "output/S01E01/comic-characters-v3/qa/pdf-export/review.json"
             }
           ]
+        },
+        {
+          "edition_id": "bluey-s01e01-comic-web-v4",
+          "created_date": "2026-10-15",
+          "status": "video_anatomy_review_and_local_browser_checked",
+          "based_on_comic_edition": "bluey-s01e01-comic-full-v1",
+          "source_directory": "web/bluey-reader",
+          "output_directory": "output\\S01E01\\comic-web-v4",
+          "page_count": 9,
+          "panel_count": 54,
+          "bubble_count": 115,
+          "audio_clip_count": 169,
+          "source_record_count": 140,
+          "visual_registry_revision": 5,
+          "transcript_registry_revision": 2,
+          "revision_scope": "原片162张抽样帧检查54格；修正2、3、4、6、11、41、51格的肢体、遮挡和道具接触。",
+          "revised_panels": [
+            2,
+            3,
+            4,
+            6,
+            11,
+            41,
+            51
+          ],
+          "audio_source": "original_video_stream_0:a:0",
+          "audio_reuse": "all169_sha256_identical_to_v3_v2_v1",
+          "audio_decode_review": "passed_all169",
+          "audio_boundary_review": "unchanged_from_v1; full_manual_listening_pending",
+          "browser_functional_review": "passed_local_browser_smoke_check",
+          "native_mobile_review": "pending",
+          "review_path": "output\\S01E01\\comic-web-v4\\qa\\web-review.json",
+          "visual_review_path": "output\\S01E01\\comic-characters-v4\\qa\\visual-review.json",
+          "audio_provenance_path": "output\\S01E01\\comic-web-v4\\qa\\source-audio.json",
+          "archive_path": "output\\S01E01\\comic-web-v4\\Bluey_S01E01_动作核对修订版_漫画点读网页.zip",
+          "source_uncertainties_preserved": [
+            20,
+            126
+          ],
+          "pdf_exports": [
+            {
+              "created_date": "2026-10-15",
+              "path": "output/S01E01/comic-characters-v4/deliverables/Bluey_S01E01_魔法木琴_最终漫画_v4.pdf",
+              "sha256": "dc74edf95ee3e0ee67d256ea7e08e55f2d75bd09750b70434924c7b228582ac5",
+              "page_count": 9,
+              "source_visual_registry_revision": 5,
+              "lossless_image_embedding": true,
+              "structure_review": "passed",
+              "visual_review": "passed_all_9_rendered_pages",
+              "review_path": "output/S01E01/comic-characters-v4/qa/pdf-export/review.json"
+            }
+          ],
+          "site_project_id": "appgprj_6acf3e92bbd081918fb97c21260c4ed0",
+          "deployment_id": "appgdep_6ad04b830c388191a5a940d69bafc1c0",
+          "site_source_commit": "314c8744ce529983346894f39273fc886f0d90aa",
+          "publication_status": "succeeded_private",
+          "url": "https://bluey-xylophone-20261014-v1.crafty-jelly-4020.chatgpt.site",
+          "online_browser_review": "blocked_by_cloudflare_current_network"
         }
       ],
       "comic_editions": [

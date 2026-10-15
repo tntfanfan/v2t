@@ -8,12 +8,12 @@
 
 Windows 下，重启电脑后双击项目根目录的 **`打开漫画预览.cmd`**。它会启动本地服务，并在默认浏览器打开漫画；已有服务时直接打开网页。保留弹出的运行窗口（最小化即可），关闭它会停止预览。无需先打开 Codex，也无需重新生成图片或音频。
 
-启动文件优先使用当前用户目录里的 Codex Python 运行环境，也支持本机已安装的 `py` 或 `python`。请保留项目下的 `output/S01E01/comic-web-v3/dist/` 完整文件夹。当前默认打开依据四张单人参考修订的 v3 版，旧版 `comic-web-v1`、`comic-web-v2` 原样保留。
+启动文件优先使用当前用户目录里的 Codex Python 运行环境，也支持本机已安装的 `py` 或 `python`。请保留项目下的 `output/S01E01/comic-web-v4/dist/` 完整文件夹。当前默认打开依据原片动作核对修订的 v4 版，v1、v2、v3 原样保留。
 
-已有构建位于 `output/S01E01/comic-web-v3/dist/`。在项目根目录运行：
+已有构建位于 `output/S01E01/comic-web-v4/dist/`。在项目根目录运行：
 
 ```powershell
-python -m http.server 8766 --bind 127.0.0.1 --directory output/S01E01/comic-web-v3/dist
+python -m http.server 8766 --bind 127.0.0.1 --directory output/S01E01/comic-web-v4/dist
 ```
 
 浏览器打开 `http://127.0.0.1:8766/`。也可打开构建目录里的 `index.html`，数据使用普通脚本加载，无需后端接口；建议通过 HTTP 预览以获得一致的媒体行为。
@@ -23,8 +23,8 @@ python -m http.server 8766 --bind 127.0.0.1 --directory output/S01E01/comic-web-
 Python 3.12 标准库和 FFmpeg 即可，无 npm 包或新模型。构建前准备 `data/sources.json` 指定的原视频与 9 张漫画 PNG；这些媒体不随 Git 提交。脚本会先校验源文件哈希，不会重新生成漫画或猜测新时间段。
 
 ```powershell
-python -B web/bluey-reader/build.py --output output/S01E01/comic-web-v4
-python -B web/bluey-reader/verify.py output/S01E01/comic-web-v4
+python -B web/bluey-reader/build.py --output output/S01E01/comic-web-v5
+python -B web/bluey-reader/verify.py output/S01E01/comic-web-v5
 ```
 
 输出目录必须不存在，避免覆盖已有交付。支持 `--root` 指定素材根目录、`--ffmpeg` 指定程序；默认从 `pipeline.local.json` 的 `media_dependency_dirs` 查找已有 FFmpeg，再尝试 PATH。构建失败后检查错误并选用新输出目录。
@@ -42,6 +42,8 @@ python -B web/bluey-reader/verify.py output/S01E01/comic-web-v4
 修改点读位置或切片边界后，构建到新的版本目录，检查完整画面、单格裁切及实际声音，再更新分集索引。图片以 1024 × 1536 原始坐标映射，不修改原图文字。
 
 ## 内容与验证范围
+
+v4 为动作核对修订：按 54 格各抽取三张原片画面，核查肢体数量、手腕/脚踝连接、尾巴位置、遮挡及道具支撑。重新生成第 1、2、7、9 页，修正第 2、3、4、6、11、41、51 格；第 3、4、5、6、8 页经检查后复用 v3 图片。第 4、6 格的爸爸尾巴按当前漫画构图遮挡处理。新版图片在 `output/S01E01/comic-characters-v4/deliverables/pages/`，内置 imagegen 提示词在 `data/character-revision-v4-prompts.json`，逐格核对记录在 `data/character-revision-v4-review.json`。角色身份和配色继续绑定 revision 5。新版 PDF 与网页使用同一组九张图片。
 
 v3 依据 `series/bluey/visual-references/individual-20261014/` 的四张单人照片修订四位主角，使用角色表 revision 5。重点修正蓝色角色灰白手脚、Bluey 灰白腹部、爸爸金黄腹部与浅色宽边、爸爸深色尾根与浅蓝灰尾尖，以及妈妈橙色底带奶油斑点的尾巴；妈妈不再沿用 Bingo 的奶油色尾尖。九张修订图另存于 `output/S01E01/comic-characters-v3/deliverables/pages/`。生成使用内置 imagegen，初稿与局部修正提示词保存在 `data/character-revision-v3-prompts.json`。图像仍为漫画改编，四张原始照片作为主要外观依据保存，不能将生成图反向作为身份事实依据。
 
