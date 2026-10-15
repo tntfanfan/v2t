@@ -134,7 +134,20 @@
           "site_source_commit": "ca6cddd0eadcd4d4d51910e5447cc9569ef22dab",
           "publication_status": "succeeded_private",
           "url": "https://bluey-xylophone-20261014-v1.crafty-jelly-4020.chatgpt.site",
-          "online_browser_review": "not_retested_cua_unavailable; previous_current_network_cloudflare_block"
+          "online_browser_review": "not_retested_cua_unavailable; previous_current_network_cloudflare_block",
+          "pdf_exports": [
+            {
+              "created_date": "2026-10-15",
+              "path": "output/S01E01/comic-characters-v3/deliverables/Bluey_S01E01_魔法木琴_最终漫画_v3.pdf",
+              "sha256": "6a448980467a573477203070c1d34fd152ec278b518e9acc13e996d30d217bf4",
+              "page_count": 9,
+              "source_visual_registry_revision": 5,
+              "lossless_image_embedding": true,
+              "structure_review": "passed",
+              "visual_review": "passed_all_9_rendered_pages",
+              "review_path": "output/S01E01/comic-characters-v3/qa/pdf-export/review.json"
+            }
+          ]
         }
       ],
       "comic_editions": [
