@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "漫画点读：启动 Vite 并调试 Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://127.0.0.1:5173",
+      "webRoot": "${workspaceFolder}/web/bluey-reader/src",
+      "preLaunchTask": "Vite: dev",
+      "sourceMaps": true
+    },
+    {
+      "name": "漫画点读：调试已运行的 Vite",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://127.0.0.1:5173",
+      "webRoot": "${workspaceFolder}/web/bluey-reader/src",
+      "sourceMaps": true
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+const {chromium}=require('C:/Users/Zwhao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const out=path.resolve('output/S03E10/comic-v3/qa');
+(async()=>{
+ const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+ const context=await browser.newContext({viewport:{width:1360,height:1000}});
+ const page=await context.newPage(),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:5173/?episode=s01e01');
+ await page.waitForSelector('#page-image[src]');
+ await page.evaluate(()=>localStorage.setItem('bluey-s01e01-comic-web-v4',JSON.stringify({panel:37,view:'panel',speed:'0.75'})));
+ await page.goto('http://127.0.0.1:5173/?episode=s03e10');
+ await page.waitForFunction(()=>window.COMIC_BOOK?.episode==='S03E10'&&document.querySelectorAll('.page-item').length===12);
+ await page.locator('#view-panel').click();
+ await page.waitForFunction(()=>document.querySelector('#image-status').hidden);
+ await page.locator('.speech-bubble').first().click();
+ await page.waitForFunction(()=>document.querySelector('#voice').currentTime>0);
+ assert.match(await page.locator('#voice').getAttribute('src'),/magic-/);
+ await page.locator('#play-toggle').click();
+ await page.screenshot({path:path.join(out,'web-desktop.png'),fullPage:true});
+ let checked=0;
+ for(let n=1;n<=72;n++){
+  await page.evaluate(n=>{location.hash='panel-'+n},n);
+  await page.waitForFunction(n=>document.querySelector('#panel-chip').textContent===`第 ${n} 格`,n);
+  const check=await page.locator('.speech-bubble').evaluateAll(nodes=>nodes.map(e=>({text:e.textContent,overflow:e.scrollHeight>e.clientHeight+2||e.scrollWidth>e.clientWidth+2})));
+  assert.ok(check.every(e=>!e.overflow),`Text overflow panel ${n}: ${JSON.stringify(check)}`);checked++;
+ }
+ assert.equal(await page.locator('#next-panel').isDisabled(),true);
+ await page.goto('http://127.0.0.1:5173/?episode=s01e01');
+ await page.waitForFunction(()=>document.querySelector('#panel-chip').textContent==='第 37 格');
+ assert.equal(await page.locator('.speech-bubble').count(),0);
+ await page.locator('#play-toggle').click();await page.waitForFunction(()=>document.querySelector('#voice').currentTime>0);await page.locator('#play-toggle').click();
+ await page.goto('http://127.0.0.1:5173/?episode=s03e10');await page.waitForFunction(()=>document.querySelector('#panel-chip').textContent==='第 72 格');
+ await page.setViewportSize({width:390,height:844});
+ await page.evaluate(()=>location.hash='panel-39');await page.waitForFunction(()=>document.querySelector('#panel-chip').textContent==='第 39 格');
+ await page.screenshot({path:path.join(out,'web-mobile-panel39.png'),fullPage:true});
+ await page.locator('#view-page').click();await page.screenshot({path:path.join(out,'web-mobile-page7.png'),fullPage:true});
+ assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ assert.deepEqual(errors,[]);
+ fs.writeFileSync(path.join(out,'web-functional-review.json'),JSON.stringify({status:'passed',panelsChecked:checked,originalAudioPlaybackBothEpisodes:true,independentProgress:true,viewportWidths:[1360,390],consoleErrors:errors,limitation:'Headless Edge checks; no physical phone or full manual audio listening.'},null,2));
+ await browser.close();console.log('Web checks passed: 72 panels, original audio in both episodes, independent progress.');
+})().catch(e=>{console.error(e);process.exit(1)});

@@ -8,7 +8,9 @@ import urllib.error
 import urllib.request
 import webbrowser
 
-DIST = Path(__file__).resolve().parents[2] / "output/S01E01/comic-web-v4/dist"
+ROOT = Path(__file__).resolve().parents[2]
+LIBRARY = ROOT / "output/bluey-library-v3/dist"
+DIST = LIBRARY if (LIBRARY / "book-data.js").is_file() else ROOT / "output/S01E01/comic-web-v4/dist"
 
 
 class PreviewServer(ThreadingHTTPServer):
@@ -31,7 +33,7 @@ def main():
     try:
         opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
         with opener.open(url + "book-data.js", timeout=2) as response:
-            same_reader = response.read(1024) == (DIST / "book-data.js").read_bytes()[:1024]
+            same_reader = response.read() == (DIST / "book-data.js").read_bytes()
     except (OSError, urllib.error.URLError):
         same_reader = False
     if same_reader:

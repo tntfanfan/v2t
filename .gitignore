@@ -12,7 +12,9 @@ credentials*.json
 service-account*.json
 /.codex/
 /.agents/
-/.vscode/
+/.vscode/*
+!/.vscode/launch.json
+!/.vscode/tasks.json
 /.idea/
 
 # Source media stays local. Keep only the shared mind-map template.

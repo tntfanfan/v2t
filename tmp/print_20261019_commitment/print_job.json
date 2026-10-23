@@ -1,0 +1,57 @@
+{
+  "job_name": "commitment-20261019-231e86f757",
+  "printer_ip": "192.168.1.134",
+  "printer_uuid": "cfe92100-67c4-11d4-a45f-64c6d22b2647",
+  "expected_pages": 1,
+  "copies": 1,
+  "sha256": "7c14b7b87655bca585ce2a29a604b210ab5b4d58cd964642b0f10c49420d8b15",
+  "state": "verified-complete",
+  "created_utc": "2026-10-19T06:31:53.781045+00:00",
+  "ipp_status": 0,
+  "job_id": 10,
+  "job_uri": "ipps://192.168.1.134:631/jobs/10",
+  "submission_response": {
+    "attributes-charset": [
+      "utf-8"
+    ],
+    "attributes-natural-language": [
+      "en"
+    ],
+    "job-uri": [
+      "ipps://192.168.1.134:631/jobs/10"
+    ],
+    "job-id": [
+      10
+    ],
+    "job-uuid": [
+      "urn:uuid:ea7bfae1-28fb-4384-8937-1a2896e7baf4"
+    ],
+    "job-state": [
+      5
+    ],
+    "job-state-reasons": [
+      "job-printing"
+    ]
+  },
+  "latest_status": {
+    "job-id": [
+      10
+    ],
+    "job-name": [
+      "commitment-20261019-231e86f757"
+    ],
+    "job-state": [
+      9
+    ],
+    "job-state-reasons": [
+      "completed-successfully"
+    ],
+    "job-impressions": [
+      ""
+    ],
+    "job-impressions-completed": [
+      1
+    ],
+    "job-media-sheets-completed": null
+  }
+}

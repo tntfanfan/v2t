@@ -24,6 +24,23 @@
 
 ## 本地准备
 
+### 前端 Vite 开发与调试
+
+在项目根目录运行（Node.js 22.12+，推荐 Node.js 24；pnpm）：
+
+```powershell
+pnpm install
+pnpm dev
+```
+
+打开 <http://127.0.0.1:5173/>，修改 `web/bluey-reader/src/` 内的 HTML、CSS、JavaScript 即可自动更新。
+本机依赖已安装后，也可双击根目录的 `启动Vite调试.cmd`，或执行 `.\启动Vite调试.cmd --open` 自动打开浏览器；启动文件支持 PATH 中的 Node.js 和当前用户的 Codex Node.js 运行环境。
+
+在 VS Code 中打开项目根目录，按 F5 选择“漫画点读：启动 Vite 并调试 Edge”，即可在 `web/bluey-reader/src/app.js` 设置断点。若服务已经运行，选择“漫画点读：调试已运行的 Vite”。
+`pnpm build` 构建到 `.cache/bluey-reader/dist/`，`pnpm preview` 在 <http://127.0.0.1:4173/> 预览构建结果。详细说明见 [前端开发说明](web/bluey-reader/README.md#vite-开发与调试)。
+
+### 分集内容处理环境
+
 在项目根目录执行下列 PowerShell 命令，仅在没有本机配置时复制示例：
 
 ```powershell

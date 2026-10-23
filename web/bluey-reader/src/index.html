@@ -4,9 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f7f0">
-  <meta name="description" content="魔法木琴：九页互动漫画。点击气泡听一句，点击画格听整格，声音来自视频原片。">
-  <title>魔法木琴 · Bluey 原声漫画</title>
+  <meta name="description" content="Bluey 原声漫画：魔法木琴与第三季第十集 Magic。点击气泡听一句，点击画格听整格，声音来自视频原片。">
+  <title>Bluey · 两集原声漫画</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="library.css">
   <script src="book-data.js?v=anatomy-v4" defer></script>
   <script src="app.js" defer></script>
 </head>
@@ -17,15 +18,16 @@
       <span class="brand-mark" aria-hidden="true">b.</span>
       <span><strong>Bluey</strong><small>一起看，一起听</small></span>
     </a>
-    <div class="book-heading"><span class="eyebrow">第一季 · 第 1 集</span><h1>魔法木琴 <span>Magic Xylophone</span></h1></div>
+    <div class="book-heading"><span id="episode-label" class="eyebrow">原声漫画</span><h1 id="book-title">Bluey</h1></div>
     <span class="source-badge"><i></i> 视频原声</span>
   </header>
 
+  <nav id="episode-shelf" class="episode-shelf" aria-label="选择一集漫画"></nav>
   <div class="reading-shell">
     <aside class="chapters" aria-label="漫画目录">
-      <div class="rail-title">故事目录 <span>09</span></div>
+      <div class="rail-title">故事目录 <span id="total-pages">09</span></div>
       <nav id="page-nav"></nav>
-      <p class="rail-note">把好玩的游戏<br>也分一半给你。</p>
+      <p class="rail-note">跟着熟悉的声音，<br>一起读故事。</p>
     </aside>
 
     <main id="reader" class="reader" tabindex="-1">
@@ -39,11 +41,12 @@
       <div class="reading-tip"><span aria-hidden="true">♪</span> 点气泡听一句，点画面听整格 <button id="outline-toggle" aria-pressed="false">显示可点区域</button></div>
       <div id="art-stage" class="art-stage" aria-label="互动漫画">
         <img id="page-image" alt="" draggable="false" width="1024" height="1536">
+        <div id="panel-art" class="hotspots" aria-hidden="true"></div>
         <div id="panel-hotspots" class="hotspots"></div>
         <div id="bubble-hotspots" class="hotspots"></div>
         <div id="image-status" class="image-status">正在打开漫画…</div>
       </div>
-      <div class="page-turner"><button id="prev-page">← 上一页</button><label class="page-select-label">第 <select id="page-select" aria-label="跳到指定页"></select> 页 / 9</label><button id="next-page">下一页 →</button></div>
+      <div class="page-turner"><button id="prev-page">← 上一页</button><label class="page-select-label">第 <select id="page-select" aria-label="跳到指定页"></select> 页 / <span id="page-total">9</span></label><button id="next-page">下一页 →</button></div>
     </main>
 
     <aside class="listen-card" aria-label="当前画格的点读台词">

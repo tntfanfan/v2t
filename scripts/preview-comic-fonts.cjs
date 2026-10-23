@@ -1,0 +1,9 @@
+const fs=require('node:fs'),path=require('node:path');
+const {chromium}=require('C:/Users/Zwhao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+(async()=>{
+const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+const page=await browser.newPage({viewport:{width:1000,height:800}});
+const font=(file)=>fs.readFileSync('web/bluey-reader/design/fonts/'+file).toString('base64');
+await page.setContent(`<style>@font-face{font-family:Patrick;src:url(data:font/ttf;base64,${font('patrickhand-PatrickHand-Regular.ttf')})}@font-face{font-family:Balsamiq;src:url(data:font/ttf;base64,${font('balsamiqsans-BalsamiqSans-Bold.ttf')})}body{background:#d8eecb;padding:20px;color:#211267}.row{display:flex;gap:20px;margin:20px}.bubble{border:2px solid #1b154a;border-radius:45%/35%;background:#fff;padding:15px 25px;text-align:center;line-height:1.05;width:370px;font-size:28px}.label{font:14px Arial;color:#345}.patrick{font-family:Patrick;-webkit-text-stroke:.65px #211267}.balsamiq{font-family:Balsamiq}</style><p class=label>Patrick Hand, stroke 0.65 / Balsamiq Sans Bold</p><div class=row><div class="bubble patrick">Dad! I want to be<br>the piano.</div><div class="bubble balsamiq">Dad! I want to be<br>the piano.</div></div><div class=row><div class="bubble patrick">Mum, can you play with me?</div><div class="bubble balsamiq">Mum, can you play with me?</div></div><div class=row><div class="bubble patrick">Ladies and gentlemen,<br>I will now play for you<br>the rondo "Alla Turca."</div><div class="bubble balsamiq">Ladies and gentlemen,<br>I will now play for you<br>the rondo "Alla Turca."</div></div>`);
+await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:'web/bluey-reader/design/font-comparison.png'});await browser.close();
+})();

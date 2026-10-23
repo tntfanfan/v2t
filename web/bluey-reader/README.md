@@ -1,10 +1,54 @@
-# 魔法木琴 · 原声漫画点读
+当前 Magic 样式修订：189 个气泡继续叠放在 72 个画格内部，对照第一集改成白底、深蓝手绘轮廓、尖尾巴与圆润字样。第一集文字属于插图，没有独立字体文件；本版以 Patrick Hand 加描边作视觉匹配，网页和小程序使用同一套透明 PNG，避免设备字体替换。本机预览：http://127.0.0.1:5173/?episode=s03e10 。修订数据见 `output/S03E10/comic-v3`，独立网页见 `output/bluey-library-v3`，小程序本地版为 `E:/英语复习/miniprogram/english-review-bluey-v5`（1.2.2，尚未上传）。第一集和历史交付保留。
+
+气泡样式构建顺序：`scripts/style-magic-bubbles.py` → `scripts/check-comic-lettering.cjs --center`（按文字实际轮廓居中并检查边界）→ `scripts/render-comic-bubbles.cjs` → `scripts/sync-comic-style-mini.py`。字体及 OFL 许可保存在 `design/fonts/`；整页、单格、原声点读和小程序编译检查通过后再打包。原声、台词及上一版的图像和气泡位置保持不变。
+
+# Bluey · 两集原声漫画点读
+
+2026-10-19 新增 S03E10《Magic / 魔法》：12 页、72 格、189 个气泡、261 段原声音频。S01E01《魔法木琴》继续保留。网页顶部可切换分集，各集阅读位置独立保存；第一集原有数据、媒体和进度键不变。
+
+- 网页：`http://127.0.0.1:5173/?episode=s03e10`，重启后仍可使用根目录“启动Vite调试.cmd”。
+- 新集素材：`output/S03E10/comic-v1`；原声从第三季视频本身截取，不使用同目录内误标为第二季的音频。
+- 新集图片与文字由页面组合显示，文字不遮挡角色。逐句原声时间窗部分参考 ASR；6 处短发声说话人继续标为待核，尚未逐句完成全部切点听审。
+- 独立双集网页包：`output/bluey-library-v1`，构建脚本 `scripts/build-bluey-library.py`。
+- 合并小程序 1.2.0：`E:/英语复习/miniprogram/english-review-bluey-v3`，保留动物园英语复习、第一集和新集；1.1.0 项目不修改。此为本地项目，上传和发布状态另行记录。
+- 新集数据构建：`scripts/build-magic-comic.py`；小程序初建：`scripts/build-bluey-multi-mini.py`；工作稿素材同步：`scripts/sync-magic-mini-media.py`。
+- 验证：`scripts/verify-bluey-web.cjs`、`scripts/verify-bluey-mini.cjs`，以及小程序目录中的 `node --test tests/*.test.cjs`。编译和浏览器测试不代替微信真机验收。
+
+下文保留第一集的制作与历史版本记录。
 
 第一季第一集的独立静态网页示例。9 页原漫画、54 个画格和 115 个气泡覆盖原核对稿的 140 条记录。点击气泡听一句，点击画面听整格；全部 169 段 MP3 均从本地视频的原音轨截取，保留音乐、笑声和环境音。
 
 支持整页/单格阅读、翻页、逐格前进、暂停继续、重听、进度拖动和 0.75/1/1.25 倍速。单播放器避免声音叠加；翻页停止播放；切换阅读模式、横竖屏及进入后台时暂停。浏览器保存阅读位置、模式和倍速，不上传阅读记录。手机可以切换“一格看”放大气泡，并使用下方台词列表点读。
 
 ## 本地运行
+
+### Vite 开发与调试
+
+在项目根目录执行：
+
+```powershell
+pnpm install
+pnpm dev
+```
+
+需要 Node.js 22.12+（推荐 24）。Vite 配置方式参考 [官方指南](https://vite.dev/guide/)。当前本机可使用已有的 Node.js 与 pnpm，无需 npm。开发地址为 <http://127.0.0.1:5173/>，端口占用时会报错；可通过 `pnpm dev --port 5174` 改端口，此时也需同步调试配置的 URL。
+
+- 修改 `src/styles.css` 会热更新；修改 HTML、JavaScript 或 `data/s01e01.json` 会刷新页面。
+- `src/vite-entry.js` 将当前 JSON 数据接入已有播放器，Vite 处理模块与源码映射；原来的 Python 构建入口继续可用。
+- 图片与音频直接读取本地 `output/S01E01/comic-web-v4/dist/assets/`；启动时检查数据引用的文件是否齐全。克隆仓库后需自行恢复该目录的媒体，缺失时会提示具体路径。
+- 本流程用于前端调试，不重新切音频或生成图片；修改 JSON 中的音频时间段不会改变现有 MP3，重新切片仍使用下方的 Python 流程并创建新版本目录。
+- 本机装好依赖后，可双击根目录 `启动Vite调试.cmd`，或执行 `.\启动Vite调试.cmd --open`。启动文件可在普通 Windows 终端中复用 Codex 自带的 Node.js，服务运行期间保留窗口，Ctrl+C 停止。
+
+VS Code 打开 `E:\v2t`（或实际项目根目录），按 F5 选择“漫画点读：启动 Vite 并调试 Edge”。断点设在 `src/app.js`；启动后在页面点击按钮即可触发。若已经通过终端启动服务，使用“漫画点读：调试已运行的 Vite”。也可直接在浏览器按 F12 使用 Sources 和 Console 调试。
+
+```powershell
+pnpm build
+pnpm preview
+```
+
+构建目录为 `.cache/bluey-reader/dist/`，包含源码映射、9 张图片和 169 段音频；每次构建会刷新这个开发缓存目录。预览地址为 <http://127.0.0.1:4173/>。历史交付的 `output/S01E01/comic-web-v*/` 不会被修改。
+
+### 已有交付预览
 
 Windows 下，重启电脑后双击项目根目录的 **`打开漫画预览.cmd`**。它会启动本地服务，并在默认浏览器打开漫画；已有服务时直接打开网页。保留弹出的运行窗口（最小化即可），关闭它会停止预览。无需先打开 Codex，也无需重新生成图片或音频。
 

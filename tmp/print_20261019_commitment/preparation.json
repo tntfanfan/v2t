@@ -1,0 +1,11 @@
+{
+  "pages": 1,
+  "paper": "A4",
+  "color": "monochrome",
+  "sides": "one-sided",
+  "copies": 1,
+  "source_sha256": "b31992619e58ab3ee94e12eb4a35f24fadb32da854191d070815a61ab1a4c0fa",
+  "pwg_sha256": "7c14b7b87655bca585ce2a29a604b210ab5b4d58cd964642b0f10c49420d8b15",
+  "pwg_bytes": 3195523,
+  "raster_pixels_verified": true
+}

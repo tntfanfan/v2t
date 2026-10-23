@@ -3,9 +3,9 @@
   "series_id": "bluey",
   "current_registry": {
     "path": "series/bluey/characters.json",
-    "revision": 5,
-    "sha256": "e4d65bc6ddc6068b302e28863a2d7f319aadb0cbe3165c77c73b180220a27780",
-    "snapshot": "series/bluey/history/characters.rev-005.json"
+    "revision": 6,
+    "sha256": "c4d8db99e11a3a45a973402e6b04f5e7abbc44cdf5b8834b39b905910865ad11",
+    "snapshot": "series/bluey/history/characters.rev-006.json"
   },
   "episodes": [
     {
@@ -330,6 +330,133 @@
         {
           "date": "2026-10-13",
           "reason": "角色总表升级到 revision 3，补充外观和参考帧。当前版本单列 current_registry；本集历史交付继续固定 revision 2 快照，不改原文件或验收结论。"
+        }
+      ]
+    },
+    {
+      "episode": "S03E10",
+      "title": "Magic",
+      "title_zh": "魔法",
+      "status": "local_comic_preview_ready_with_uncertainties",
+      "transcript": "output/S03E10/comic-v1/transcript.v1.json",
+      "registry_revision": 6,
+      "registry_snapshot": "series/bluey/history/characters.rev-006.json",
+      "registry_sha256": "c4d8db99e11a3a45a973402e6b04f5e7abbc44cdf5b8834b39b905910865ad11",
+      "sources": [
+        {
+          "path": "input/第三季52集/分集视频/9-10/S03E10.mp4",
+          "sha256": "cc52f40399fb49696ec500c11988b6dbf6f7b7960102fd397a8c87e6a4b5dca8",
+          "role": "video"
+        }
+      ],
+      "comic_editions": [
+        {
+          "edition_id": "bluey-s03e10-comic-v1",
+          "status": "local_preview_ready_with_uncertainties",
+          "output_directory": "output/S03E10/comic-v1",
+          "page_count": 12,
+          "panel_count": 72,
+          "bubble_count": 189,
+          "source_record_count": 227,
+          "audio_clip_count": 261,
+          "manifest_path": "output/S03E10/comic-v1/deliverables/manifest.json",
+          "content_review": "reviewed_with_six_uncertain_speakers",
+          "visual_review": "reviewed_all_final_pages",
+          "audio_boundary_review": "approximate; full_manual_listening_pending",
+          "web_url": "http://127.0.0.1:5173/?episode=s03e10",
+          "web_output": "output/bluey-library-v1",
+          "mini_program_project": "E:\\英语复习\\miniprogram\\english-review-bluey-v3",
+          "mini_program_version": "1.2.0",
+          "cloud_status": "not_uploaded"
+        },
+        {
+          "edition_id": "bluey-s03e10-comic-v2",
+          "status": "local_preview_ready_with_uncertainties",
+          "output_directory": "output/S03E10/comic-v2",
+          "page_count": 12,
+          "panel_count": 72,
+          "bubble_count": 189,
+          "source_record_count": 227,
+          "audio_clip_count": 261,
+          "content_review": "reviewed_with_six_uncertain_speakers",
+          "visual_review": "all_12_rendered_pages_checked",
+          "audio_boundary_review": "approximate; full_manual_listening_pending",
+          "web_url": "http://127.0.0.1:5173/?episode=s03e10",
+          "web_output": "output/bluey-library-v2",
+          "mini_program_project": "E:\\英语复习\\miniprogram\\english-review-bluey-v4",
+          "mini_program_version": "1.2.1",
+          "cloud_status": "not_uploaded",
+          "created_date": "2026-10-19",
+          "based_on_edition": "bluey-s03e10-comic-v1",
+          "revision_scope": "189 个气泡回到 72 个画格内部；仅更改坐标、换行和气泡形状。",
+          "review_path": "output/S03E10/comic-v2/qa/layout-review.json"
+        },
+        {
+          "edition_id": "bluey-s03e10-comic-v3",
+          "status": "local_preview_ready_with_uncertainties",
+          "output_directory": "output/S03E10/comic-v3",
+          "page_count": 12,
+          "panel_count": 72,
+          "bubble_count": 189,
+          "source_record_count": 227,
+          "audio_clip_count": 261,
+          "content_review": "reviewed_with_six_uncertain_speakers",
+          "visual_review": "all_12_rendered_pages_and_compiled_mini_views_checked",
+          "audio_boundary_review": "approximate; full_manual_listening_pending",
+          "web_url": "http://127.0.0.1:5173/?episode=s03e10",
+          "web_output": "output/bluey-library-v3",
+          "mini_program_project": "E:\\英语复习\\miniprogram\\english-review-bluey-v5",
+          "mini_program_version": "1.2.2",
+          "cloud_status": "not_uploaded",
+          "created_date": "2026-10-19",
+          "based_on_edition": "bluey-s03e10-comic-v2",
+          "revision_scope": "对照第一集统一 189 个气泡的白底、深蓝轮廓、尖尾巴和圆润手写字样；台词、音频及插图不变。",
+          "review_path": "output/S03E10/comic-v3/qa/style-review.json"
+        }
+      ],
+      "qa": "output/S03E10/comic-v1/qa/comic-review.json",
+      "unresolved": [
+        {
+          "id": 36,
+          "start": 94.75,
+          "text_status": "reviewed",
+          "speaker_status": "uncertain",
+          "reason": "片名报幕文字已核对，报幕童声的具体角色待核。"
+        },
+        {
+          "id": 88,
+          "start": 191.5,
+          "text_status": "reviewed",
+          "speaker_status": "uncertain",
+          "reason": "短促发声的具体说话人尚未确认；保留原声。"
+        },
+        {
+          "id": 118,
+          "start": 242.107,
+          "text_status": "reviewed",
+          "speaker_status": "uncertain",
+          "reason": "短促发声的具体说话人尚未确认；保留原声。"
+        },
+        {
+          "id": 120,
+          "start": 243.45,
+          "text_status": "reviewed",
+          "speaker_status": "uncertain",
+          "reason": "短促发声的具体说话人尚未确认；保留原声。"
+        },
+        {
+          "id": 139,
+          "start": 279.25,
+          "text_status": "reviewed",
+          "speaker_status": "uncertain",
+          "reason": "短促发声的具体说话人尚未确认；保留原声。"
+        },
+        {
+          "id": 156,
+          "start": 306.25,
+          "text_status": "reviewed",
+          "speaker_status": "uncertain",
+          "reason": "短促发声的具体说话人尚未确认；保留原声。"
         }
       ]
     }
