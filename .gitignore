@@ -1,4 +1,4 @@
-# Local configuration, credentials, and editor or agent state.
+# Local secrets, credentials, and environment files
 /pipeline.local.json
 .env
 .env.*
@@ -10,39 +10,41 @@
 *.pfx
 credentials*.json
 service-account*.json
+
+# Local editor / agent state
 /.codex/
 /.agents/
-/.vscode/*
-!/.vscode/launch.json
-!/.vscode/tasks.json
+/.vscode/
 /.idea/
 
-# Source media stays local. Keep only the shared mind-map template.
+# Keep only the shared visual template; everything else under input is local material
 /input/*
 !/input/template/
 /input/template/*
 !/input/template/Bluey_分集英语学习总结_思维导图参考模板.jpg
 
-# Episode deliverables, extracted media, OCR/ASR evidence, and QA renders.
+# Generated outputs, local media, OCR/ASR evidence, and QA artifacts
 /output/
 /doc/_work/
 /tests/runs/
+/tmp/
 .episode-test-*/
 .mindmap-test-*/
 
-# Preserve demo source code, not its media, models, or generated outputs.
+# Demo source stays tracked; generated media/checkpoints should not
 /demo/*
 !/demo/*.py
 !/demo/*.ps1
+/demo/output/
+/demo/tmp/
+/demo/model_cache/
 
-# Downloaded runtimes, dependencies, models, and private application data.
+# Downloaded runtimes, models, caches, and temporary app data
 /.demo_deps/
 /.ocr_tools/
 /models/
 /model_cache/
-/data/uploads/
-/data/drafts/
-/data/cache/
+/data/
 .venv/
 venv/
 node_modules/
@@ -58,7 +60,7 @@ htmlcov/
 build/
 dist/
 
-# Temporary, lock, and operating system files.
+# Temporary and OS files
 *.log
 *.tmp
 *.temp
