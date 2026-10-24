@@ -16,10 +16,21 @@ if not exist "%DEVTOOLS_DIR%\cli.bat" (
   goto finish
 )
 
+if not exist "%DEVTOOLS_DIR%\微信开发者工具.exe" (
+  echo 找不到微信开发者工具程序: "%DEVTOOLS_DIR%\微信开发者工具.exe"
+  echo 请检查 WECHAT_DEVTOOLS_DIR 是否指向正确的安装目录。
+  set "LAUNCH_EXIT=1"
+  goto finish
+)
+
+start "" "%DEVTOOLS_DIR%\微信开发者工具.exe"
+ping -n 6 127.0.0.1 >nul
 call "%DEVTOOLS_DIR%\cli.bat" open --project "%~dp0frontend\miniprogram"
 set "LAUNCH_EXIT=%ERRORLEVEL%"
 echo.
-echo 如果项目没有打开，且提示服务端口已关闭，请在微信开发者工具的“设置 > 安全设置”中启用服务端口后重试。
+if not "%LAUNCH_EXIT%"=="0" (
+  echo 如果项目没有打开，且提示服务端口已关闭，请在微信开发者工具的设置中的安全设置里启用服务端口，然后重新运行此启动器。
+)
 
 :finish
 if /i not "%~1"=="/nopause" pause
