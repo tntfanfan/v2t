@@ -1,0 +1,300 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bluey/index",
+    "pages/english/index"
+  ],
+  "subPackages": [
+    {
+      "root": "chapters/p01",
+      "name": "chapter01",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "chapters/p02",
+      "name": "chapter02",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "chapters/p03",
+      "name": "chapter03",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "chapters/p04",
+      "name": "chapter04",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "chapters/p05",
+      "name": "chapter05",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "chapters/p06",
+      "name": "chapter06",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "chapters/p07",
+      "name": "chapter07",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "chapters/p08",
+      "name": "chapter08",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "chapters/p09",
+      "name": "chapter09",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p01",
+      "name": "magic01",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p02",
+      "name": "magic02",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p03",
+      "name": "magic03",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p04",
+      "name": "magic04",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p05",
+      "name": "magic05",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p06",
+      "name": "magic06",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p07",
+      "name": "magic07",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p08",
+      "name": "magic08",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p09",
+      "name": "magic09",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p10",
+      "name": "magic10",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p11",
+      "name": "magic11",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "magic/p12",
+      "name": "magic12",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "review",
+      "name": "legacyEnglishLinks",
+      "pages": [
+        "pages/index/index",
+        "pages/words/index",
+        "pages/build/index",
+        "pages/quiz/index",
+        "pages/chant/index",
+        "pages/story/index",
+        "pages/progress/index"
+      ]
+    },
+    {
+      "root": "english/u0",
+      "name": "englishUnit0",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u1",
+      "name": "englishUnit1",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u2",
+      "name": "englishUnit2",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u3",
+      "name": "englishUnit3",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u4",
+      "name": "englishUnit4",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u5",
+      "name": "englishUnit5",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u6",
+      "name": "englishUnit6",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u7",
+      "name": "englishUnit7",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u8",
+      "name": "englishUnit8",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    },
+    {
+      "root": "english/u9",
+      "name": "englishUnit9",
+      "pages": [
+        "home/index",
+        "game/index",
+        "words/index",
+        "recordings/index",
+        "collection/index",
+        "progress/index"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTitleText": "英语复习小花园",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#f8f5e9",
+    "backgroundColor": "#f8f5e9",
+    "backgroundTextStyle": "light",
+    "pageOrientation": "auto"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

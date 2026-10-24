@@ -1,47 +1,207 @@
-# v2t
+# v2t · 英语小花园与分集内容制作
 
-分集视频与音频的分角色台词整理项目。维护跨集角色表，区分角色对白、旁白、报幕、合声与画外对白，导出 DOCX、TXT、SRT，并为每集制作双语学习总结脑图。
+项目包含整合网页版、对应的原生微信小程序，以及视频／音频的分角色台词和学习脑图制作流程。本文说明当前目录结构、运行方法和内容维护方式；开发协作约定见 [AGENTS.md](AGENTS.md)。
 
-当前仓库包含内容整理流程、脚本、测试和产品设计，以及第一季第一集的漫画点读网页示例：9 页漫画、54 格、115 个气泡，点击播放视频原声切片。完整 H5 产品的上传、生成和审核流程仍待开发。自动转写和结构校验不能替代人工音画核对。
+当前前端版本为 `2.0.0`，只有 `frontend/web/` 和 `frontend/miniprogram/` 两套实现，提供相同的两个产品入口：
 
-## 项目目录
-
-| 路径 | 用途 |
+| 模块 | 功能 |
 | --- | --- |
-| `AGENTS.md` | 项目操作与交付约定 |
-| `skills/episode-dialogue-docs/` | 本项目维护的 skill、通用脚本与参考说明 |
-| `series/bluey/` | 角色总表、版本快照、参考帧与分集进度 |
-| `input/template/` | 已有分集学习脑图参考模板 |
-| `input/` 中其他目录 | 本地原始视频和音频，不提交 Git |
-| `output/` | 本地分集成果与检查文件，不提交 Git |
-| `doc/` | 正式产品设计文档，保留历史版本 |
-| `demo/` | 早期演示源码，不含片源、模型和生成结果 |
-| `web/bluey-reader/` | 首集漫画点读网页源码、坐标与时间段、构建及检查脚本 |
-| `tests/` | 历史回归准备脚本；测试产物留在本地 |
-| `pipeline.example.json` | 可复制后按环境调整的配置示例 |
+| 迎宾首页 | 介绍英语复习、Bluey 漫画，并进入各自页面 |
+| 英语复习 | ZZY《英语星球冒险 U0–U9》：10 个单元、90 个词、五类练习、点读、徽章与家长进度；小程序按功能提供独立页面 |
+| Bluey 原声漫画 | S01E01《Magic Xylophone》、S03E10《Magic》；整页／单格阅读、气泡／画格原声、暂停、重听、变速与阅读位置保存 |
 
-通用脚本入口位于 `skills/episode-dialogue-docs/scripts/`。根目录的 `episode_*.py`、`annotate_episode.py`、`build_episode_doc.py` 和演示脚本属于早期一次性处理代码，不直接用于后续集。
+学习记录保存在当前浏览器或微信本地，没有账号后台或跨设备进度同步。原始素材和内容制作流程独立于前端，启动网页不需要运行转写、文档或脑图工具。
 
-## 本地准备
+## 目录结构
 
-### 前端 Vite 开发与调试
+以下路径相对项目根目录；当前电脑为 `E:\v2t`。标注“本地”的素材、配置、依赖和生成产物不一定随 Git 提供。
 
-在项目根目录运行（Node.js 22.12+，推荐 Node.js 24；pnpm）：
+```text
+v2t/
+├─ AGENTS.md                       开发协作、内容制作与检查约定
+├─ README.md                       本文：目录说明和使用方法
+├─ package.json                    两端统一命令，版本与 Node.js 要求
+├─ 启动整合网页.cmd                 Windows 网页服务启动器
+├─ 打开整合网页.url                 打开本地网址，需先启动服务
+├─ frontend/
+│  ├─ README.md                    前端总览
+│  ├─ dev-runtime.cjs              开发检查工具的依赖与浏览器定位
+│  ├─ web/
+│  │  ├─ src/                     网页源码
+│  │  │  ├─ index.html            迎宾首页
+│  │  │  ├─ english/              英语界面、词表、句子和记忆逻辑
+│  │  │  └─ bluey/                漫画目录、内容数据和点读界面
+│  │  ├─ public/                  图片、音频和许可证；媒体为本地资源
+│  │  ├─ scripts/                 静态构建与本地服务器
+│  │  ├─ tests/                   浏览器功能检查
+│  │  ├─ deployment/history/      历史网站发布元数据
+│  │  └─ dist/                    生成的网站；服务器实际读取此目录
+│  └─ miniprogram/
+│     ├─ project.config.json      开发者工具入口，miniprogramRoot 为 src/
+│     ├─ package.json             本地编译检查依赖
+│     ├─ pnpm-lock.yaml           编译检查依赖锁文件
+│     ├─ config/media.json        课本长录音 HTTPS 基地址
+│     ├─ scripts/                 英语内容同步、编译和排版检查
+│     ├─ tests/                   练习交互和播放器测试
+│     └─ src/
+│        ├─ app.*                 应用配置、入口与全局样式
+│        ├─ pages/                迎宾首页、英语单元选择、Bluey 目录
+│        ├─ lib/                  播放器、阅读逻辑、英语原生交互
+│        ├─ shared/               共用漫画模板与样式
+│        ├─ data/                 漫画目录数据
+│        ├─ assets/               共用本地资源
+│        ├─ english/u0 … u9/      生成的英语分包：数据、资源及六类页面
+│        ├─ chapters/             S01E01 漫画分包
+│        ├─ magic/                S03E10 漫画分包
+│        └─ review/               旧 Unit 2 路由跳转兼容页
+├─ input/                         本地原始视频／音频，按季保留原目录结构
+│  └─ template/                   共享的学习总结脑图参考模板
+├─ output/                        本地分集成果、历史交付与检查产物
+│  ├─ qa/frontend/                网页、小程序检查报告和截图
+│  ├─ maintenance/                目录迁移、保留与清理记录
+│  ├─ releases/                   历史小程序交付 ZIP
+│  └─ validation-history/         历史台词验证记录和文稿
+├─ series/bluey/                  角色表、逐集索引、参考帧和版本快照
+│  └─ comic-sources/              漫画制作坐标、校对资料、字体与许可证
+├─ skills/episode-dialogue-docs/   分集制作 skill、通用脚本与使用参考
+├─ resources/wechat-promotion/     推广图片、PDF 和设计源文件
+├─ demo/                          本地演示素材、成果和在用 ASR 模型
+├─ .demo_deps/、.ocr_tools/        本地媒体／OCR 依赖
+├─ .vscode/                       本机调试入口与启动任务
+├─ pipeline.example.json          分集制作配置示例
+└─ pipeline.local.json            本机素材、模板、依赖和模型配置
+```
+
+`dist/`、生成的英语分包、历史交付 ZIP 都不是另一套需要独立开发的前端。源码入口和生成文件的对应关系见下文“修改与同步内容”。旧 Vite 工程、单独 Unit 2 产品和早期小程序开发目录已清理；保留的历史记录中仍可能出现旧路径。
+
+## 启动整合网页版
+
+### 本机直接打开
+
+1. 双击根目录的 `启动整合网页.cmd`，保持服务窗口运行。
+2. 双击 `打开整合网页.url`，或在浏览器访问 [迎宾首页](http://127.0.0.1:5175/)。
+3. 从首页进入 [英语复习](http://127.0.0.1:5175/english/index.html) 或 [Bluey 漫画](http://127.0.0.1:5175/bluey/index.html)。
+
+启动器优先使用 PATH 中的 Node.js，也支持当前用户已安装的 Codex Node.js 运行环境。网址快捷方式只打开页面，不会启动服务。
+
+### 命令行运行与构建
+
+网页启动、构建只需要 **Node.js 22.12 或以上**，无须安装 Vite。根 `package.json` 指定 `pnpm@11.25.0`；以下命令均在项目根目录执行：
 
 ```powershell
-pnpm install
 pnpm dev
 ```
 
-打开 <http://127.0.0.1:5173/>，修改 `web/bluey-reader/src/` 内的 HTML、CSS、JavaScript 即可自动更新。
-本机依赖已安装后，也可双击根目录的 `启动Vite调试.cmd`，或执行 `.\启动Vite调试.cmd --open` 自动打开浏览器；启动文件支持 PATH 中的 Node.js 和当前用户的 Codex Node.js 运行环境。
+未安装 pnpm 时，可直接运行同一入口：
 
-在 VS Code 中打开项目根目录，按 F5 选择“漫画点读：启动 Vite 并调试 Edge”，即可在 `web/bluey-reader/src/app.js` 设置断点。若服务已经运行，选择“漫画点读：调试已运行的 Vite”。
-`pnpm build` 构建到 `.cache/bluey-reader/dist/`，`pnpm preview` 在 <http://127.0.0.1:4173/> 预览构建结果。详细说明见 [前端开发说明](web/bluey-reader/README.md#vite-开发与调试)。
+```powershell
+node frontend/web/scripts/serve.mjs
+```
 
-### 分集内容处理环境
+服务器启动时构建网站，默认只监听本机 `127.0.0.1:5175`。修改 `frontend/web/src/` 后自动重新构建，需手动刷新浏览器；修改 `public/` 媒体后运行 `pnpm build` 或重启服务。停止服务用 `Ctrl+C`。
 
-在项目根目录执行下列 PowerShell 命令，仅在没有本机配置时复制示例：
+```powershell
+pnpm build
+```
+
+构建结果在 `frontend/web/dist/`，可交给静态网站服务器部署。页面使用从站点根目录开始的路径，部署时把 `dist/` 的内容作为站点根目录。`pnpm preview` 与 `pnpm dev` 使用同一个本地服务器，也会构建，默认端口同为 5175。
+
+需要临时换端口时，在当前 PowerShell 中设置后启动：
+
+```powershell
+$env:PORT = '5176'
+pnpm dev
+```
+
+学习进度与网址来源有关：`127.0.0.1`、`localhost` 或不同端口会使用不同的浏览器记录。日常使用建议固定默认地址。
+
+### VS Code 调试
+
+用 VS Code 打开整个项目根目录，在“运行和调试”中选择 **网页版：启动并调试**。它通过 `整合网页版: dev` 前置任务启动网页服务，再打开 Edge。配置在 `.vscode/launch.json` 与 `.vscode/tasks.json`，浏览器路径按本机安装位置调整；若已手动启动服务，可直接使用现有网页，避免重复占用端口。
+
+## 导入微信小程序
+
+1. 打开微信开发者工具，导入 **`E:\v2t\frontend\miniprogram`**，不要选择里面的 `src/`。
+2. 当前 `project.config.json` 的项目名为 `english-garden-2.0.0`，AppID 为 **`touristappid`**，代码目录为 `src/`。
+3. 使用已生成的代码和本地资源编译，检查迎宾首页、英语入口及两集 Bluey。产品运行代码不需要在开发者工具内“构建 npm”。
+
+当前是游客项目配置。后续连接正式账号、手机预览或上传时，需要配置相应正式 AppID，并使用有权限的微信账号。本地 `2.0.0` 版本号不代表线上版本已更新；本地编译、手机验证、上传和发布是不同步骤。
+
+VS Code 的 **微信小程序：启动开发者工具** 也可打开项目；其中的 CLI 路径按本机安装位置配置。若工具提示“服务端口已关闭”，可先在开发者工具界面手动导入。
+
+小程序的单词、句子和 Bluey 原声已经打包；**课本长录音目前尚未配置可用的 HTTPS 地址**。具体接通方法见下文。小程序页面结构、媒体与检查说明见 [小程序 README](frontend/miniprogram/README.md)。
+
+## 修改与同步内容
+
+| 要修改的内容 | 编辑入口 | 后续操作 |
+| --- | --- | --- |
+| 迎宾首页、网页布局 | `frontend/web/src/index.html`、相关 CSS | 网页构建／刷新；小程序布局在自身 `src/pages/` 中维护 |
+| 英语词表、图片／音频清单 | `frontend/web/src/english/content.json`、`frontend/web/public/english/` | 网页构建，并运行 `pnpm build:mini` |
+| 英语句子规则、单元展示、记忆算法 | `frontend/web/src/english/app.js` 的 `makeSentences`、`META`，以及 `memory.js` | 同步维护句子音频映射；网页构建并运行 `pnpm build:mini` |
+| 小程序英语交互与共用页面 | `frontend/miniprogram/src/lib/adventure/engine.js`、`page.js`、`page.wxml`、`page.wxss` | 运行小程序测试与编译检查 |
+| Bluey 网页内容与点读 | `frontend/web/src/bluey/`、`frontend/web/public/bluey/` | 检查画格、气泡与原声对应关系 |
+| Bluey 小程序内容与点读 | `frontend/miniprogram/src/data/`、`lib/`、`shared/`、`chapters/`、`magic/` | 两端分别维护并检查；英语同步脚本不会新增或同步 Bluey 集数 |
+| 课本长录音地址 | `frontend/miniprogram/config/media.json` | 运行 `pnpm build:mini`，再验证手机播放 |
+
+```powershell
+pnpm build
+pnpm build:mini
+```
+
+网页构建把 `src/` 和 `public/` 组合到 `dist/`，并从 `content.json` 生成 `dist/english/data.js`。不要直接修改 `dist/`；当前构建会复制和更新文件，不自动清除已从源码删除的旧文件，删除／重命名资源后需检查构建目录。
+
+小程序同步读取网页词表、句子生成规则及记忆算法，生成 `src/english/u0` 至 `u9` 的数据、资源和页面包装文件，以及 `src/lib/adventure/` 内的 `catalog.js`、`memory.js`、`media-config.js`，并更新应用的英语分包配置。这些生成文件应通过来源或脚本修改，避免下一次同步覆盖手工改动。
+
+### 接通课本长录音
+
+当前 `frontend/miniprogram/config/media.json` 中 `lessonBaseUrl` 为空。单词、句子和 Bluey 音频不依赖此地址；它只控制课本长录音。配置中的 `previousWebsiteUrl` 是历史记录，不会作为备用地址自动使用。
+
+1. 按 `content.json` 各单元的 `lessons[].src`，将 `frontend/web/public/english/` 下对应音频保留相对目录上传到可用 HTTPS 素材服务。
+2. 将该目录的 HTTPS 基地址填入 `lessonBaseUrl`，使基地址与每条 `src` 拼接后能访问正确的音频。
+3. 在微信后台配置与实际素材服务匹配的服务器合法域名，再执行 `pnpm build:mini`。
+4. 在开发者工具和手机上检查播放、拖动进度、暂停及变速。
+
+地址未配置时，页面显示未接通提示。不要用历史地址代替验证，也不要通过关闭域名校验掩盖访问问题。
+
+## 开发检查
+
+### 准备检查依赖
+
+日常启动网页不需要以下依赖。小程序编译检查依赖 `miniprogram-compiler`，从现有锁文件安装：
+
+```powershell
+pnpm --dir frontend/miniprogram install --frozen-lockfile
+```
+
+英语分包同步另需 `sharp`，浏览器功能检查和小程序模板排版检查另需 `playwright`。`frontend/dev-runtime.cjs` 先寻找相应项目中安装的包，再尝试 `CODEX_NODE_MODULES` 指向的目录，未设置时尝试当前用户的 Codex 依赖目录。
+
+没有可复用运行环境时，可按需安装到对应项目：
+
+```powershell
+pnpm --dir frontend/web add -D playwright
+pnpm --dir frontend/miniprogram add -D sharp playwright
+```
+
+这些安装会更新对应开发依赖和锁文件，不进入产品运行代码。浏览器检查优先使用 `BROWSER_PATH` 指定的可执行文件，其次尝试本机 Edge；都没有时，需为 Playwright 准备 Chromium，例如执行 `pnpm --dir frontend/web exec playwright install chromium`。
+
+### 检查命令与产物
+
+以下命令在项目根目录运行；网页版检查前，先在另一个终端保持 `pnpm dev` 运行。使用自定义端口时，检查终端中的 `PORT` 也要相同。
+
+| 命令 | 作用 | 产物 |
+| --- | --- | --- |
+| `pnpm test:web` | 独立浏览器上下文检查入口、英语练习、音频、进度和手机宽度 | `output/qa/frontend/web/` |
+| `pnpm test:mini` | 小程序练习交互、页面状态与播放器单元测试 | 终端结果 |
+| `pnpm verify:mini` | WXML／WXSS 编译、路由、包体积和 Bluey 原声哈希检查 | `output/qa/frontend/miniprogram/verification.json` |
+| `node frontend/miniprogram/scripts/preview-layout.cjs` | 将编译模板放入浏览器检查排版 | `output/qa/frontend/miniprogram/layout/` |
+
+包体积阈值是本项目的本地检查规则，实际上传结果以开发者工具为准。模板排版截图不等于微信原生运行效果；发布前还需检查模拟器和手机。浏览器检查使用隔离上下文，不读取或清空孩子日常浏览器的学习进度。
+
+## 分集台词与脑图制作
+
+开始处理指定集数前，阅读 [分集制作 skill](skills/episode-dialogue-docs/SKILL.md) 和 [本地工具使用说明](skills/episode-dialogue-docs/references/local-workflow.md)。这个流程交付带中文角色说明和时间码的英文台词 DOCX、TXT、SRT，以及一张中英双语学习总结脑图 PNG。
+
+首次配置只在本机配置缺失时复制示例：
 
 ```powershell
 if (-not (Test-Path -LiteralPath 'pipeline.local.json')) {
@@ -49,48 +209,36 @@ if (-not (Test-Path -LiteralPath 'pipeline.local.json')) {
 }
 ```
 
-编辑 `pipeline.local.json`，填写实际的模型和依赖目录。相对路径以项目根目录为基准；示例中的 `models/faster-whisper-base.en` 是配置位置，不代表仓库附带模型，也不会自动下载模型。
+在 `pipeline.local.json` 填写实际素材、依赖和本地 ASR 模型位置，相对路径均以项目根目录为基准。`pipeline.example.json` 中的模型路径只是示例，仓库不会自动下载模型。已有本机配置使用的 `demo/`、`.demo_deps/`、`.ocr_tools/` 包含在用资源。
 
-将自行准备且有权处理的视频、音频放入 `input/`，按季保留目录结构。原素材、模板和已有交付不覆盖，重做使用新的输出版本目录。
+操作顺序：
 
-环境按任务准备：
+1. 从 `input/` 确认片源、音频和时间轴，从 `series/bluey/episodes.json` 确认指定集数的进度。
+2. 以 `series/bluey/characters.json` 为角色身份来源，结合字幕、音画逐句核对；OCR 和 ASR 只提供候选证据。
+3. 校验台词结构，导出文档并逐页检查；准备脑图文案，校验原句、说话人和参考帧后生成并检查图片。
+4. 将结果放入 `output/<集号>/<新版本目录>/`，记录所用角色版本并更新进度。保留原素材、模板和既有交付。
 
-- Python 脚本已在 Python 3.12 环境验证；不依赖原作者个人目录。
-- 台词与脑图规则单元测试使用标准库；DOCX 导出另需 `python-docx`。
-- 媒体探测与抽帧使用 `av`、`Pillow`；OCR 另需 `rapidocr_onnxruntime`、`numpy`；ASR 使用 `faster_whisper`、`imageio_ffmpeg`、`numpy` 和本地模型。
-- Word 逐页检查需要可用的文档渲染环境；Windows 下的 `render_word.ps1` 备用方案需要 Microsoft Word。
-- 脑图图像生成需要独立的图像生成能力；文案校验与提示词构建脚本本身不生成图片。
+通用脚本在 `skills/episode-dialogue-docs/scripts/`。`media.py` 与 `transcript.py` 的调用者需按配置显式传参，不能假定脚本自动读取所有本机设置；完整参数示例见上述工具说明。
 
-`media.py` 与 `transcript.py` 的调用者须显式传参，不会自动加载整个本机配置。具体参数和依赖路由见 [本地工具与校验](skills/episode-dialogue-docs/references/local-workflow.md)。
-
-## 使用流程
-
-开始整理前阅读 [项目约定](AGENTS.md) 和 [分集整理 skill](skills/episode-dialogue-docs/SKILL.md)。依次确认片源与时间轴、核对角色和原句、校验结构、导出文稿、准备脑图文案、生成图片并完成文档与图片的视觉检查。
-
-角色身份以 `series/bluey/characters.json` 为准，CSV 是查看用导出；历史交付保留当时的角色版本。新视频不应强行匹配 Bluey 的角色，模板中的剧情也不能充当其他集的事实依据。
-
-现有 `episodes.json` 记录的是本地已处理进度，其 `input/` 和 `output/` 引用不一定随仓库提供。克隆后不要把这些历史状态当作本机已经具备相应片源或交付文件；真实集回归前应准备对应素材与已核对稿，不为消除缺失提示而改写历史记录。
-
-## 单元测试
-
-在项目根目录执行，不需要下载片源或模型：
+Python 工具已在 Python 3.12 验证。规则单元测试只使用标准库；文稿导出需 `python-docx`，抽帧需 `av`／`Pillow`，OCR 和 ASR 依赖按任务从本机配置复用。文档逐页检查需要文档渲染工具；`render_word.ps1` 备用方案需要 Microsoft Word。脑图校验脚本不直接生成图片，出图另需图像生成能力。
 
 ```powershell
 python -B -m unittest discover -s skills/episode-dialogue-docs/scripts -p "test_*.py" -v
 ```
 
-测试覆盖角色与发声类型、时间码和疑点规则、来源与哈希、脑图原句及说话人绑定，以及输出防覆盖。它们不验证识别准确率、翻译质量或生成图片的文字质量。
+这些测试验证结构与约束，不代替真实台词、角色、翻译或脑图文字的人工核对。
 
-`tests/prepare_episode_skill_regression.py` 是首集历史迁移辅助脚本，会写入特定本地结果路径，不是上述单元测试的一部分；不要对已有交付直接重跑。
+## 常见问题与文件分发
 
-## 产品设计
+| 现象 | 处理方法 |
+| --- | --- |
+| 打开网址但无法访问 | 先启动网页服务并保持窗口运行；核对输出端口；不要直接打开源码 HTML |
+| 提示 5175 端口已占用 | 检查是否已有本项目服务；优先访问现有地址，或设置其他 `PORT`，不要结束不明进程 |
+| 修改媒体后没有变化 | `public/` 不在自动监听范围内，执行构建或重启服务，再刷新页面 |
+| 换浏览器或网址后进度为空 | 学习记录按浏览器和网址来源保存；回到原浏览器、原地址查看 |
+| 小程序课本录音无法播放 | 当前基地址为空时属于未接通状态，按“接通课本长录音”配置 |
+| 新电脑缺图、缺音频或缺模型 | 补齐被 Git 忽略的本地资源，不能仅凭源码恢复所有媒体 |
 
-最新方案为 [儿童英语点读产品设计文档 v1.3](doc/儿童英语点读产品设计文档_v1.3.docx)。核心流程是家长上传视频、生成并审核漫画、孩子点击漫画气泡或画格听原声。第 15–23 节细化手机竖屏、手机横屏、Pad 横屏和 PC 的界面及交互。
+`.gitignore` 排除了原始媒体、导出文件、模型、依赖、本机配置、网页构建产物，以及前端多数音频／漫画资源和生成分包。迁移电脑时需另行复制这些必要资源；小程序的英语包可以在词表、原媒体和依赖齐备后重新生成，Bluey 分包则需保留现有资源。`episodes.json` 的历史记录不代表新电脑上已经具有对应素材。
 
-首集可运行示例及本地构建方法见 [漫画点读网页](web/bluey-reader/README.md)。网页采用原图加可点击区域，支持整页/单格阅读、整格/单句原声、暂停、重听和变速；媒体素材仍由本地 `input/`、`output/` 提供。
-
-## 版本控制边界
-
-`.gitignore` 排除原始视频音频、分集导出、模型、下载依赖、文档渲染缓存、测试运行产物、本机配置和常见凭据文件；正式产品文档、角色资料、参考帧与指定模板保留在仓库。忽略规则不会删除本地文件。
-
-公开仓库不应添加家庭私密视频、账户凭据或整季媒体包。提交前检查暂存区，不用 `git add -f` 绕过规则上传这些内容。新增素材和公开传播需自行确认使用范围；仓库中的角色参考、模板及其涉及的第三方作品不因进入版本控制而获得新的授权。
+更多前端说明见 [前端总览](frontend/README.md)、[网页版说明](frontend/web/README.md) 和 [小程序说明](frontend/miniprogram/README.md)。本地目录清理明细位于 `output/maintenance/cleanup-2026-10-23.json`，仅供追溯，不是启动或恢复旧工程的入口。

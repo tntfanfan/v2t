@@ -1,0 +1,4 @@
+page {font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;}
+view,button,text,image,navigator {box-sizing:border-box;}
+
+.product-nav{display:flex;justify-content:center;gap:8rpx;padding:18rpx 12rpx;border-bottom:1rpx solid #e1e5d7;background:#faf9f3;color:#5c725d;font-size:24rpx}.product-nav navigator{padding:14rpx 20rpx;border-radius:38rpx;white-space:nowrap}.product-nav .selected{background:#e4edda;color:#315232;font-weight:650}

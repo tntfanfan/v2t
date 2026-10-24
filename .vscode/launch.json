@@ -2,21 +2,28 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "漫画点读：启动 Vite 并调试 Edge",
-      "type": "msedge",
+      "name": "网页版：启动并调试",
+      "type": "pwa-chrome",
       "request": "launch",
-      "url": "http://127.0.0.1:5173",
-      "webRoot": "${workspaceFolder}/web/bluey-reader/src",
-      "preLaunchTask": "Vite: dev",
-      "sourceMaps": true
+      "url": "http://127.0.0.1:5175/",
+      "webRoot": "${workspaceFolder}/frontend/web/src",
+      "preLaunchTask": "整合网页版: dev",
+      "sourceMaps": true,
+      "runtimeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "runtimeArgs": [
+        "--new-window",
+        "--auto-open-devtools-for-tabs",
+        "--remote-debugging-port=9222",
+        "--user-data-dir=${workspaceFolder}/.vscode/.edge-debug-profile"
+      ],
+      "port": 9222,
+      "timeout": 20000
     },
     {
-      "name": "漫画点读：调试已运行的 Vite",
-      "type": "msedge",
+      "name": "微信小程序：启动开发者工具",
+      "type": "node-terminal",
       "request": "launch",
-      "url": "http://127.0.0.1:5173",
-      "webRoot": "${workspaceFolder}/web/bluey-reader/src",
-      "sourceMaps": true
+      "command": "& 'C:\\Program Files (x86)\\Tencent\\微信web开发者工具\\cli.bat' open --project '${workspaceFolder}\\frontend\\miniprogram'"
     }
   ]
 }

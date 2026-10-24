@@ -1,0 +1,2 @@
+@import "../../lib/adventure/page.wxss";
+.unit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20rpx}.unit-card{background:#fffef9;border:1rpx solid #d7e1ca;border-radius:28rpx;padding:28rpx 15rpx;text-align:center}.unit-card .strong{font-size:27rpx}.unit-card .muted{font-size:22rpx;min-height:70rpx}.planet-icon{font-size:55rpx;display:block;margin:10rpx}.unit-progress{font-size:22rpx;color:#859275;margin:15rpx 0}.enter{display:block;color:#41724e;font-size:24rpx;font-weight:700}.hero .bobo{height:140rpx}

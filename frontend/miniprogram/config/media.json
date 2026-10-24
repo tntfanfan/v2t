@@ -1,0 +1,6 @@
+{
+  "lessonBaseUrl": "",
+  "previousWebsiteUrl": "https://bobo-english-u0-u9.pages.dev/",
+  "previousWebsiteStatus": "Returned HTTP 403 (1010) during verification; not configured as a working media host.",
+  "note": "Only long textbook recordings require this HTTPS base URL. Word audio, sentence audio and Bluey clips are packaged locally."
+}

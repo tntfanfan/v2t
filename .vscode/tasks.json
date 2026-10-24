@@ -2,10 +2,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Vite: dev",
+      "label": "整合网页版: dev",
       "type": "shell",
-      "command": ".\\启动Vite调试.cmd",
-      "options": { "cwd": "${workspaceFolder}" },
+      "command": ".\\启动整合网页.cmd",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "isBackground": true,
       "problemMatcher": [
         {
@@ -20,12 +22,33 @@
           ],
           "background": {
             "activeOnStart": true,
-            "beginsPattern": "VITE v",
-            "endsPattern": "Local:.*http://"
+            "beginsPattern": "英语小花园",
+            "endsPattern": "英语小花园：http://"
           }
         }
       ],
-      "presentation": { "reveal": "always", "panel": "dedicated" }
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "微信小程序: 打开开发者工具",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "& 'C:\\Program Files (x86)\\Tencent\\微信web开发者工具\\cli.bat' open --project '${workspaceFolder}\\frontend\\miniprogram'"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
     }
   ]
 }

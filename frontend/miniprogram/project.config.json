@@ -1,0 +1,52 @@
+{
+  "description": "最终整合版：U0–U9 英语星球冒险 + Bluey 两集原声漫画",
+  "appid": "touristappid",
+  "projectname": "english-garden-2.0.0",
+  "compileType": "miniprogram",
+  "miniprogramRoot": "src/",
+  "libVersion": "3.7.6",
+  "setting": {
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "urlCheck": true,
+    "ignoreUploadUnusedFiles": false,
+    "uploadWithSourceMap": true,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "condition": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "迎宾首页",
+          "pathName": "pages/index/index"
+        },
+        {
+          "name": "英语星球冒险",
+          "pathName": "pages/english/index"
+        }
+      ]
+    }
+  },
+  "simulatorPluginLibVersion": {},
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "editorSetting": {}
+}

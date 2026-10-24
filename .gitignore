@@ -25,19 +25,12 @@ service-account*.json
 
 # Generated outputs, local media, OCR/ASR evidence, and QA artifacts
 /output/
-/doc/_work/
-/tests/runs/
 /tmp/
 .episode-test-*/
 .mindmap-test-*/
 
-# Demo source stays tracked; generated media/checkpoints should not
-/demo/*
-!/demo/*.py
-!/demo/*.ps1
-/demo/output/
-/demo/tmp/
-/demo/model_cache/
+# Retained demo material and local ASR model; obsolete demo code was removed
+/demo/
 
 # Downloaded runtimes, models, caches, and temporary app data
 /.demo_deps/
@@ -70,3 +63,13 @@ dist/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Frontend local media / generated native packages and QA evidence
+/frontend/web/public/english/
+/frontend/web/public/bluey/
+/frontend/web/public/images/*.jpg
+/frontend/miniprogram/src/assets/
+/frontend/miniprogram/src/chapters/
+/frontend/miniprogram/src/magic/
+/frontend/miniprogram/src/english/
+/frontend/miniprogram/project.private.config.json

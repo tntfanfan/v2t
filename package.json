@@ -1,6 +1,6 @@
 {
-  "name": "v2t-bluey-reader",
-  "version": "0.1.0",
+  "name": "english-garden-frontend",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@11.25.0",
@@ -8,12 +8,12 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "sirv": "3.0.2",
-    "vite": "8.3.4"
+    "dev": "node frontend/web/scripts/serve.mjs",
+    "build": "node frontend/web/scripts/build.mjs",
+    "preview": "node frontend/web/scripts/serve.mjs",
+    "test:web": "node frontend/web/tests/browser.cjs",
+    "build:mini": "node frontend/miniprogram/scripts/sync-content.cjs",
+    "test:mini": "node --test frontend/miniprogram/tests/*.test.cjs",
+    "verify:mini": "node frontend/miniprogram/scripts/verify.cjs"
   }
 }

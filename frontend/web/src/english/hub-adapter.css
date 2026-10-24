@@ -1,0 +1,7 @@
+/* Keep the original mascot clear of wrapped action buttons on small screens. */
+@media(max-width:600px){
+  .adventure-hub .hero-companion{
+    position:static;
+    margin:8px 0 -4px auto;
+  }
+}

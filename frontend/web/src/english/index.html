@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f5eb">
+<meta name="description" content="跟着小机器人 Bobo 探索英语星球。U0–U9 共 10 个单元、90 个单词和短语，每轮两个词、五关十题的轻松冒险。">
+<title>英语星球冒险 · U0–U9</title>
+<meta name="bobo-build" content="fast-media-v1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/navigation.css">
+<link rel="stylesheet" href="hub-adapter.css">
+</head>
+<body>
+<nav class="product-nav" aria-label="学习导航"><a href="/">✿ 迎宾首页</a><a href="/english/index.html" aria-current="page">英语复习</a><a href="/bluey/index.html">Bluey 漫画</a></nav>
+<div class="app-shell">
+  <header class="topbar">
+    <button class="brand" data-action="home" aria-label="回到冒险首页"><span class="brand-icon">✦</span><span>英语星球冒险<small>BOBO'S LITTLE ADVENTURE</small></span></button>
+    <div class="top-actions"><span id="starCount" class="star-count" aria-label="收集的星星">★ 0</span><button class="icon-btn" id="soundBtn" data-action="sound" aria-label="关闭音效" title="音效开关">♫</button></div>
+  </header>
+  <nav class="unit-nav" aria-label="选择单元" id="unitNav"></nav>
+  <main id="app" tabindex="-1"></main>
+  <footer class="footer"><span>一点点练习，一大步发现。</span><button type="button" data-action="parents" class="parent-entry" aria-haspopup="dialog">给爸爸妈妈 <span aria-hidden="true">›</span></button></footer>
+</div>
+<div id="toast" role="status" class="toast" hidden></div>
+<dialog id="parentDialog" aria-labelledby="parentTitle"></dialog>
+<div id="confetti" aria-hidden="true"></div>
+
+
+<script src="data.js"></script><script src="memory.js"></script><script src="app.js"></script>
+</body>
+</html>
