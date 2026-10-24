@@ -23,7 +23,7 @@
       "name": "微信小程序：启动开发者工具",
       "type": "node-terminal",
       "request": "launch",
-      "command": "& 'C:\\Program Files (x86)\\Tencent\\微信web开发者工具\\cli.bat' open --project '${workspaceFolder}\\frontend\\miniprogram'"
+      "command": "& '${workspaceFolder}\\启动微信小程序.cmd' /nopause"
     }
   ]
 }
