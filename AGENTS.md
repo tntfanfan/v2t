@@ -45,12 +45,14 @@
 | `series/bluey/` | 角色、分集索引、参考帧、版本快照与漫画制作资料 |
 | `skills/episode-dialogue-docs/` | 本项目维护的分集制作流程与通用脚本 |
 | `resources/wechat-promotion/` | 微信推广图片、PDF 与设计源文件，不是小程序代码 |
-| `demo/`、`.demo_deps/`、`.ocr_tools/` | 本地素材、ASR 模型和媒体依赖；按 `pipeline.local.json` 判断用途，不按名称当作无用缓存删除 |
+| `demo/` | 本地演示素材、处理成果和 ASR 模型；检查 `pipeline.local.json` 引用后再清理 |
+| `.demo_deps/`、`.ocr_tools/` | 本地媒体／ASR 与 OCR 依赖；删除会影响分集处理，按需重装 |
+| `.wrangler/` | Cloudflare Wrangler 本机缓存；通常可删除，使用时会重建，可能需重新登录或确认项目 |
 
 - 网页和小程序的检查报告、截图统一写入 `output/qa/frontend/web/` 与 `output/qa/frontend/miniprogram/`；分集检查放在本集新版本的输出目录中。
 - 原始素材、重复素材副本、模板、正式交付、角色历史版本不删除、不覆盖。清理时区分可重建产物和唯一资料，先检查引用和本机配置；Windows 递归删除或移动前核对解析后的绝对路径与目标范围。
 - 不提交原始媒体、模型、凭据、本机配置或构建缓存，不用强制添加绕过 `.gitignore`。不要根据历史索引里的旧路径假定文件仍存在。
-- Cloudflare 的 `.wrangler/` 是本机账号／项目缓存，`.dev.vars` 及环境变体可能包含秘密，必须忽略；无秘密的示例文件可保留。`frontend/web/public/_redirects`、构建与检查脚本属于源码，应提交。发布 ZIP、部署检查记录和截图放在已忽略的 `output/`，不把整个 `deployment/` 或所有 JSON／ZIP 一概忽略。变更忽略规则后用 `git check-ignore` 核对，并检查是否已有敏感产物被跟踪；忽略规则不会自动移除已跟踪文件。
+- Cloudflare 的 `.wrangler/` 是可重建的本机缓存；`.dev.vars` 及环境变体可能包含秘密，必须忽略；无秘密的示例文件可保留。`frontend/web/public/_redirects`、构建与检查脚本属于源码，应提交。发布 ZIP、部署检查记录和截图放在已忽略的 `output/`，不把整个 `deployment/` 或所有 JSON／ZIP 一概忽略。变更忽略规则后用 `git check-ignore` 核对，并检查是否已有敏感产物被跟踪；忽略规则不会自动移除已跟踪文件。
 
 ## 网页与小程序维护
 

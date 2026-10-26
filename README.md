@@ -301,7 +301,15 @@ if (-not (Test-Path -LiteralPath 'pipeline.local.json')) {
 }
 ```
 
-在 `pipeline.local.json` 填写实际素材、依赖和本地 ASR 模型位置，相对路径均以项目根目录为基准。`pipeline.example.json` 中的模型路径只是示例，仓库不会自动下载模型。已有本机配置使用的 `demo/`、`.demo_deps/`、`.ocr_tools/` 包含在用资源。
+在 `pipeline.local.json` 填写实际素材、依赖和本地 ASR 模型位置，相对路径均以项目根目录为基准。`pipeline.example.json` 中的模型路径只是示例，仓库不会自动下载模型。本机配置当前将 ASR 模型指向 `demo/model_cache/`，并将媒体和 OCR 依赖指向 `.demo_deps/`、`.ocr_tools/`。
+
+这些目录虽被 Git 忽略，仍可能是本机工作流程所需：
+
+- `demo/` 除演示媒体和转写结果外，还保存配置正在使用的 ASR 模型；不要仅为清理缓存而删除整个目录。若确认不再使用模型或演示资料，可先备份有价值的文件，再按配置调整模型路径。
+- `.demo_deps/` 和 `.ocr_tools/` 分别保存本地媒体／ASR 依赖和 OCR 依赖。删除后相关分集处理步骤将无法使用这些依赖；需要时可重新准备依赖，但不会由仓库自动恢复。
+- `.wrangler/` 是 Cloudflare Wrangler 的本机缓存，不是项目源码或分集制作素材。通常可以删除，后续使用 Wrangler 时缓存会重新生成；必要时需重新登录或确认目标项目。
+
+清理前先检查 `pipeline.local.json` 和所需素材；`.gitignore` 只控制 Git 跟踪，不会删除文件或判断文件是否仍在使用。
 
 操作顺序：
 
