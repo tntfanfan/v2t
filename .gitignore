@@ -11,6 +11,13 @@
 credentials*.json
 service-account*.json
 
+# Cloudflare local state and development secrets (not deployment source config)
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+!.dev.vars.sample
+
 # Local editor / agent state
 /.codex/
 /.agents/

@@ -1,11 +1,11 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const runtime=require('../../dev-runtime.cjs'),{chromium}=runtime.load('playwright',path.resolve(__dirname,'..'));
-const base='http://127.0.0.1:'+(process.env.PORT||5175),root=path.resolve(__dirname,'..'),out=path.resolve(root,'../../output/qa/frontend/web');
+const base=(process.env.WEB_TEST_BASE_URL||'http://127.0.0.1:'+(process.env.PORT||5175)).replace(/\/$/,''),root=path.resolve(__dirname,'..'),out=path.resolve(root,process.env.WEB_TEST_OUTPUT||'../../output/qa/frontend/web');
 fs.mkdirSync(out,{recursive:true});
 (async()=>{
  const browser=await chromium.launch(runtime.browserOptions());
  const context=await browser.newContext({viewport:{width:1380,height:1050},reducedMotion:'reduce'});
- const page=await context.newPage(),errors=[],external=[],checks=[];
+ const page=await context.newPage(),errors=[],external=[],checks=[],notes=[];
  page.on('pageerror',e=>errors.push(e.message));
  page.on('response',r=>{if(r.status()>=400)errors.push(`${r.status()} ${r.url()}`);});
  page.on('request',r=>{if(/^https?:/.test(r.url())&&!r.url().startsWith(base+'/'))external.push(r.url());});
@@ -15,7 +15,7 @@ fs.mkdirSync(out,{recursive:true});
   await page.goto(base+'/');assert.equal(await page.locator('a.product').count(),2);
   await page.evaluate(()=>Promise.all([...document.images].map(i=>i.decode())));
   await screenshot('welcome-desktop');await overflow('welcome desktop');
-  await page.locator('a.product.zoo').click();await page.waitForURL('**/english/index.html');
+  await page.locator('a.product.zoo').click();await page.waitForURL(url=>/^\/english\/(?:index\.html)?$/.test(url.pathname));
   await page.getByRole('heading',{name:'小队长，一起冒险吧！'}).waitFor();
   assert.equal(await page.locator('.unit-tab').count(),10);
   assert.equal(await page.evaluate(()=>SOURCE_UNITS.flatMap(u=>u.words).length),90);
@@ -38,8 +38,15 @@ fs.mkdirSync(out,{recursive:true});
   await page.waitForFunction(()=>document.querySelector('#lessonAudio').currentTime>.05);
   const track=await page.locator('#lessonAudio').getAttribute('src');
   const range=await context.request.get(new URL(track,base+'/english/').href,{headers:{Range:'bytes=0-127'}});
-  assert.equal(range.status(),206);assert.equal((await range.body()).length,128);
-  checks.push('Textbook audio plays under /english; audio byte-range seeking works');
+  if(range.status()===206){assert.equal((await range.body()).length,128);}
+  else{
+   assert.ok(process.env.WEB_TEST_BASE_URL,'Local server must support byte ranges');
+   assert.equal(range.status(),200);assert.ok((await range.body()).length>128);
+   notes.push('Remote host returned full audio (HTTP 200) to the Range request; partial-download support was not verified.');
+  }
+  await page.evaluate(()=>{const audio=document.querySelector('#lessonAudio');audio.currentTime=5;});
+  await page.waitForFunction(()=>{const audio=document.querySelector('#lessonAudio');return !audio.seeking&&audio.currentTime>=5&&audio.readyState>=2;});
+  checks.push('Textbook audio plays and seeks; HTTP Range behavior recorded separately');
   await page.locator('[data-action="home"]').first().click();
   await page.locator('.unit-tab[data-value="2"]').click();
   await page.locator('[data-action="start"]').click();
@@ -82,7 +89,7 @@ fs.mkdirSync(out,{recursive:true});
    await page.setViewportSize({width,height:844});
    await page.goto(base+'/');await overflow(`welcome ${width}`);
    if(width===390)await screenshot('welcome-mobile');
-   await page.locator('a.product.zoo').click();await overflow(`English home ${width}`);
+   await page.locator('a.product.zoo').click();await page.locator('.hero-companion').waitFor();await overflow(`English home ${width}`);
    if(width<=600)assert.ok(await page.evaluate(()=>{
     const art=document.querySelector('.hero-companion').getBoundingClientRect();
     const actions=document.querySelector('.hero-actions').getBoundingClientRect();
@@ -103,14 +110,15 @@ fs.mkdirSync(out,{recursive:true});
    await page.locator('#play-toggle').click();await overflow('Bluey '+episode);
   }
   await page.locator('.product-nav a[href="/english/index.html"]').click();
+  await page.locator('.unit-tab').first().waitFor();
   assert.equal(await page.locator('.unit-tab').count(),10);assert.equal(await page.locator('#starCount').innerText(),stars);
   checks.push('Both Bluey episodes still render/play; cross-product navigation returns to ZZY with progress');
   for(const file of ['words','build','quiz','chant','story','progress','review']){
-   await page.goto(base+'/english/'+file+'.html');await page.waitForURL('**/english/index.html');
+   await page.goto(base+'/english/'+file+'.html');await page.waitForURL(url=>/^\/english\/(?:index\.html)?$/.test(url.pathname));
   }
   checks.push('All seven old English activity bookmarks redirect to the new product');
   assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
-  const report={status:'passed',version:'2.0.0',checks,errors,external,retainedGameplayVerified:true,limitation:'Isolated desktop browser checks; no migration of progress from other origins.'};
+  const report={status:'passed',baseUrl:base,version:'2.0.0',checks,errors,external,notes,retainedGameplayVerified:true,limitation:'Isolated desktop browser checks; no migration of progress from other origins.'};
   fs.writeFileSync(path.join(out,'report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

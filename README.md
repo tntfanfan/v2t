@@ -69,6 +69,7 @@ v2t/
 ├─ demo/                          本地演示素材、成果和在用 ASR 模型
 ├─ .demo_deps/、.ocr_tools/        本地媒体／OCR 依赖
 ├─ .vscode/                       本机调试入口与启动任务
+├─ .wrangler/                     Cloudflare 本机账号／项目缓存，Git 忽略
 ├─ pipeline.example.json          分集制作配置示例
 └─ pipeline.local.json            本机素材、模板、依赖和模型配置
 ```
@@ -141,6 +142,72 @@ pnpm dev
 ### VS Code 调试
 
 用 VS Code 打开整个项目根目录，在“运行和调试”中选择 **网页版：启动并调试**。它通过 `整合网页版: dev` 前置任务启动网页服务，再打开 Edge。配置在 `.vscode/launch.json` 与 `.vscode/tasks.json`，浏览器路径按本机安装位置调整；若已手动启动服务，可直接使用现有网页，避免重复占用端口。
+
+## 网页打包与 Cloudflare Pages 发布
+
+历史网站托管于 Cloudflare Pages，项目名为 `bobo-english-u0-u9`，地址为 <https://bobo-english-u0-u9.pages.dev/>。2026-10-22 的发布记录对应 U0–U9 英语复习版，不代表当前英语与 Bluey 整合版已上线。历史记录在 `frontend/web/deployment/history/cloudflare-v1/publication.json`，其中的账号 ID 不是登录密码或 API Token。
+
+### 2026-10-26 流程验证结果
+
+- 当前构建脚本执行成功；网页自动化检查通过，覆盖 U0–U9、练习与进度、音频、两集 Bluey 和不同屏幕宽度。
+- `frontend/web/dist/` 共 1,127 个文件，178,099,912 字节；最大文件 2,554,661 字节。与源码／媒体目录比对无遗漏或残留文件。
+- 已生成 ZIP 并检查完整性，入口 `index.html` 位于包根目录。发布包与检查记录位于 `output/releases/web-20261026-183551/`。
+- **当前整合版超过网页拖拽上传的 1,000 文件上限，应使用 Wrangler 上传 `dist/` 目录。ZIP 仅作为交付包，不能直接传给 Wrangler。** 官方 Direct Upload 文档列出的 Wrangler 上限为 20,000 文件、单文件 25 MiB，当前产物符合这两项限制。
+- 首次检查未执行云端部署：当时没有本机部署凭据，浏览器控制初始化失败。随后通过下述设备授权流程完成预览上传；正式版本没有变更。
+
+### 同日后续：设备授权与预览上传
+
+Wrangler 4.152.0 的普通浏览器登录曾因 localhost 回调超时而失败，改用设备授权后登录成功：
+
+```powershell
+npx wrangler login --device --scopes account:read user:read pages:write
+npx wrangler pages project list --json
+```
+
+按终端提示在浏览器输入当次临时设备码并允许授权，无需把密码或令牌写入项目。授权是否完成以命令行成功提示和项目列表查询为准，不仅看浏览器页面。
+
+已通过 API 确认生产分支为 `main`，测试分支为 `preview-web-check-20261026`。整合版预览已上传：<https://4acca6b3.bobo-english-u0-u9.pages.dev/>。`public/_redirects` 为 Cloudflare 提供七个旧英语入口的跳转规则，构建时一起复制；本地服务器和小程序已有的兼容入口继续保留。
+
+线上浏览器检查可指定目标，检查报告与本地结果分开保存：
+
+```powershell
+$env:WEB_TEST_BASE_URL = 'https://4acca6b3.bobo-english-u0-u9.pages.dev'
+$env:WEB_TEST_OUTPUT = '../../output/qa/frontend/web/cloudflare-20261026'
+pnpm test:web
+# 返回本地测试时清除这两个环境变量
+Remove-Item Env:WEB_TEST_BASE_URL, Env:WEB_TEST_OUTPUT
+```
+
+云端音频 Range 请求曾返回 HTTP 200 整文件，而本地返回 HTTP 206；测试分别记录响应行为并检查真实播放跳转，不把整文件响应当成分段下载已验证。
+
+本次预览的七组浏览器检查全部通过：英语词卡和音频、完整练习与进度恢复、课本录音播放与跳转、两集 Bluey、多屏幕宽度及七个旧链接；控制台错误和失败资源请求均为空。本地回归也通过。云端分段下载仍未验证，实际播放跳转已通过。最终发布包（含 `_redirects`，共 1,128 文件）及云端部署记录在 `output/releases/web-20261026-preview/`，线上检查报告在 `output/qa/frontend/web/cloudflare-20261026/report.json`。正式生产部署仍为历史版本，本次仅发布预览。
+
+### 后续发布步骤
+
+在项目根目录构建，启动服务后执行浏览器检查：
+
+```powershell
+pnpm build
+# 在另一终端运行“启动整合网页.cmd”，保持服务运行
+pnpm test:web
+```
+
+准备 Wrangler 并登录对应 Cloudflare 账号；首次通过 npx 调用可能提示安装工具：
+
+```powershell
+npx wrangler login --device --scopes account:read user:read pages:write
+npx wrangler pages project list
+```
+
+确认账号、项目和生产分支后，先选择一个与生产分支不同的测试分支发布预览。下面的 `preview-web-check` 必须先确认不是该项目的生产分支：
+
+```powershell
+npx wrangler pages deploy frontend/web/dist --project-name=bobo-english-u0-u9 --branch=preview-web-check
+```
+
+获取预览 URL 后检查首页、英语练习、两集漫画、音频和手机布局，再按确认的生产分支发布正式版本。不要仅根据本地构建结果报告“已上线”。密码和 API Token 不写入项目文档；需要授权时使用登录流程或受保护的环境变量。
+
+官方方法与限制：[Direct Upload](https://developers.cloudflare.com/pages/get-started/direct-upload/)。发布限制以上述核对日期为准，后续发布前再次核对。
 
 ## 导入微信小程序
 
@@ -265,5 +332,19 @@ python -B -m unittest discover -s skills/episode-dialogue-docs/scripts -p "test_
 | 新电脑缺图、缺音频或缺模型 | 补齐被 Git 忽略的本地资源，不能仅凭源码恢复所有媒体 |
 
 `.gitignore` 排除了原始媒体、导出文件、模型、依赖、本机配置、网页构建产物，以及前端多数音频／漫画资源和生成分包。迁移电脑时需另行复制这些必要资源；小程序的英语包可以在词表、原媒体和依赖齐备后重新生成，Bluey 分包则需保留现有资源。`episodes.json` 的历史记录不代表新电脑上已经具有对应素材。
+
+### 本次发布相关文件是否提交 GitHub
+
+| 文件／目录 | 处理方式 |
+| --- | --- |
+| `.wrangler/`（包括账号和 Pages 项目缓存） | 忽略；换电脑后重新登录、核对目标项目 |
+| `.dev.vars`、`.dev.vars.*`、`.env`、`.env.*` | 忽略；仅允许不含真实秘密的 `.example`／`.sample` 示例 |
+| `frontend/web/dist/`、`node_modules/`、日志 | 忽略；由源码、依赖安装和运行重新生成 |
+| `output/releases/`、`output/qa/` | 已由 `/output/` 整体忽略；发布 ZIP、部署记录、报告和截图保留本地 |
+| `frontend/web/public/_redirects` | 提交；Cloudflare 旧页面跳转所需的部署源码 |
+| `frontend/web/tests/browser.cjs`、构建脚本、README、AGENTS | 提交；包含可复用的构建、线上检查及使用约定 |
+| `frontend/miniprogram/pnpm-lock.yaml` | 保留版本控制，用于重现依赖安装 |
+
+Wrangler 的实际登录凭据由工具保存在用户配置位置，不写入仓库；`.wrangler/` 中的项目缓存不能替代登录授权。`.gitignore` 不会删除文件，也不会自动停止跟踪已入库文件。本项目已有的 `.vscode/launch.json`、`.vscode/tasks.json` 仍是被跟踪的共用启动配置，其余本机编辑器状态继续忽略。
 
 更多前端说明见 [前端总览](frontend/README.md)、[网页版说明](frontend/web/README.md) 和 [小程序说明](frontend/miniprogram/README.md)。本地目录清理明细位于 `output/maintenance/cleanup-2026-10-23.json`，仅供追溯，不是启动或恢复旧工程的入口。
