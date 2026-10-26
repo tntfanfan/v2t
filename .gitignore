@@ -21,7 +21,10 @@ service-account*.json
 # Local editor / agent state
 /.codex/
 /.agents/
-/.vscode/
+/.vscode/*
+!/.vscode/launch.json
+!/.vscode/tasks.json
+/.vscode/.edge-debug-profile/
 /.idea/
 
 # Keep only the shared visual template; everything else under input is local material
