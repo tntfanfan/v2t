@@ -1,8 +1,10 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
-import {build,dist} from './build.mjs';
-build();
+import {build,dist as defaultDist} from './build.mjs';
+// Reuse the normal launcher for an isolated release/QA directory when requested.
+const dist=process.env.WEB_PREVIEW_DIST?path.resolve(process.env.WEB_PREVIEW_DIST):defaultDist;
+if(!process.env.WEB_PREVIEW_DIST)build();
 const port=Number(process.env.PORT||5175);
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.jpg':'image/jpeg','.png':'image/png','.mp3':'audio/mpeg','.wav':'audio/wav'};
 const server=http.createServer((req,res)=>{
@@ -21,4 +23,4 @@ const server=http.createServer((req,res)=>{
 });
 server.on('error',e=>{console.error(e.code==='EADDRINUSE'?`端口 ${port} 已占用，请检查已有首页服务。`:e);process.exitCode=1;});
 server.listen(port,'127.0.0.1',()=>console.log(`英语小花园：http://127.0.0.1:${port}/`));
-let timer;fs.watch(new URL('../src/',import.meta.url),{recursive:true},()=>{clearTimeout(timer);timer=setTimeout(()=>{build();console.log('页面已更新，刷新浏览器查看。');},150);});
+if(!process.env.WEB_PREVIEW_DIST){let timer;fs.watch(new URL('../src/',import.meta.url),{recursive:true},()=>{clearTimeout(timer);timer=setTimeout(()=>{build();console.log('页面已更新，刷新浏览器查看。');},150);});}

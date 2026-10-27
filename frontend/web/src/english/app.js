@@ -65,18 +65,21 @@ META.push(
 );
 const SENTENCES = makeSentences(SOURCE_UNITS);
 const LEVELS=[{type:'listen',icon:'🎧',name:'听一听'},{type:'letter',icon:'🔧',name:'补一补'},{type:'hide',icon:'🙈',name:'躲猫猫'},{type:'recall',icon:'⌨️',name:'自己拼'},{type:'sentence',icon:'💬',name:'句子挑战'}];
-const QUESTIONS_PER_LEVEL=2, DAILY_QUESTIONS=LEVELS.length*QUESTIONS_PER_LEVEL;
+const DEFAULT_WORD_COUNT=2, MAX_WORD_COUNT=6;
+const validWordCount=n=>Number.isInteger(n)&&n>=1&&n<=MAX_WORD_COUNT;
+const roundWordCount=r=>r?.version===3?r.wordCount:DEFAULT_WORD_COUNT;
 const STORAGE_KEY = 'bobo-adventure-u012-v1';
 const app = document.getElementById('app');
 const unitNav = document.getElementById('unitNav');
 let storageOK = true;
 const freshProgress = () => ({ rounds:0, stars:0, seen:[], bag:[], grammar:0, independent:0, assisted:0, memory:{}, studyTurn:0, studyClock:0 });
 function readState() {
-  const base = { unit:0, effects:true, resetId:'', dailyByUnit:SOURCE_UNITS.map(()=>null), progress:SOURCE_UNITS.map(freshProgress) };
+  const base = { unit:0, effects:true, dailyWordCount:DEFAULT_WORD_COUNT, resetId:'', offlineResetId:'', island:null, dailyByUnit:SOURCE_UNITS.map(()=>null), progress:SOURCE_UNITS.map(freshProgress) };
   try {
     const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
     if (!raw || typeof raw !== 'object') return base;
     base.resetId=typeof raw.resetId==='string'?raw.resetId:'';
+    base.offlineResetId=typeof raw.offlineResetId==='string'?raw.offlineResetId:'';
     base.unit = Number.isInteger(raw.unit) && SOURCE_UNITS[raw.unit] ? raw.unit : 0;
     base.dailyByUnit=base.dailyByUnit.map((_,unit)=>{
       const saved=hydrateDaily(raw.dailyByUnit?.[unit]);
@@ -85,7 +88,9 @@ function readState() {
     // Move the old shared round into its own unit without losing any answers.
     const legacy=hydrateDaily(raw.daily);
     if(legacy&&!base.dailyByUnit[legacy.unit])base.dailyByUnit[legacy.unit]=legacy;
+    base.island=Island.hydrate(raw.island,SOURCE_UNITS);
     base.effects = raw.effects !== false;
+    base.dailyWordCount=validWordCount(raw.dailyWordCount)?raw.dailyWordCount:DEFAULT_WORD_COUNT;
     base.progress = base.progress.map((p,i) => {
       const v = raw.progress?.[i];
       if (!v || typeof v !== 'object') return p;
@@ -109,15 +114,17 @@ const currentUnit = () => SOURCE_UNITS[state.unit];
 const currentMeta = () => META[state.unit];
 const button = (action, label, cls='secondary', extra='') => `<button class="${cls}" data-action="${action}" ${extra}>${label}</button>`;
 function packDaily(active) {
-  return {version:2,day:active.day,unit:active.unit,index:active.index,committed:active.committed,questions:active.questions.map(q=>{
+  return {version:3,wordCount:roundWordCount(active),day:active.day,unit:active.unit,index:active.index,committed:active.committed,questions:active.questions.map(q=>{
     const {word,data,...fields}=q;
     return {...fields,wordKey:word?.w,sentenceIndex:data?SENTENCES[active.unit].indexOf(data):undefined,options:q.type==='listen'?q.options.map(w=>w.w):q.options};
   })};
 }
 function hydrateDaily(raw) {
   try {
-    if(![1,2].includes(raw?.version)||!Number.isInteger(raw.day)||raw.day<0||raw.day>Memory.today()||!Number.isInteger(raw.unit)||!SOURCE_UNITS[raw.unit])return null;
-    const count=raw.version===1?6:DAILY_QUESTIONS;
+    if(![1,2,3].includes(raw?.version)||!Number.isInteger(raw.day)||raw.day<0||raw.day>Memory.today()||!Number.isInteger(raw.unit)||!SOURCE_UNITS[raw.unit])return null;
+    const n=roundWordCount(raw);
+    if(!validWordCount(n))return null;
+    const count=raw.version===1?6:LEVELS.length*n;
     if(!Number.isInteger(raw.index)||raw.index<0||raw.index>count||typeof raw.committed!=='boolean'||!Array.isArray(raw.questions)||raw.questions.length!==count||raw.committed!==(raw.index===count))return null;
     if(raw.version===1&&(raw.questions[2].type!=='hide'||raw.questions[5].type!=='sentence'))return null;
     const words=SOURCE_UNITS[raw.unit].words;
@@ -131,10 +138,10 @@ function hydrateDaily(raw) {
       if(q.type==='hide'&&(!Array.isArray(q.keys)||!Array.isArray(q.picked)||typeof q.target!=='string'||q.picked.some(n=>!Number.isInteger(n)||!q.keys[n])))return null;
       if(q.type==='recall'&&(typeof q.draft!=='string'||!['study','review'].includes(q.mode)))return null;
     }
-    if(raw.version===2){
-      const pair=raw.questions.slice(0,2).map(q=>q.wordKey);
-      if(new Set(pair).size!==2||raw.questions.some((q,i)=>q.type!==LEVELS[Math.floor(i/2)].type||i<8&&q.wordKey!==pair[i%2]))return null;
-      if(raw.questions[8].sentenceIndex===raw.questions[9].sentenceIndex)return null;
+    if(raw.version>=2){
+      const pair=raw.questions.slice(0,n).map(q=>q.wordKey);
+      if(new Set(pair).size!==n||raw.questions.some((q,i)=>q.type!==LEVELS[Math.floor(i/n)].type||i<4*n&&q.wordKey!==pair[i%n]))return null;
+      if(new Set(raw.questions.slice(4*n).map(q=>q.sentenceIndex)).size!==n)return null;
     }
     return raw;
   } catch { return null; }
@@ -185,12 +192,12 @@ function voiceFallback(text, slow, token, events={}) {
   if(speechSynthesis.paused)speechSynthesis.resume();
   speechSynthesis.speak(u);
 }
-async function playWord(word, slow=false) {
-  stopAudio(); const token=audioVersion; const unit=currentUnit();
+async function playWord(word, slow=false, unitIndex=state.unit) {
+  stopAudio(); const token=audioVersion; const unit=SOURCE_UNITS[unitIndex];
   const src=unit.audio[word] || unit.track;
   if (!src) return voiceFallback(word,slow,token);
   const audio=new Audio(src); activeAudio=audio; audio.preload='auto'; audio.playbackRate=slow?.78:1;
-  const playButton=document.querySelector('[data-action="listen"]');
+  const playButton=document.querySelector('[data-action="listen"],[data-action="island-listen"]');
   const clearPlaying=()=>{if(token===audioVersion)playButton?.classList.remove('playing');};
   const fallback=()=>{if(token!==audioVersion)return;audio.pause();clearTimeout(audioTimer);clearPlaying();voiceFallback(word,slow,token);};
   audio.onerror=fallback;
@@ -264,9 +271,9 @@ function chime() {
     [523.25,659.25,783.99].forEach((frequency,i)=>{const o=audioContext.createOscillator(),g=audioContext.createGain(),t=audioContext.currentTime+i*.09;o.type='sine';o.frequency.value=frequency;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.045,t+.01);g.gain.exponentialRampToValueAtTime(.001,t+.22);o.connect(g);g.connect(audioContext.destination);o.start(t);o.stop(t+.23);});
   } catch {}
 }
-function picture(word, label='') {
+function picture(word, label='', unit=currentUnit()) {
   const source=word.art;
-  const art=typeof source==='object'?`<svg viewBox="${source.rect.join(' ')}" aria-hidden="true"><image href="${esc(currentUnit().sheets[source.sheet])}" width="${source.size[0]}" height="${source.size[1]}"/></svg>`:source.startsWith('<svg')?source.replace('<svg ',`<svg aria-hidden="true" `):`<img src="${esc(source)}" alt="${esc(label)}" draggable="false" decoding="async">`;
+  const art=typeof source==='object'?`<svg viewBox="${source.rect.join(' ')}" aria-hidden="true"><image href="${esc(unit.sheets[source.sheet])}" width="${source.size[0]}" height="${source.size[1]}"/></svg>`:source.startsWith('<svg')?source.replace('<svg ',`<svg aria-hidden="true" `):`<img src="${esc(source)}" alt="${esc(label)}" draggable="false" decoding="async">`;
   return `<span class="picture" ${label?`role="img" aria-label="${esc(label)}"`:'aria-hidden="true"'}>${art}</span>`;
 }
 function robot(extra='') {
@@ -278,6 +285,9 @@ function scene(unit) {
   return `<svg viewBox="0 0 470 340" role="img" aria-label="Bobo 小机器人正在${META[unit].title}等你"><path class="flight-path" d="M41 77q80-93 145-19t170-16m48 65q92 26 17 97"/><circle cx="58" cy="77" r="5" fill="#f4ca70"/><path d="m385 40 3 7 8 2-7 4-1 8-5-6-8 1 4-7-3-7z" fill="#f4ca70"/><path d="m109 43 2 5 6 2-5 3-1 6-4-5-6 1 3-5-2-5z" fill="#9ab584"/><ellipse cx="249" cy="286" rx="177" ry="22" fill="#acc09a" opacity=".25"/><path d="M80 241q23-59 174-56t158 63q-7 36-165 39T80 241" fill="#a6bb82"/><path d="M85 248q58 44 315 5l-35 41q-137 41-237-3z" fill="#c7bd8a"/><path d="M89 242q95 48 314 6" stroke="#8da66e" stroke-width="3" fill="none"/><path d="M125 239q85-12 149 12t90-11" stroke="#e7d8ab" stroke-width="17" fill="none"/>${building}<path d="M370 236v-37" stroke="#8f9670" stroke-width="7"/><circle cx="370" cy="184" r="23" fill="#a2b96e"/><circle cx="385" cy="199" r="18" fill="#86a966"/><circle cx="354" cy="200" r="18" fill="#8fae6a"/><g class="float"><g transform="translate(79 95) scale(.9)">${robot().replace(/<svg[^>]*>|<\/svg>/g,'')}</g></g><path d="M329 284v-23" stroke="#8c9a6b" stroke-width="4"/><path d="M329 264q-17-17-19-1 5 7 19 1m0 0q17-19 19-4-3 8-19 4" fill="#6c9967"/><path d="m155 285 2 13m44-5-1 11m92-9 2 9" stroke="#a89a68" stroke-width="5" stroke-linecap="round"/><g transform="translate(27 171) rotate(-13)"><rect width="40" height="31" rx="7" fill="#fff6da" stroke="#bfceaa" stroke-width="2"/><text x="20" y="21" text-anchor="middle" font-size="17" font-weight="bold" fill="#6b8a5f">Aa</text></g><path d="m419 242 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="#edc36a"/></svg>`;
 }
 function renderNav() {
+  unitNav.hidden=screen.startsWith('island');
+  const reminder=Island.summary(state,SOURCE_UNITS),entry=document.getElementById('islandNotice');
+  if(entry){entry.textContent=reminder.due?'🏝️ 回忆岛 · '+reminder.due+' 个待复习':'🏝️ 回忆岛';entry.classList.toggle('has-due',reminder.due>0);}
   document.documentElement.style.setProperty('--unit',currentMeta().color);
   unitNav.innerHTML=META.map((u,i)=>`<button data-action="unit" data-value="${i}" class="unit-tab ${i===state.unit?'active':''}" aria-pressed="${i===state.unit}"><span class="tab-icon" aria-hidden="true">${u.icon}</span><span><b class="unit-code">U${i}</b><span class="unit-name">${u.title}</span><small>${u.en}</small></span></button>`).join('');
   document.getElementById('starCount').textContent='★ '+state.progress.reduce((sum,p)=>sum+p.stars,0);
@@ -286,16 +296,16 @@ function renderNav() {
 function mount(html, focus=true) { app.innerHTML=html; renderNav(); if(focus){app.focus({preventScroll:true});window.scrollTo({top:0,behavior:'instant'});} }
 function home(focus=true) {
   stopAudio();save();screen='home';round=null;const u=currentMeta(),p=state.progress[state.unit];
-  const s=Memory.summary(p,currentUnit().words),earned=s.passed===s.total,daily=dailyToday(),done=!!daily?.committed;
-  const currentDaily=daily?.version===2?daily:null,legacyDone=done&&daily.version===1;
-  const completed=LEVELS.filter((_,i)=>currentDaily?.questions.slice(i*2,i*2+2).every(q=>q.solved)).length;
-  const title=done?'这一轮，完成啦！':daily?'接着这轮小冒险！':'每轮 5 关，闯关摘星星！';
-  const cta=done?'继续冒险 →':daily?currentDaily?`继续第 ${Math.floor(daily.index/2)+1} 关 →`:'继续冒险 →':'开始冒险';
+  const s=Memory.summary(p,currentUnit().words),earned=s.passed===s.total,daily=dailyToday(),done=!!daily?.committed,newCount=currentUnit().words.filter(w=>{const r=Memory.entry(p,w.w);return !r.passes&&!r.learned;}).length;
+  const currentDaily=daily?.version>=2?daily:null,legacyDone=done&&daily.version===1,n=currentDaily?roundWordCount(currentDaily):Math.min(state.dailyWordCount,newCount||state.dailyWordCount);
+  const completed=LEVELS.filter((_,i)=>currentDaily?.questions.slice(i*n,i*n+n).every(q=>q.solved)).length;
+  const title=!newCount&&!daily?'新词学完啦，去回忆岛！':done?'这一轮，完成啦！':daily?'接着这轮小冒险！':'每轮 5 关，闯关摘星星！';
+  const cta=!newCount&&!daily?'去回忆岛 →':done?'继续冒险 →':daily?currentDaily?`继续第 ${Math.floor(daily.index/n)+1} 关 →`:'继续冒险 →':'开始冒险';
   mount(`<section class="home-heading"><div><h1>小队长，一起冒险吧！</h1><p>选个单元，出发吧！</p></div><span class="home-label">LEARN · RECALL · REMEMBER</span></section>
-    <section class="hero adventure-hub"><div class="hero-info"><span class="mission-label">U${state.unit} · ${u.title}</span><h2>${title}</h2><div class="hero-actions">${button(done?'continue':'start',cta,'primary')}${done?button('restart','重新冒险','secondary')+button('book','单词星图','text-btn'):''}</div><span class="hero-companion" aria-hidden="true">${robot()}</span></div><section class="round-card hero-route"><div class="section-label"><h3>${legacyDone?'下一轮冒险':'本轮冒险'} · 5 关</h3><span>每关 2 题${legacyDone?'':` · ${completed} / 5 关完成`}</span></div><div class="route daily-route">${LEVELS.map((level,i)=>{const solved=currentDaily?currentDaily.questions.slice(i*2,i*2+2).filter(q=>q.solved).length:0;return `<div class="route-stop"><span class="route-icon" aria-hidden="true">${solved===2?'✓':level.icon}</span>${i+1}. ${level.name}<small class="route-count">${legacyDone?'2 题':`${solved} / 2 题`}</small></div>`;}).join('')}</div></section></section>
-    <section class="memory-summary"><div><strong>本单元过关进度</strong></div><div class="memory-meter" role="progressbar" aria-label="已过关单词数量" aria-valuemin="0" aria-valuemax="${s.total}" aria-valuenow="${s.passed}">${currentUnit().words.map(w=>`<span class="${Memory.status(Memory.entry(p,w.w)).passed?'lit':''}" title="${esc(w.cn)}">★</span>`).join('')}<b>${s.passed} / ${s.total}</b></div><div class="memory-counts"><div><strong><b>${s.passed}</b> 个词</strong><span>已过关</span></div><div class="pending"><strong><b>${s.total-s.passed}</b> 个词</strong><span>未过关</span></div></div></section>
+    <section class="hero adventure-hub"><div class="hero-info"><span class="mission-label">U${state.unit} · ${u.title}</span><h2>${title}</h2><div class="hero-actions">${button(!newCount&&!daily?'island':done?'continue':'start',cta,'primary')}${done?button('restart','重新冒险','secondary')+button('book','单词星图','text-btn'):''}</div><span class="hero-companion" aria-hidden="true">${robot()}</span></div><section class="round-card hero-route"><div class="section-label"><h3>${legacyDone?'下一轮冒险':'本轮冒险'} · 5 关</h3><span>每关 ${n} 题${legacyDone?'':` · ${completed} / 5 关完成`}</span></div><div class="route daily-route">${LEVELS.map((level,i)=>{const solved=currentDaily?currentDaily.questions.slice(i*n,i*n+n).filter(q=>q.solved).length:0;return `<div class="route-stop"><span class="route-icon" aria-hidden="true">${solved===n?'✓':level.icon}</span>${i+1}. ${level.name}<small class="route-count">${legacyDone?`${n} 题`:`${solved} / ${n} 题`}</small></div>`;}).join('')}</div></section></section>
+    ${islandEntryMarkup()}<section class="memory-summary"><div><strong>本单元过关进度</strong></div><div class="memory-meter" role="progressbar" aria-label="已过关单词数量" aria-valuemin="0" aria-valuemax="${s.total}" aria-valuenow="${s.passed}">${currentUnit().words.map(w=>`<span class="${Memory.status(Memory.entry(p,w.w)).passed?'lit':''}" title="${esc(w.cn)}">★</span>`).join('')}<b>${s.passed} / ${s.total}</b></div><div class="memory-counts"><div><strong><b>${s.passed}</b> 个词</strong><span>已过关</span></div><div class="pending"><strong><b>${s.total-s.passed}</b> 个词</strong><span>未过关</span></div></div></section>
     <div class="home-bottom"><section class="collection-card"><div class="section-label"><h3>单词记忆徽章</h3>${button('collection','看看收藏 →','text-btn')}</div><div class="collection-row"><span class="badge-small ${earned?'earned':''}" aria-hidden="true">${earned?u.badge:'✦'}</span><div class="collection-copy"><p>${earned?u.badgeName:'把整单元的星星点亮'}</p><small>${earned?'本单元星星全亮啦':`已点亮 ${s.passed} / ${s.total} 颗星`}</small></div></div></section></div>
-    <div class="home-tools"><div class="book-tools">${button('book',`▤ 单词星图 · ${s.total} 个`,'wordbook-btn')}${button('recordings','♫ 听读小屋','wordbook-btn')}</div><span class="daily-note">每轮 2 个词 · 5 关 × 2 题</span></div>`,focus);
+    <div class="home-tools"><div class="book-tools">${button('book',`▤ 单词星图 · ${s.total} 个`,'wordbook-btn')}${button('recordings','♫ 听读小屋','wordbook-btn')}</div><span class="daily-note">每轮 ${n} 个词 · 5 关 × ${n} 题</span></div>`,focus);
 }
 function drawWords(n) {
   const p=state.progress[state.unit], all=currentUnit().words.map((_,i)=>i), picked=[];
@@ -332,15 +342,13 @@ function startRound() {
   if(daily?.committed){home();return;}
   if(daily){
     state.unit=daily.unit;
-    round=daily.version===2?restoreDaily(daily):migrateDaily(daily);
+    round=daily.version>=2?restoreDaily(daily):migrateDaily(daily);
     screen='game';save();renderQuestion();return;
   }
   round=null;
-  const p=state.progress[state.unit],all=currentUnit().words,due=Memory.dueWords(p,all).slice(0,2);
-  const hasStudy=all.some(w=>Memory.entry(p,w.w).passes===0);
-  const pair=due.length?(hasStudy?[due[0],...Memory.studyWords(p,all,1)]:due):Memory.studyWords(p,all,2);
-  const fallback=all.filter(w=>!pair.includes(w)).sort((a,b)=>Memory.entry(p,a.w).shown-Memory.entry(p,b.w).shown);
-  while(pair.length<2)pair.push(fallback.shift());
+  const p=state.progress[state.unit],all=currentUnit().words,pending=all.filter(w=>{const r=Memory.entry(p,w.w);return r.passes===0&&!r.learned;});
+  if(!pending.length){openIsland();return;}
+  const pair=Memory.studyWords(p,all,Math.min(state.dailyWordCount,pending.length));
   round=makeDailyRound(pair);screen='game';save();renderQuestion();
 }
 function continueRound() {
@@ -351,7 +359,7 @@ function restartRound() {
   const saved=dailyToday();
   if(!saved?.committed)return;
   stopAudio();state.unit=saved.unit;
-  round=saved.version===2?restoreDaily(saved):migrateDaily(saved);
+  round=saved.version>=2?restoreDaily(saved):migrateDaily(saved);
   round.day=Memory.today();round.index=0;round.committed=false;
   for(const q of round.questions){
     Object.assign(q,{solved:false,helped:false,wrong:[],hint:false,notice:''});
@@ -366,15 +374,13 @@ function restartRound() {
 function makeDailyRound(pair,day=Memory.today()) {
   const p=state.progress[state.unit],bank=SENTENCES[state.unit];
   const listening=word=>({type:'listen',word,options:wordOptions(word),answer:word.w});
-  const questions=[...pair.map(listening),...pair.map(makeLetter),...pair.map(makeHide),...pair.map(word=>{
-    const r=Memory.entry(p,word.w);return makeRecall(word,r.passes>0&&r.due>=0&&r.due<=day?'review':'study');
-  })];
+  const questions=[...pair.map(listening),...pair.map(makeLetter),...pair.map(makeHide),...pair.map(word=>makeRecall(word,'study'))];
   pair.forEach((word,i)=>{
     const data=bank.find(q=>q.wordKey===word.w)||bank[(p.grammar+i)%bank.length];
     questions.push({type:'sentence',data,answer:data.a,options:shuffle(data.options)});
   });
   questions.forEach(q=>Object.assign(q,{solved:false,helped:false,wrong:[],hint:false}));
-  return {version:2,id:++roundId,day,unit:state.unit,mode:'daily',questions,index:0,committed:false};
+  return {version:3,wordCount:pair.length,id:++roundId,day,unit:state.unit,mode:'daily',questions,index:0,committed:false};
 }
 function migrateDaily(saved) {
   const previous=restoreDaily(saved),all=currentUnit().words;
@@ -390,8 +396,8 @@ function migrateDaily(saved) {
   return updated;
 }
 function gameHeader() {
-  const level=Math.floor(round.index/2),question=round.index%2;
-  return `<div class="game-header">${button('home','‹ 返回基地','back-btn')}<div class="mission-progress" role="progressbar" aria-label="关卡进度" aria-valuemin="0" aria-valuemax="5" aria-valuenow="${level}">${LEVELS.map((_,i)=>`<span class="progress-segment ${i<level?'done':i===level?'current':''}"></span>`).join('')}</div><span class="step-count"><b>第 ${level+1} / 5 关</b><small>第 ${question+1} / 2 题</small></span></div>`;
+  const n=roundWordCount(round),level=Math.floor(round.index/n),question=round.index%n;
+  return `<div class="game-header">${button('home','‹ 返回基地','back-btn')}<div class="mission-progress" role="progressbar" aria-label="关卡进度" aria-valuemin="0" aria-valuemax="5" aria-valuenow="${level}">${LEVELS.map((_,i)=>`<span class="progress-segment ${i<level?'done':i===level?'current':''}"></span>`).join('')}</div><span class="step-count"><b>第 ${level+1} / 5 关</b><small>第 ${question+1} / ${n} 题</small></span></div>`;
 }
 const stepNames={listen:'声音雷达',letter:'字母维修站',hide:'Hide · 字母躲猫猫',recall:'记忆宝箱 · 自己拼',sentence:'句子小挑战'};
 function optionMarkup(q, option, i, pictureMode=false) {
@@ -404,7 +410,7 @@ function feedbackMarkup(q) {
   if(q.solved){
     const answer=q.type==='sentence'?q.data.full:q.word.w;
     const memoryLine=q.type==='recall'?'拼对啦，过关！':null;
-    return `<div class="feedback" role="status"><div><strong>${memoryLine||(q.helped?'找到啦！学会一个新本领。':'太棒了，能量 +1！')}</strong><span>${esc(answer)}</span>${q.type==='sentence'?`<br>${esc(q.data.hint)}`:` · ${esc(q.word.cn)}`}</div>${button('next',round.index===round.questions.length-1?'收好努力星 ✦':round.index%2===0?'下一题 →':'下一关 →','primary',`data-round="${round.id}" data-step="${round.index}"`)}</div>`;
+    return `<div class="feedback" role="status"><div><strong>${memoryLine||(q.helped?'找到啦！学会一个新本领。':'太棒了，能量 +1！')}</strong><span>${esc(answer)}</span>${q.type==='sentence'?`<br>${esc(q.data.hint)}`:` · ${esc(q.word.cn)}`}</div>${button('next',round.index===round.questions.length-1?'收好努力星 ✦':(round.index+1)%roundWordCount(round)!==0?'下一题 →':'下一关 →','primary',`data-round="${round.id}" data-step="${round.index}"`)}</div>`;
   }
   if(q.type==='recall')return q.notice?`<div class="hint-panel" role="status">${esc(q.notice)}</div>`:'';
   if(q.type==='hide'){
@@ -550,7 +556,7 @@ function finishRound() {
 function wordbook() {
   stopAudio();screen='book';round=null;
   const p=state.progress[state.unit],s=Memory.summary(p,currentUnit().words);
-  mount(`<div class="book-heading"><div><h1>U${state.unit} · 单词星图</h1><p>点词卡，看单词，听发音。</p></div>${button('home','‹ 回基地','back-btn')}</div>${s.due?`<div class="book-review-note"><span>${s.due} 个词等你复习。</span>${dailyToday()?.committed?'':button('start','开始冒险','secondary')}</div>`:''}<div class="word-grid">${currentUnit().words.map(w=>{const r=Memory.entry(p,w.w),status=Memory.status(r);return `<button class="word-card" data-action="word" data-word="${esc(w.w)}" aria-label="查看${esc(w.cn)}的词卡"><span class="word-status ${status.key}">${status.passed?'★ ':''}${status.label}</span>${picture(w)}<h2>${esc(w.cn)}</h2><p class="word-en">点开看单词</p><small>${r.due>=0?`下次复习：${Memory.dayLabel(r.due)}`:'先练习，再独立拼一遍'}</small></button>`;}).join('')}</div>`);
+  mount(`<div class="book-heading"><div><h1>U${state.unit} · 单词星图</h1><p>点词卡，看单词，听发音。</p></div>${button('home','‹ 回基地','back-btn')}</div>${s.due?`<div class="book-review-note"><span>${s.due} 个词等你复习。</span>${dailyToday()?.committed?'':button('island','去回忆岛','secondary')}</div>`:''}<div class="word-grid">${currentUnit().words.map(w=>{const r=Memory.entry(p,w.w),status=Memory.status(r);return `<button class="word-card" data-action="word" data-word="${esc(w.w)}" aria-label="查看${esc(w.cn)}的词卡"><span class="word-status ${status.key}">${status.passed?'★ ':''}${status.label}</span>${picture(w)}<h2>${esc(w.cn)}</h2><p class="word-en">点开看单词</p><small>${r.due>=0?`下次复习：${Memory.dayLabel(r.due)}`:'先练习，再独立拼一遍'}</small></button>`;}).join('')}</div>`);
 }
 function collection() {
   stopAudio();screen='collection';round=null;
@@ -559,7 +565,7 @@ function collection() {
 }
 function memoryParentMarkup() {
   const summaries=SOURCE_UNITS.map((u,i)=>Memory.summary(state.progress[i],u.words));
-  return `<div class="dialog-top"><h2 id="parentTitle">给爸爸妈妈 · 学习进度</h2>${button('close-dialog','×','icon-btn','aria-label="关闭家长说明"')}</div><div class="parent-copy"><div class="parent-reset-tools"><p>当前浏览器 · 所有单元</p>${button('reset-progress','清空进度','danger-button')}</div><p><strong>拼对就过关。</strong>在完整拼写题中，提交正确的单词或短语就显示“已过关”，不必等隔天检验。拼错显示“未过关”，改对后可以再次过关。看词卡、听音选图和字母游戏不改变完整拼写结果。</p><p><strong>过关的词，也会再练一练。</strong>首次拼对后，从第二天起安排复习。下次玩同一单元、开始新一轮时，网页会自动选出该复习的旧词。</p><p>有旧词要复习、也有没过关的词时，一轮安排<strong>1 个旧词＋1 个新词或待练词</strong>。例如：今天学 door 和 bookcase，明天可能练 door 和 clock。全部过关后，优先复习旧词。</p><p>每轮仍是<strong>两个词、五关十题</strong>，正在做的题不会中途更换。复习时能自己拼对，下次可以隔久一点再练；拼错或看了提示，会更快再练。</p><p><strong>每轮选一个单元，学习两个词。</strong>每个单元分别保存冒险进度，切换单元后会显示对应的关卡，切回来还能继续。听一听、补一补、躲猫猫、自己拼、句子挑战共 5 关，每关 2 题，共 10 题。前四关都练习同一对单词；最后做两道本单元句子题。完成一轮后可点击“继续冒险”，提前练习下一组两个词，无需等到第二天。“重新冒险”会重做本轮相同的题目。词卡和录音可随时查看，中途退出、刷新或隔天回来，都能继续未完成的这一轮。已输入的字母和完成的题目都会保留。</p><table class="stats-table"><thead><tr><th>单元</th><th>已过关</th><th>未过关</th><th>今天复习</th></tr></thead><tbody>${summaries.map((s,i)=>`<tr><td>U${i}</td><td>${s.passed}</td><td>${s.total-s.passed}</td><td>${s.due}</td></tr>`).join('')}</tbody></table><div class="parent-word-list">${SOURCE_UNITS.map((unit,i)=>`<details><summary>U${i} · 查看每个词</summary>${unit.words.map(w=>{const r=Memory.entry(state.progress[i],w.w),s=Memory.status(r);return `<div><span>${esc(w.cn)}</span><span>${s.label}${r.due>=0?' · 复习：'+Memory.dayLabel(r.due):''}</span></div>`;}).join('')}</details>`).join('')}</div><p>本单元所有词过关即可点亮徽章。过关表示当前拼写结果，不表示以后无需复习。已经记录过一次拼对的词会直接显示过关，原有星星和复习日期保留。</p><p class="parent-note">${storageOK?'进度自动保存在当前浏览器。':'当前浏览器无法保存进度，关闭网页后可能丢失。'} 复习日期按北京时间计算，提前练下一轮不会修改真实日期。不同浏览器、设备之间不会自动同步。<br>网页提供单词音频和 85 句练习朗读。下载的离线版请保留旁边的 u0-u9-assets 文件夹，供课本录音使用。</p></div>`;
+  return `<div class="dialog-top"><h2 id="parentTitle">给爸爸妈妈 · 学习进度</h2>${button('close-dialog','×','icon-btn','aria-label="关闭家长说明"')}</div><div class="parent-copy"><div class="parent-reset-tools"><p>当前浏览器 · 所有单元</p>${button('reset-progress','清空进度','danger-button')}</div><section class="parent-settings" aria-labelledby="studySettingTitle"><h3 id="studySettingTitle">每天学几个词？</h3><label for="dailyWordCount">每日单词数 <select id="dailyWordCount" aria-describedby="wordCountHelp">${Array.from({length:MAX_WORD_COUNT},(_,i)=>i+1).map(n=>`<option value="${n}" ${n===state.dailyWordCount?'selected':''}>${n} 个词${n===2?'（默认）':''}</option>`).join('')}</select></label><p id="wordCountHelp">每天先完成一轮：5 关，每关 ${state.dailyWordCount} 题，共 ${state.dailyWordCount*5} 题。</p><p class="parent-note">自动保存，所有单元通用。修改后从新一轮开始，正在做的题不变。还想练，可以点“继续冒险”。</p></section><p><strong>拼对就过关。</strong>在完整拼写题中，提交正确的单词或短语就显示“已过关”，不必等隔天检验。拼错显示“未过关”，改对后可以再次过关。看词卡、听音选图和字母游戏不改变完整拼写结果。</p><p><strong>旧词统一去“回忆岛”。</strong>所有单元的旧词合在一起，先练最早到期的词。首页会显示“今日待复习”的数量，逾期的词不会消失；没有到期词时显示下次日期。</p><p><strong>参考艾宾浩斯遗忘规律，采用间隔复习。</strong>第一次拼对后，明天复习。此后每次到期独立拼对，下一次依次间隔 2、4、7、15、30 天；之后保持 30 天。日期从实际复习当天算，不是固定从初学日期累加。拼错或看过答案，就回到明天再练；同一天反复练不会跳级。这是本产品的复习安排，不是人人适用的固定遗忘曲线。</p><p>“开始冒险”按单元学习未过关的词，旧词的定期复习放在回忆岛。每天先做一轮，最多 <strong>${state.dailyWordCount} 个词</strong>；本单元待学词不足时按实际数量出题。回忆岛每批也最多 ${state.dailyWordCount} 个词，每词直接看图拼写一次，不先展示答案；还有到期词可以继续下一批。已过关与复习日期分别记录，过关后仍会提醒复习。</p><p>中途关闭后可以继续原题。设置改动从新一轮生效。“重新冒险”保留本轮相同的题目。网页关闭时不会弹出系统通知，重新打开或返回页面会更新提醒。</p><table class="stats-table"><thead><tr><th>单元</th><th>已过关</th><th>未过关</th><th>今日待复习</th></tr></thead><tbody>${summaries.map((s,i)=>`<tr><td>U${i}</td><td>${s.passed}</td><td>${s.total-s.passed}</td><td>${s.due}</td></tr>`).join('')}</tbody></table><div class="parent-word-list">${SOURCE_UNITS.map((unit,i)=>`<details><summary>U${i} · 查看每个词</summary>${unit.words.map(w=>{const r=Memory.entry(state.progress[i],w.w),s=Memory.status(r);return `<div><span>${esc(w.w)}</span><span>${s.label}${r.due>=0?' · 复习：'+Memory.dayLabel(r.due):''}</span></div>`;}).join('')}</details>`).join('')}</div><p>本单元所有词过关即可点亮徽章。过关表示当前拼写结果，不表示以后无需复习。已经记录过一次拼对的词会直接显示过关，原有星星和复习日期保留。</p><p class="parent-note">${storageOK?'进度自动保存在当前浏览器。':'当前浏览器无法保存进度，关闭网页后可能丢失。'} 复习日期按北京时间计算，提前练下一轮不会修改真实日期。不同浏览器、设备之间不会自动同步。<br>网页提供单词音频和 85 句练习朗读。下载的离线版请保留旁边的 u0-u9-assets 文件夹，供课本录音使用。</p></div>`;
 }
 function parents() {
   const dialog=document.getElementById('parentDialog');
@@ -567,18 +573,28 @@ function parents() {
   dialog.innerHTML=memoryParentMarkup();
   if(!dialog.open)dialog.showModal();
 }
+function setDailyWordCount(value) {
+  if(!validWordCount(value))return;
+  const previous=state.dailyWordCount;state.dailyWordCount=value;
+  if(!save()){
+    state.dailyWordCount=previous;parents();toast('没有保存成功，请重试。');return;
+  }
+  if(screen==='home')home(false);
+  parents();document.getElementById('dailyWordCount').focus();
+  toast('已保存，新一轮使用这个词数。');
+}
 function requestProgressReset() {
   const dialog=document.getElementById('parentDialog');
   if(!dialog.open||progressResetPending)return;
   progressResetPending=true;
-  dialog.innerHTML=`<div class="dialog-top"><h2 id="parentTitle">清空全部进度？</h2>${button('close-dialog','×','icon-btn','aria-label="取消清空"')}</div><div class="reset-panel"><p>将清空当前浏览器中 <strong>U0–U9 所有单元</strong>的星星、过关记录、复习安排和冒险进度。</p><p class="reset-warning">清空后无法恢复。</p><p id="resetStatus" role="status"></p><div class="reset-actions">${button('cancel-reset','先不清空','primary','id="cancelResetProgress"')}${button('confirm-reset','确认清空','danger-button')}</div></div>`;
+  dialog.innerHTML=`<div class="dialog-top"><h2 id="parentTitle">清空全部进度？</h2>${button('close-dialog','×','icon-btn','aria-label="取消清空"')}</div><div class="reset-panel"><p>将清空当前浏览器中 <strong>U0–U9 所有单元</strong>的星星、过关记录、回忆岛复习安排和冒险进度。</p><p class="reset-warning">清空后无法恢复。</p><p id="resetStatus" role="status"></p><div class="reset-actions">${button('cancel-reset','先不清空','primary','id="cancelResetProgress"')}${button('confirm-reset','确认清空','danger-button')}</div></div>`;
   dialog.scrollTop=0;
   document.getElementById('cancelResetProgress').focus();
 }
 function confirmProgressReset() {
   const dialog=document.getElementById('parentDialog');
   if(!progressResetPending||!dialog.open)return;
-  const next={unit:state.unit,effects:state.effects,resetId:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2),dailyByUnit:SOURCE_UNITS.map(()=>null),progress:SOURCE_UNITS.map(unit=>({...freshProgress(),memory:Memory.hydrate({},unit.words)}))};
+  const next={unit:state.unit,effects:state.effects,dailyWordCount:state.dailyWordCount,offlineResetId:state.offlineResetId,island:null,resetId:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2),dailyByUnit:SOURCE_UNITS.map(()=>null),progress:SOURCE_UNITS.map(unit=>({...freshProgress(),memory:Memory.hydrate({},unit.words)}))};
   // Commit first. A failed browser-storage write must leave the old records intact.
   try{localStorage.setItem(STORAGE_KEY,JSON.stringify(next));}
   catch{storageOK=false;document.getElementById('resetStatus').textContent='没有清空成功，原进度已保留。请重试。';return;}
@@ -646,6 +662,8 @@ document.addEventListener('click',event=>{
   else if(action==='audio-tab'&&screen==='recordings')recordingPanel(Number(el.dataset.index));
   else if(action==='lesson'&&screen==='recordings')playLesson(Number(el.dataset.index));
   else if(action==='parents')parents();
+  else if(action==='island')openIsland();
+  else if(action.startsWith('island-'))islandAction(action,el);
   else if(action==='reset-progress')requestProgressReset();
   else if(action==='cancel-reset')parents();
   else if(action==='confirm-reset')confirmProgressReset();
@@ -667,9 +685,9 @@ document.addEventListener('click',event=>{
     else if(action==='read-sentence'&&q.type==='sentence'&&q.solved)say(q.data.full);
   }
 });
-document.addEventListener('input',event=>{if(event.target.id==='recallInput'&&screen==='game'&&round?.questions[round.index]?.type==='recall'){round.questions[round.index].draft=event.target.value;save();}});
-document.addEventListener('change',event=>{if(event.target.id==='lessonSpeed'){const audio=document.getElementById('lessonAudio');if(audio)audio.playbackRate=Number(event.target.value);}});
-document.addEventListener('submit',event=>{if(event.target.id==='recallForm'){event.preventDefault();checkRecall(event.target);}});
+document.addEventListener('input',event=>{if(event.target.id==='islandInput'){const q=Island.current(state);if(q&&!q.solved){q.draft=event.target.value.slice(0,60);save();}return;}if(event.target.id==='recallInput'&&screen==='game'&&round?.questions[round.index]?.type==='recall'){round.questions[round.index].draft=event.target.value;save();}});
+document.addEventListener('change',event=>{if(event.target.id==='dailyWordCount'){setDailyWordCount(Number(event.target.value));return;}if(event.target.id==='lessonSpeed'){const audio=document.getElementById('lessonAudio');if(audio)audio.playbackRate=Number(event.target.value);}});
+document.addEventListener('submit',event=>{if(event.target.id==='islandForm'){event.preventDefault();islandAction('island-answer');return;}if(event.target.id==='recallForm'){event.preventDefault();checkRecall(event.target);}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){save();stopAudio();}else if(screen==='home')home(false);});
 window.addEventListener('focus',()=>{if(screen==='home')home(false);});
 window.addEventListener('pagehide',()=>{save();stopAudio();});

@@ -15,11 +15,15 @@ for(const file of list(app)){
 }
 for(const [name,size]of Object.entries(sizes))assert.ok(size<2*1024*1024,`${name}: ${size} exceeds 2 MiB`);
 const total=Object.values(sizes).reduce((a,b)=>a+b,0);assert.ok(total<30*1024*1024,'Total package exceeds 30 MiB: '+total);
-const generate=new Function('global','window',compiler.wxmlToJs(app,{maxBuffer:32*1024*1024}))({},{});assert.ok(compiler.wxssToJs(app,{maxBuffer:32*1024*1024}));
+const wxmlOnly=process.argv.includes('--wxml-only');
+const generate=new Function('global','window',compiler.wxmlToJs(app,{maxBuffer:32*1024*1024}))({},{});
+if(!wxmlOnly)assert.ok(compiler.wxssToJs(app,{maxBuffer:32*1024*1024}));
 const render=(route,data)=>{const tree=generate(route+'.wxml')(data);assert.ok(tree&&tree.children?.length,route);return tree;};
 const {makePage}=require('../tests/page-harness.cjs');
 let states=0,clips=0;
 render('pages/index/index',{});states++;
+const islandState={summary:{due:2,overdue:1,total:3},wordCount:2,intervals:[1,2,4,7,15,30],nextLabel:'明天',reward:2};
+for(const state of [{view:'home'},{view:'home',summary:{due:0,total:0}},{view:'game',q:{ready:true,number:1,total:2,word:{w:'door',cn:'门',image:'/english/u0/assets/word-0.png'},draft:'',solved:false}},{view:'game',q:{ready:true,number:2,total:2,word:{w:'go camping',cn:'去露营',image:'/english/u9/assets/word-7.png'},draft:'go camping',solved:true,nextLabel:'明天'}},{view:'result'}]){render('pages/island/index',{...islandState,...state});states++;}
 for(let u=0;u<10;u++)for(const view of ['home','game','words','recordings','collection','progress']){
  const harness=makePage(u,view);render(`english/u${u}/${view}/index`,harness.page.data);states++;
  if(view==='game'){
@@ -40,4 +44,5 @@ for(const book of books)for(const info of book.chapters){
 const qa=path.resolve(root,'../../output/qa/frontend/miniprogram');
 fs.mkdirSync(qa,{recursive:true});
 const report={status:'passed',version:'2.0.0',routes:routes.length,templateStates:states,verifiedOriginalBlueyClips:clips,totalMiB:total/1048576,packages:sizes,limits:{eachMiB:2,totalMiB:30},lessonMediaConfigured:!!require('../src/lib/adventure/media-config').lessonBaseUrl,limitations:['Compiled WXML/WXSS and mocked wx interaction checks; native developer-tool and phone preview still required.','Long textbook recordings need a working HTTPS base URL and WeChat platform domain configuration.']};
-fs.writeFileSync(path.join(qa,'verification.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({...report,packages:undefined},null,2));
+if(wxmlOnly){report.status='partial';report.wxssCompiled=false;report.limitations=report.limitations.map(s=>s.replace('Compiled WXML/WXSS','Compiled WXML only'));report.limitations.unshift('WXSS compilation was explicitly omitted with --wxml-only; this is not a full verification pass.');}else report.wxssCompiled=true;
+fs.writeFileSync(path.join(qa,wxmlOnly?'verification-wxml-only.json':'verification.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({...report,packages:undefined},null,2));

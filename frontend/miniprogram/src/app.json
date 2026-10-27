@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/bluey/index",
-    "pages/english/index"
+    "pages/english/index",
+    "pages/island/index"
   ],
   "subPackages": [
     {

@@ -11,7 +11,8 @@ const memory=fs.readFileSync(path.join(web,'src/english/memory.js'),'utf8');
 write(path.join(app,'lib/adventure/memory.js'),memory+'\nmodule.exports = Memory;\n');
 const media=JSON.parse(fs.readFileSync(path.join(root,'config/media.json'),'utf8'));
 write(path.join(app,'lib/adventure/media-config.js'),'module.exports = '+literal({lessonBaseUrl:media.lessonBaseUrl})+';\n');
-write(path.join(app,'lib/adventure/catalog.js'),'module.exports = '+literal(model.units.map((u,i)=>({...meta[i],id:i,words:u.words.map(w=>({w:w.w,cn:w.cn}))})))+';\n');
+write(path.join(app,'lib/adventure/catalog.js'),'module.exports = '+literal(model.units.map((u,i)=>({...meta[i],id:i,words:u.words.map((w,index)=>({w:w.w,cn:w.cn,aliases:w.aliases||[],image:`/english/u${i}/assets/word-${index}.png`,audio:`/english/u${i}/assets/word-${index}.mp3`}))})))+';\n');
+write(path.join(app,'lib/adventure/island.js'),"const Memory=require('./memory');\n"+fs.readFileSync(path.join(web,'src/english/island.js'),'utf8')+'\nmodule.exports = Island;\n');
 async function wordImage(unit,word){
  const art=word.art;
  if(typeof art==='object'){
@@ -48,7 +49,7 @@ async function wordImage(unit,word){
  }
  await sharp(path.join(web,'public/images/bobo.svg')).resize(180,216).png({palette:true}).toFile(path.join(app,'assets/bobo.png'));
  const config=JSON.parse(fs.readFileSync(path.join(app,'app.json'),'utf8'));
- config.pages=['pages/index/index','pages/bluey/index','pages/english/index'];
+ config.pages=['pages/index/index','pages/bluey/index','pages/english/index','pages/island/index'];
  config.subPackages=config.subPackages.filter(p=>!p.root.startsWith('english/'));
  config.subPackages.push(...model.units.map(u=>({root:`english/u${u.id}`,name:`englishUnit${u.id}`,pages:['home','game','words','recordings','collection','progress'].map(v=>v+'/index')})));
  write(path.join(app,'app.json'),JSON.stringify(config,null,2));

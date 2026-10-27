@@ -145,6 +145,8 @@ pnpm dev
 
 ## 网页打包与 Cloudflare Pages 发布
 
+**当前正式版本（2026-10-27）**：已将用户确认的 `22edd8fc` 整合版预览发布到 <https://bobo-english-u0-u9.pages.dev/>，生产分支为 `main`，本次部署地址为 <https://a9a8a58c.bobo-english-u0-u9.pages.dev/>。包含迎宾首页、U0–U9 英语复习、回忆岛及两集 Bluey。发布前核对了预览与发布包的 17 个 HTML／CSS／JS 文件一致；发布后确认正式首页匹配、10 单元、回忆岛入口、两集漫画及原声音频正常。发布快照和记录保存在 `output/releases/production-20261027-225952/`。下文较早的“正式版本未变更”均为当时的历史状态。此次仅发布网页版，未上传或发布微信小程序。
+
 历史网站托管于 Cloudflare Pages，项目名为 `bobo-english-u0-u9`，地址为 <https://bobo-english-u0-u9.pages.dev/>。2026-10-22 的发布记录对应 U0–U9 英语复习版，不代表当前英语与 Bluey 整合版已上线。历史记录在 `frontend/web/deployment/history/cloudflare-v1/publication.json`，其中的账号 ID 不是登录密码或 API Token。
 
 ### 2026-10-26 流程验证结果
@@ -356,3 +358,17 @@ python -B -m unittest discover -s skills/episode-dialogue-docs/scripts -p "test_
 Wrangler 的实际登录凭据由工具保存在用户配置位置，不写入仓库；`.wrangler/` 中的项目缓存不能替代登录授权。`.gitignore` 不会删除文件，也不会自动停止跟踪已入库文件。本项目已有的 `.vscode/launch.json`、`.vscode/tasks.json` 仍是被跟踪的共用启动配置，其余本机编辑器状态继续忽略。
 
 更多前端说明见 [前端总览](frontend/README.md)、[网页版说明](frontend/web/README.md) 和 [小程序说明](frontend/miniprogram/README.md)。本地目录清理明细位于 `output/maintenance/cleanup-2026-10-23.json`，仅供追溯，不是启动或恢复旧工程的入口。
+
+## 英语每日词数设置
+
+在“给爸爸妈妈”里选择每日 1–6 个词，默认 2 个。每天先完成一轮，五个关卡各做相同数量的题；还想练可继续冒险。设置自动保存并从新一轮生效，已有题目、拼写草稿、进度及重新冒险的题量不变。网页与微信小程序各自在当前设备保存设置。
+
+## 回忆岛：跨单元间隔复习
+
+所有单元已学词进入同一个回忆岛，按到期日排序，逾期优先。每天词数设置控制每批上限，未完成的一批与输入会保存；一批完成后仍有到期词可继续。普通冒险学习本单元未学会的新词，待学不足时按实际数量出题；到期旧词不再占用新一轮冒险的名额。原有未完成冒险保留原题。
+
+首次正确拼写后隔 1 天复习；在回忆岛到期且不看提示地拼对后，下一次间隔依次为 2、4、7、15、30 天，最后保持 30 天。每次从实际完成日期计算，逾期不跳阶段，同一天重复不升级。拼错、听发音或看答案后，下次缩短到 1 天。拼错的已学词仍保留复习安排，不会从岛上消失。旧版本记录迁移保留已有过关状态及到期日期。
+
+网页顶部和首页入口显示全局“今日待复习”数量，打开、返回页面和每分钟会更新；到期时有一次页面提示。回忆岛没有单元选择；无到期词时显示下一次日期。关闭网页或小程序时不发送系统通知。微信版使用独立的 `pages/island/index` 页面，按当前词加载所属单元的资源分包。
+
+此时间表是产品选择，参考遗忘与间隔提取研究，并非艾宾浩斯给出的统一复习日历：[Murre 与 Dros（2015）](https://doi.org/10.1371/journal.pone.0120644)、[Karpicke 与 Bauernschmidt（2011）](https://pubmed.ncbi.nlm.nih.gov/21574747/)。

@@ -1,0 +1,2 @@
+@import "../../lib/adventure/page.wxss";
+.island-hero{text-align:center;background:#e4f1e9;border:2rpx solid #bfd9cf;border-radius:32rpx;padding:34rpx;margin:28rpx 0}.island-art{font-size:110rpx}.island-hero .primary{margin:28rpx 0}.intervals{display:flex;flex-wrap:wrap;gap:14rpx;margin:20rpx 0}.intervals text{background:#e9efdd;padding:10rpx;border-radius:13rpx;font-size:24rpx}.island-game{text-align:center}.island-game image{width:230rpx;height:210rpx}.island-game .heading{font-size:33rpx}.island-progress{font-size:26rpx;color:#527b65}

@@ -14,6 +14,7 @@
     "test:web": "node frontend/web/tests/browser.cjs",
     "build:mini": "node frontend/miniprogram/scripts/sync-content.cjs",
     "test:mini": "node --test frontend/miniprogram/tests/*.test.cjs",
-    "verify:mini": "node frontend/miniprogram/scripts/verify.cjs"
+    "verify:mini": "node frontend/miniprogram/scripts/verify.cjs",
+    "test:web:logic": "node --test frontend/web/tests/*.test.cjs"
   }
 }

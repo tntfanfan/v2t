@@ -63,6 +63,7 @@
 - `sync-content.cjs` 生成小程序 `src/english/u0` 至 `u9` 的数据、资源、页面包装文件，以及 `src/lib/adventure/catalog.js`、`memory.js`、`media-config.js`，并更新 `src/app.json` 的入口和英语分包。不要只手工改生成文件而不改来源或生成脚本。
 - 同步脚本读取网页版 `app.js` 中 `const SENTENCES = makeSentences` 之前的定义。移动或重构该部分时同时维护同步脚本，不能只验证网页。
 - 小程序独有的状态与微信交互维护在 `src/lib/adventure/engine.js`、`page.js`、`page.wxml`、`page.wxss`。英语各功能保持独立页面；旧 `src/review/` 是路由兼容入口，不是仍在维护的 Unit 2 产品。
+- 回忆岛的跨单元队列与复习规则维护在网页版 `src/english/island.js`，界面在 `island-view.js`；同步脚本生成小程序 `src/lib/adventure/island.js`，原生适配在 `island-page.js` 与 `src/pages/island/`。每日词数设置与复习间隔变更需同时核对两端，并运行 `pnpm test:web:logic`、`pnpm test:mini` 和小程序编译检查。
 
 ### Bluey 与媒体
 
